@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizupon Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/admin-style.css">
+</head>
+<body>
+    
+    <header class="bizupon-header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between">
+
+                <!-- Logo -->
+                <a class="logo" href="/index.html">
+                    <img src="/images/logo.png" alt="" srcset="">
+                </a>
+
+                <!-- User dropdown -->
+                <div class="dropdown user-dropdown">
+                <button class="btn user-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="avatar"><i class="bi bi-person-fill"></i></span>
+                    <span class="welcome-text">Welcome Bizupon User</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end user-menu">
+                    <li><a class="dropdown-item" href="/login.html"><i class="bi bi-power me-2"></i> Login</a></li>
+                    <li><a class="dropdown-item" href="/user-login.html"><i class="bi bi-power me-2"></i>User Login</a></li>
+                    <li><a class="dropdown-item" href="/register.html"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <div class="container-fluid p-0">
+        <div class="row g-0 min-vh-100">
+            
+            <div class="col-lg-6 illus-panel d-none d-lg-flex flex-column justify-content-between">
+         
+            </div>
+            <div class="col-lg-6 form-panel d-flex align-items-center justify-content-center">
+            <div class="form-wrap">
+
+                <h2 class="form-title">User Login</h2>
+                <p class="form-subtitle">Welcome back — sign in to your account</p>
+
+                <form novalidate id="loginForm">
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">User Email</label>
+                    <div class="input-icon-wrap">
+                    <i class="bi bi-envelope"></i>
+                    <input type="email" class="form-control login-input" id="email" placeholder="Enter your email address" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-icon-wrap">
+                    <i class="bi bi-lock"></i>
+                    <input type="password" class="form-control login-input" id="password" placeholder="Enter your password" required>
+                    <i class="bi bi-eye toggle-password" role="button" aria-label="Show password"></i>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">Enter Security</label>
+                    <div class="captcha-box">
+                    <span id="captchaText" class="captcha-text"></span>
+                    <button type="button" id="refreshCaptcha" class="captcha-refresh" aria-label="Generate new code">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-icon-wrap">
+                    <i class="bi bi-shield-check"></i>
+                    <input type="text" class="form-control login-input" id="verificationCode" placeholder="Verification Code*" required autocomplete="off">
+                    </div>
+                    <p class="captcha-feedback" id="captchaFeedback"></p>
+                </div>
+
+                <div class="d-flex justify-content-end mb-3">
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-login w-100">Login</button>
+
+                <p class="signup-line">New here? <a href="register.html">Create an account</a></p>
+                </form>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/admin/javascript/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

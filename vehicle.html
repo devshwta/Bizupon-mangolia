@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizupon Mongolia</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <script src="javascript/fontawesome.kit.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="dn-header">
+        <nav class="navbar navbar-expand-lg dn-navbar">
+            <div class="container-fluid px-3 px-lg-5">
+                <a class="navbar-brand dn-brand" href="#">
+                    <img src="images/Logo.png" alt="Bizupon Logo" class="dn-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#dnNavbarContent" aria-controls="dnNavbarContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="dnNavbarContent">
+                    <ul class="navbar-nav mx-auto dn-nav-links mb-3 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Нүүр</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="vehicle.html">Машин</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculator.html">Татварын тооцоолуур</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tracker.html">Ачааны хяналт</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center flex-wrap gap-3 dn-actions">
+                        <a href="#" class="login-btn btn dn-btn-primary">Нэвтрэх</a>
+                        <div class="language-toggle me-3">
+                            <a href="#" class="active">EN</a>
+                            <span>|</span>
+                            <a href="#">MN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Section -->
+    <section class="bc-section">
+        <div class="bc-overlay"></div>
+        <div class="container bc-content">
+            <h1 class="bc-title">Машины Нөөц</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bc-breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Нүүр</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Инвентор</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Vehicle Section -->
+      <section class="iv-section">
+        <div class="container-xl">
+            <div class="row g-4">
+              
+                <div class="col-lg-3">
+                    <aside class="iv-filters">
+                        <div class="d-flex align-items-center justify-content-between iv-filters-head">
+                            <h5><i class="fa-solid fa-sliders"></i> Шүүлтүүр</h5>
+                            <button type="button" class="iv-reset-btn" id="ivReset">Reset</button>
+                        </div>
+
+                        <!-- Make -->
+                        <div class="iv-filter-group">
+                            <label class="iv-filter-label">Брэнд</label>
+                            <select class="form-select iv-select" id="ivMake">
+                                <option value="all">All Makes</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Lexus">Lexus</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Tesla">Tesla</option>
+                            </select>
+                        </div>
+
+                        <!-- Fuel Type -->
+                        <div class="iv-filter-group">
+                            <label class="iv-filter-label">Түлшний төрөл</label>
+                            <div class="iv-pill-group" id="ivFuelGroup">
+                                <button type="button" class="iv-pill iv-pill-active" data-value="all">Бүгд</button>
+                                <button type="button" class="iv-pill" data-value="Petrol">Цахилгаан</button>
+                                <button type="button" class="iv-pill" data-value="Diesel">Бензин</button>
+                                <button type="button" class="iv-pill" data-value="Hybrid">Дизель</button>
+                                <button type="button" class="iv-pill" data-value="Electric">Гибрид</button>
+                            </div>
+                        </div>
+
+                        <!-- Drive Type -->
+                        <div class="iv-filter-group">
+                            <label class="iv-filter-label">Хөтлөгч</label>
+                            <div class="iv-pill-group iv-pill-three" id="ivDriveGroup">
+                                <button type="button" class="iv-pill iv-pill-active" data-value="all">All</button>
+                                <button type="button" class="iv-pill" data-value="FWD">FWD</button>
+                                <button type="button" class="iv-pill" data-value="AWD">AWD</button>
+                            </div>
+                        </div>
+
+                        <!-- Source Location -->
+                        <div class="iv-filter-group">
+                            <label class="iv-filter-label">Эх сурвалж</label>
+                            <select class="form-select iv-select" id="ivLocation">
+                                <option value="all">All Locations</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Korea">Korea</option>
+                                <option value="USA">USA</option>
+                                <option value="Europe">Europe</option>
+                            </select>
+                        </div>
+
+                        <!-- Year From -->
+                        <div class="iv-filter-group">
+                            <div class="d-flex justify-content-between">
+                                <label class="iv-filter-label">Он: 2010 – 2026</label>
+                                <span class="iv-range-value" id="ivYearValue">2010</span>
+                            </div>
+                            <input type="range" class="form-range iv-range" id="ivYear" min="2010" max="2025" step="1" value="2010">
+                        </div>
+
+                        <!-- Max Mileage -->
+                        <div class="iv-filter-group">
+                            <div class="d-flex justify-content-between">
+                                <label class="iv-filter-label">Дээд гүйлт (км):</label>
+                                <span class="iv-range-value" id="ivMileageValue">200,000</span>
+                            </div>
+                            <input type="range" class="form-range iv-range" id="ivMileage" min="0" max="200000" step="1000" value="200000">
+                        </div>
+
+                        <!-- Max Price -->
+                        <div class="iv-filter-group">
+                            <div class="d-flex justify-content-between">
+                                <label class="iv-filter-label">Үнийн хязгаар (USD):</label>
+                                <span class="iv-range-value" id="ivPriceValue">$250,000</span>
+                            </div>
+                            <input type="range" class="form-range iv-range" id="ivPrice" min="0" max="250000" step="1000" value="250000">
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="col-lg-9">
+
+                    <!-- Top bar -->
+                    <div class="d-flex flex-wrap justify-content-between align-items-center iv-topbar" style="flex-direction: row;">
+                        <p class="iv-count" id="ivCount">8 машин олдлоо</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <select class="form-select iv-select iv-sort" id="ivSort">
+                                <option value="newest">Шинэ эхлэлтэй</option>
+                                <option value="price-low">Үнэ: Бага-Их</option>
+                                <option value="price-high">Үнэ: Их-Бага</option>
+                                <option value="mileage-low">Гүйлт: Бага-Их</option>
+                            </select>
+                            <div class="iv-view-toggle">
+                                <button type="button" class="iv-view-btn iv-view-active" id="ivGridBtn" aria-label="Grid view"><i class="fa-solid fa-grip"></i></button>
+                                <button type="button" class="iv-view-btn" id="ivListBtn" aria-label="List view"><i class="fa-solid fa-list"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car grid -->
+                    <div class="row g-4 iv-grid" id="ivGrid">
+
+                        <!-- CARD 1 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="Toyota" data-fuel="Petrol" data-drive="AWD" data-location="Japan"
+                             data-year="2023" data-mileage="10500" data-price="68000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/Toyota-Land-Cruiser.jpg" class="iv-img" alt="Toyota Land Cruiser 300">
+                                    <span class="iv-badge iv-badge-grade">Grade A</span>
+                                    <span class="iv-badge iv-badge-flag">🇯🇵 Japan</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2023 Toyota Land Cruiser 300</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 10,500 km</span>
+                                        <span><i class="fa-solid fa-gas-pump"></i> 3,500 cc</span>
+                                        <span><i class="fa-solid fa-gauge"></i> AWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$68,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$89,920</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="Toyota" data-fuel="Petrol" data-drive="AWD" data-location="Japan"
+                             data-year="2023" data-mileage="8000" data-price="52000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/Toyota-Alphard.jpg" class="iv-img" alt="Toyota Alphard">
+                                    <span class="iv-badge iv-badge-grade">Grade A</span>
+                                    <span class="iv-badge iv-badge-flag">🇯🇵 Japan</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2023 Toyota Alphard</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 8,000 km</span>
+                                        <span><i class="fa-solid fa-gas-pump"></i> 2,500 cc</span>
+                                        <span><i class="fa-solid fa-gauge"></i> AWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$52,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$69,000</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 3 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="Mercedes-Benz" data-fuel="Petrol" data-drive="AWD" data-location="Europe"
+                             data-year="2023" data-mileage="15000" data-price="58000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/Mercedes-Benz.jpg" class="iv-img" alt="Mercedes-Benz GLE 450">
+                                    <span class="iv-badge iv-badge-new">New</span>
+                                    <span class="iv-badge iv-badge-flag">🇪🇺 Europe</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2023 Mercedes-Benz GLE 450 4MATIC</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 15,000 km</span>
+                                        <span><i class="fa-solid fa-gas-pump"></i> 3,200 cc</span>
+                                        <span><i class="fa-solid fa-gauge"></i> AWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$58,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$78,000</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="Hyundai" data-fuel="Hybrid" data-drive="FWD" data-location="Korea"
+                             data-year="2023" data-mileage="18000" data-price="28000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/Calligraphy.jpg" class="iv-img" alt="Hyundai Palisade">
+                                    <span class="iv-badge iv-badge-new">New</span>
+                                    <span class="iv-badge iv-badge-flag">🇰🇷 Korea</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2023 Hyundai Palisade Calligraphy</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 18,000 km</span>
+                                        <span><i class="fa-solid fa-gas-pump"></i> 2,800 cc</span>
+                                        <span><i class="fa-solid fa-gauge"></i> FWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$28,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$38,500</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 5 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="Lexus" data-fuel="Petrol" data-drive="AWD" data-location="Japan"
+                             data-year="2022" data-mileage="28000" data-price="72000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/Lexus.jpg" class="iv-img" alt="Lexus LX 600">
+                                    <span class="iv-badge iv-badge-grade">Grade A</span>
+                                    <span class="iv-badge iv-badge-flag">🇯🇵 Japan</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2022 Lexus LX 600</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 28,000 km</span>
+                                        <span><i class="fa-solid fa-gas-pump"></i> 3,500 cc</span>
+                                        <span><i class="fa-solid fa-gauge"></i> AWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$72,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$95,000</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 6 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="BMW" data-fuel="Petrol" data-drive="AWD" data-location="USA"
+                             data-year="2022" data-mileage="30000" data-price="48000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/BMW.jpg" class="iv-img" alt="BMW X5">
+                                    <span class="iv-badge iv-badge-new">New</span>
+                                    <span class="iv-badge iv-badge-flag">🇺🇸 USA</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2022 BMW X5 xDrive40i</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 30,000 km</span>
+                                        <span><i class="fa-solid fa-gas-pump"></i> 3,000 cc</span>
+                                        <span><i class="fa-solid fa-gauge"></i> AWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$48,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$64,000</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 7 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="Honda" data-fuel="Petrol" data-drive="FWD" data-location="USA"
+                             data-year="2021" data-mileage="40000" data-price="22000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/Honda.jpg" class="iv-img" alt="Honda CR-V">
+                                    <span class="iv-badge iv-badge-flag">🇺🇸 USA</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2021 Honda CR-V EX-L</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 40,000 km</span>
+                                        <span><i class="fa-solid fa-gas-pump"></i> 1,500 cc</span>
+                                        <span><i class="fa-solid fa-gauge"></i> FWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$22,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$30,500</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 8 -->
+                        <div class="col-md-6 col-xl-4 iv-card-col"
+                             data-make="Tesla" data-fuel="Electric" data-drive="AWD" data-location="USA"
+                             data-year="2024" data-mileage="5000" data-price="45000">
+                            <div class="iv-card">
+                                <div class="iv-img-wrap">
+                                    <img src="images/cars/Tesla.jpg" class="iv-img" alt="Tesla Model Y">
+                                    <span class="iv-badge iv-badge-new">New</span>
+                                    <span class="iv-badge iv-badge-flag">🇺🇸 USA</span>
+                                </div>
+                                <div class="iv-body">
+                                    <h3 class="iv-title">2024 Tesla Model Y</h3>
+                                    <div class="iv-specs">
+                                        <span><i class="fa-solid fa-road"></i> 5,000 km</span>
+                                        <span><i class="fa-solid fa-bolt"></i> Electric</span>
+                                        <span><i class="fa-solid fa-gauge"></i> AWD</span>
+                                    </div>
+                                    <div class="iv-price-row">
+                                        <div>
+                                            <span class="iv-price-label">FOB Үнэ</span>
+                                            <span class="iv-price">$45,000</span>
+                                        </div>
+                                        <span class="iv-landed">УБ хүргэлтийн үнэ (тооцоолсон) ~$59,500</span>
+                                    </div>
+                                    <div class="d-flex gap-2 iv-actions">
+                                        <a href="#" class="btn iv-btn-primary flex-grow-1">Дэлгэрэнгүй <i class="fa-solid fa-arrow-right"></i></a>
+                                        <a href="#" class="iv-inquire">Асуулга</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="iv-no-results d-none" id="ivNoResults">No vehicles match your filters. Try adjusting them.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="ft-footer">
+        <div class="container-xl">
+
+            <div class="row gy-5 ft-top">
+
+                <div class="col-lg-4">
+                    <div class="ft-brand">
+                        <img src="images/Logo.png" alt="DriveNest Logo" class="ft-logo-img">
+   
+                    </div>
+
+                    <p class="ft-desc">
+                        Улаанбаатарт таны хаалга хүртэл хүргэх <br>дэлхийн тэргүүний автомашин нийлүүлэх.
+                    </p>
+                     <ul class="description-link">
+                        <li><a href="#"><i class="fa-solid fa-location-dot"></i>AVTOKOM Auto Trade Complex, <br>Block B-312, 32nd District, Ulaanbaatar</a></li>
+                        <li><a href="#"><i class="fa-solid fa-envelope"></i>mongolia@idubid.com</a></li>
+                        <li><a href="#"><i class="fa-solid fa-phone"></i>+976 8014 0543</a></li>
+                    </ul>
+ 
+                    <h4 class="ft-subheading ft-follow-heading">Follow Us:</h4>
+                    <div class="d-flex gap-2 ft-social-row">
+                        <a href="#" class="ft-social" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="ft-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="ft-social" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" class="ft-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="ft-social" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h4 class="ft-col-heading">Компани</h4>
+                    <ul class="ft-link-list">
+                        <li><a href="#">Бидний тухай</a></li>
+                        <li><a href="#">Ажлын байр</a></li>
+                        <li><a href="#">Хэвлэл мэдээлэл</a></li>
+                        <li><a href="#">Холбоо барих</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h4 class="ft-col-heading">Үйлчилгээ</h4>
+                    <ul class="ft-link-list">
+                        <li><a href="#">Машин үзэх</a></li>
+                        <li><a href="#">Татварын тооцоолуур</a></li>
+                        <li><a href="#">Ачааны хяналт</a></li>
+                        <li><a href="#">Санхүүжилт</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h4 class="ft-col-heading">Нөөц</h4>
+                    <ul class="ft-link-list">
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Монголын татварын</a></li>
+                        <li><a href="#">гарын авлага</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2 text-lg-end">
+                    <p class="ft-contact-label">Асуулт байна уу? Бидэнтэй холбогдоорой:</p>
+                    <a href="mailto:support@drivenest.com" class="ft-contact-email">support@drivenest.com</a>
+                    
+                </div>
+
+            </div>
+
+            <hr class="ft-divider">
+
+            <div class="d-flex flex-wrap justify-content-between align-items-center ft-bottom">
+                <p class="ft-copyright">© 2026 Bizupon.mn. Бүх эрх хуулиар хамгаалагдсан.</p>
+                <p class="ft-status">
+                    <span class="ft-status-dot"></span> Монголд зориулан бүтээсэн.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/javascript/vehicle.js"></script>   
+    <script src="javascript/popper.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+</body>
+</html>

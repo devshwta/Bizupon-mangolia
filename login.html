@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizupon Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/admin-style.css">
+</head>
+<body>
+
+  <header class="bizupon-header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+          <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between">
+              <!-- Logo -->
+              <a class="logo" href="/index.html">
+                  <img src="/images/logo.png" alt="" srcset="">
+              </a>
+              <!-- User dropdown -->
+              <div class="dropdown user-dropdown">
+              <button class="btn user-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="avatar"><i class="bi bi-person-fill"></i></span>
+                  <span class="welcome-text">Welcome Bizupon User</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end user-menu">
+                  <li><a class="dropdown-item" href="/login.html"><i class="bi bi-power me-2"></i> Login</a></li>
+                    <li><a class="dropdown-item" href="/user-login.html"><i class="bi bi-power me-2"></i>User Login</a></li>
+                    <li><a class="dropdown-item" href="/register.html"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
+              </ul>
+              </div>
+          </div>
+          </div>
+      </div>
+  </header>
+
+  <div class="stage">
+
+    <!-- LOGIN CARD -->
+    <div class="login-card">
+      <h4>Welcome, Login to your account</h4>
+      <form>
+        <div class="mb-3">
+          <label class="field-label">Email ID</label>
+          <input type="text" class="form-control-custom" placeholder="Enter your ID">
+        </div>
+
+        <div class="mb-2">
+          <label class="field-label">Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="pwField" class="form-control-custom" placeholder="Enter your Password" style="padding-right:44px;">
+            <button type="button" class="pw-toggle" onclick="togglePw()" id="pwIcon"></button>
+          </div>
+        </div>
+
+        <div class="row-between">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember">
+            <label class="form-check-label" for="remember">Remember me</label>
+          </div>
+          <a href="#" class="forgot-link">Forget Password?</a>
+        </div>
+
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+    </div>
+
+    <!-- ILLUSTRATION SIDE -->
+    <div class="illustration-side">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+
+      <div class="balloon">
+        <div class="b-brand"><span class="okay">BIZUPON</span> </div>
+        <div class="b-text">Automobile <br><span class="accent">Service</span> Provider</div>
+      </div>
+      <div class="balloon-string"></div>
+
+      <svg viewBox="0 0 560 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- city skyline -->
+        <g opacity="0.9">
+          <rect x="10" y="230" width="40" height="130" fill="#CFEEDA"/>
+          <rect x="55" y="190" width="35" height="170" fill="#B9E6CB"/>
+          <rect x="95" y="240" width="30" height="120" fill="#CFEEDA"/>
+          <rect x="380" y="210" width="35" height="150" fill="#B9E6CB"/>
+          <rect x="420" y="180" width="40" height="180" fill="#9FDCB8"/>
+          <rect x="465" y="230" width="30" height="130" fill="#CFEEDA"/>
+        </g>
+
+        <!-- phone mock -->
+        <g>
+          <rect x="15" y="120" width="140" height="230" rx="18" fill="#1F2A24"/>
+          <rect x="24" y="140" width="122" height="165" rx="4" fill="#DCF3E4"/>
+          <path d="M30 260 L60 220 L85 245 L110 200 L140 260 L30 260 Z" fill="#9FDCB8"/>
+          <circle cx="90" cy="185" r="20" fill="#0B6E4F"/>
+          <path d="M90 165 C102 165 112 175 112 187 C112 200 90 220 90 220 C90 220 68 200 68 187 C68 175 78 165 90 165 Z" fill="#0B6E4F"/>
+          <circle cx="90" cy="186" r="7" fill="#fff"/>
+          <rect x="30" y="312" width="100" height="20" rx="4" fill="#16A34A"/>
+          <text x="80" y="326" font-size="10" fill="#fff" text-anchor="middle" font-weight="700" font-family="Segoe UI, sans-serif">PICK UP</text>
+        </g>
+
+        <!-- taxi car -->
+        <g transform="translate(140,150)">
+          <ellipse cx="180" cy="235" rx="230" ry="14" fill="#DCEEE2"/>
+          <path d="M20 190 L45 130 Q55 115 75 115 L230 115 Q250 115 260 130 L285 190 Z" fill="#16A34A"/>
+          <path d="M75 122 L95 155 L215 155 L235 122 Z" fill="#EAF8F0"/>
+          <line x1="155" y1="122" x2="155" y2="155" stroke="#0B6E4F" stroke-width="3"/>
+          <rect x="15" y="185" width="280" height="30" rx="6" fill="#0F9D58"/>
+          <g fill="#fff">
+            <rect x="30" y="185" width="14" height="30"/>
+            <rect x="58" y="185" width="14" height="30"/>
+            <rect x="86" y="185" width="14" height="30"/>
+            <rect x="228" y="185" width="14" height="30"/>
+            <rect x="256" y="185" width="14" height="30"/>
+          </g>
+          <rect x="120" y="170" width="60" height="20" rx="4" fill="#0B6E4F"/>
+          <text x="150" y="185" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" font-family="Segoe UI, sans-serif">TAXI</text>
+          <circle cx="70" cy="222" r="26" fill="#1F2A24"/>
+          <circle cx="70" cy="222" r="12" fill="#B9E6CB"/>
+          <circle cx="245" cy="222" r="26" fill="#1F2A24"/>
+          <circle cx="245" cy="222" r="12" fill="#B9E6CB"/>
+          <circle cx="255" cy="130" r="10" fill="#FCEB98"/>
+        </g>
+
+        <!-- person -->
+        <g transform="translate(455,120)">
+          <rect x="-10" y="90" width="70" height="120" fill="#9FDCB8" opacity="0.7"/>
+          <circle cx="25" cy="30" r="18" fill="#3A2E28"/>
+          <circle cx="25" cy="34" r="14" fill="#E8B98C"/>
+          <path d="M10 25 Q25 5 40 25 Q40 15 25 12 Q10 15 10 25 Z" fill="#1F2A24"/>
+          <rect x="8" y="48" width="34" height="55" rx="10" fill="#16A34A"/>
+          <rect x="0" y="52" width="14" height="45" rx="6" fill="#16A34A" transform="rotate(-25 7 74)"/>
+          <rect x="34" y="45" width="14" height="50" rx="6" fill="#16A34A" transform="rotate(35 41 70)"/>
+          <circle cx="55" cy="35" r="7" fill="#E8B98C"/>
+          <rect x="10" y="98" width="14" height="55" fill="#1F2A24"/>
+          <rect x="26" y="98" width="14" height="55" fill="#1F2A24"/>
+          <rect x="6" y="150" width="20" height="8" rx="3" fill="#0F2A1F"/>
+          <rect x="24" y="150" width="20" height="8" rx="3" fill="#0F2A1F"/>
+          <rect x="20" y="66" width="10" height="16" rx="2" fill="#0B6E4F"/>
+        </g>
+
+        <circle cx="200" cy="60" r="26" fill="#FCEB98" opacity="0.8"/>
+      </svg>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

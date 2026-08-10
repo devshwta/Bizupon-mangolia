@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizupon Mongolia</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <script src="javascript/fontawesome.kit.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="dn-header">
+        <nav class="navbar navbar-expand-lg dn-navbar">
+            <div class="container-fluid px-3 px-lg-5">
+                <a class="navbar-brand dn-brand" href="#">
+                    <img src="images/Logo.png" alt="Bizupon Logo" class="dn-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#dnNavbarContent" aria-controls="dnNavbarContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="dnNavbarContent">
+                    <ul class="navbar-nav mx-auto dn-nav-links mb-3 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Нүүр</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="vehicle.html">Машин</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculator.html">Татварын тооцоолуур</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tracker.html">Ачааны хяналт</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center flex-wrap gap-3 dn-actions">
+                        <a href="#" class="login-btn btn dn-btn-primary">Нэвтрэх</a>
+                        <div class="language-toggle me-3">
+                            <a href="#" class="active">EN</a>
+                            <span>|</span>
+                            <a href="#">MN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- How To Track Section -->
+    <section class="ts-section">
+        <div class="container">
+            <div class="ts-header">
+                <h2 class="ts-heading">Захиалгаа 3 хялбар <br>алхмаар хянаарай</h2>
+                <p class="ts-subtext">
+                    Автомашиныхаа худалдан авалтын баталгаажуулалтаас эхлээд Улаанбаатар дахь таны хаягт хүргэгдэх хүртэлх бүх явцыг хэдхэн товшилтоор хянах боломжтой.
+                </p>
+            </div>
+
+             <div class="tk-section">
+                <div class="container tk-container">
+                    <div class="tk-search-bar">
+                        <i class="fa-solid fa-magnifying-glass tk-search-icon"></i>
+                        <input type="text" class="tk-search-input" id="tkInput"
+                            placeholder="Жнь. JT3HP10V5W0043892 эсвэл BZP-2024-1234">
+                        <button type="button" class="btn tk-track-btn" id="tkTrackBtn">Хянах</button>
+                    </div>
+
+                    <div class="tk-demo-note" id="tkDemoNote">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Демо горим: BZP-2024-1337 лавлагааны жишиг хяналтын өгөгдлийг харуулж байна.
+                    </div>
+
+                    <div class="tk-results d-none" id="tkResults">
+
+                        <!-- Vehicle header -->
+                        <div class="tk-vehicle-card">
+                            <h3 class="tk-vehicle-title">2022 Toyota Land Cruiser 300 (Pearl White)</h3>
+                            <div class="tk-meta-row">
+                                <span><i class="fa-solid fa-ship"></i> Хөлөг онгоц: <strong>MV ASIA GLORY</strong></span>
+                                <span><i class="fa-solid fa-anchor"></i> Очих боомт: <strong>Tianjin, China</strong></span>
+                                <span><i class="fa-regular fa-calendar"></i> Төлөвлөгөөт ирэх огноо: <strong class="tk-eta">2024-12-08</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Timeline -->
+                        <ul class="tk-timeline">
+
+                            <li class="tk-item tk-item-done">
+                                <div class="tk-item-marker">
+                                    <span class="tk-item-icon"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                                <div class="tk-item-content">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start tk-item-top">
+                                        <h4 class="tk-item-title">Захиалга баталгаажсан</h4>
+                                        <span class="tk-item-datetime">2024-11-01 <span class="tk-item-time">09:00</span></span>
+                                    </div>
+                                    <p class="tk-item-desc">Захиалгыг баталгаажуулж, борлуулагчид мэдэгдэв.</p>
+                                    <span class="tk-status tk-status-done">Дуусан</span>
+                                </div>
+                            </li>
+
+                            <li class="tk-item tk-item-done">
+                                <div class="tk-item-marker">
+                                    <span class="tk-item-icon"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                                <div class="tk-item-content">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start tk-item-top">
+                                        <h4 class="tk-item-title">Усан онгоцонд ачигдсан</h4>
+                                        <span class="tk-item-datetime">2024-11-05 <span class="tk-item-time">14:10</span></span>
+                                    </div>
+                                    <p class="tk-item-desc">Тээврийн хэрэгслийг экспортын боомтод ачив.</p>
+                                    <span class="tk-status tk-status-done">Дуусан</span>
+                                </div>
+                            </li>
+
+                            <li class="tk-item tk-item-done">
+                                <div class="tk-item-marker">
+                                    <span class="tk-item-icon"><i class="fa-solid fa-check"></i></span>
+                                </div>
+                                <div class="tk-item-content">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start tk-item-top">
+                                        <h4 class="tk-item-title">Экспортын гаалиас гарсан</h4>
+                                        <span class="tk-item-datetime">2024-11-12 <span class="tk-item-time">11:45</span></span>
+                                    </div>
+                                    <p class="tk-item-desc">Машин Япон / Солонгос улсын гаалийн бүрдүүлэлтийг давсан.</p>
+                                    <span class="tk-status tk-status-done">Дуусан</span>
+                                </div>
+                            </li>
+
+                            <li class="tk-item tk-item-active">
+                                <div class="tk-item-marker">
+                                    <span class="tk-item-icon"><i class="fa-solid fa-anchor"></i></span>
+                                </div>
+                                <div class="tk-item-content">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-start tk-item-top">
+                                        <h4 class="tk-item-title">Далайн тээвэрт явж байна</h4>
+                                        <span class="tk-item-datetime">2024-11-15 <span class="tk-item-time">08:00</span></span>
+                                    </div>
+                                    <p class="tk-item-desc">Тээврийн хэрэгсэл далайгаар тээвэрлэгдэж байна.</p>
+                                    <span class="tk-status tk-status-active">Явагдаж байна</span>
+                                </div>
+                            </li>
+
+                            <li class="tk-item tk-item-upcoming">
+                                <div class="tk-item-marker">
+                                    <span class="tk-item-icon"><i class="fa-solid fa-circle"></i></span>
+                                </div>
+                                <div class="tk-item-content">
+                                    <h4 class="tk-item-title">Очих боомтод ирсэн</h4>
+                                    <p class="tk-item-desc">Хөлөг онгоц Тяньжинь боомтод ирнэ. Хараахан эхлээгүй байна.</p>
+                                </div>
+                            </li>
+
+                            <li class="tk-item tk-item-upcoming">
+                                <div class="tk-item-marker">
+                                    <span class="tk-item-icon"><i class="fa-solid fa-circle"></i></span>
+                                </div>
+                                <div class="tk-item-content">
+                                    <h4 class="tk-item-title">Монгол улсын гаалийн боловсруулалт</h4>
+                                    <p class="tk-item-desc">Гаалийн мэдүүлгийг Улаанбаатар хотын гаалийн товчоод илгээнэ.</p>
+                                </div>
+                            </li>
+
+                            <li class="tk-item tk-item-upcoming tk-item-last">
+                                <div class="tk-item-marker">
+                                    <span class="tk-item-icon"><i class="fa-solid fa-circle"></i></span>
+                                </div>
+                                <div class="tk-item-content">
+                                    <h4 class="tk-item-title">Хүргэгдсэн — УБ гаалийн талбай</h4>
+                                    <p class="tk-item-desc">Машиныг эцсийн байдлаар хүлээн авахад бэлэн болно.</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <div class="ts-img-wrap">
+                        <i class="fa-solid fa-star ts-spark ts-spark-top"></i>
+                        <img src="images/tracking2.jpg" alt="Container ship at port" class="ts-img ts-img-back">
+                        <img src="images/tracking1.jpg" alt="Car being loaded for shipping" class="ts-img ts-img-front">
+                        <i class="fa-solid fa-star ts-spark ts-spark-bottom"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="ts-steps">
+                        <div class="ts-step">
+                            <div class="ts-step-marker">
+                                <span class="ts-step-num">01</span>
+                            </div>
+                            <div class="ts-step-content">
+                                <h3 class="ts-step-title">Алхам 1: Хяналтын дугаараа оруулна уу</h3>
+                                <p class="ts-step-text">
+                                    VIN дугаар эсвэл захиалгын дугаараа хяналтын хуудсанд оруулснаар таны тээвэрлэлтийн мэдээлэл шууд харагдана.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ts-step">
+                            <div class="ts-step-marker">
+                                <span class="ts-step-num">02</span>
+                            </div>
+                            <div class="ts-step-content">
+                                <h3 class="ts-step-title">Алхам 2: Бодит цагийн явцыг харах</h3>
+                                <p class="ts-step-text">
+                                    Экспортын гаалийн бүрдүүлэлтээс эхлээд далайн тээвэр хүртэл автомашиныхаа байршил, явцыг бодит цагийн горимоор шат бүрт нь хянаарай.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ts-step">
+                            <div class="ts-step-marker">
+                                <span class="ts-step-num">03</span>
+                            </div>
+                            <div class="ts-step-content">
+                                <h3 class="ts-step-title">Алхам 3: Автомашинаа хүлээн авах</h3>
+                                <p class="ts-step-text">
+                                    Таны автомашин Монголын гаалиар нэвтэрч, Улаанбаатарт хүлээн авах эсвэл хүргэлтэд бэлэн болмогц танд мэдэгдэл илгээнэ.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="ft-footer">
+        <div class="container-xl">
+
+            <div class="row gy-5 ft-top">
+
+                <div class="col-lg-4">
+                    <div class="ft-brand">
+                        <img src="images/Logo.png" alt="DriveNest Logo" class="ft-logo-img">
+   
+                    </div>
+
+                    <p class="ft-desc">
+                        Улаанбаатарт таны хаалга хүртэл хүргэх <br>дэлхийн тэргүүний автомашин нийлүүлэх.
+                    </p>
+                     <ul class="description-link">
+                        <li><a href="#"><i class="fa-solid fa-location-dot"></i>AVTOKOM Auto Trade Complex, <br>Block B-312, 32nd District, Ulaanbaatar</a></li>
+                        <li><a href="#"><i class="fa-solid fa-envelope"></i>mongolia@idubid.com</a></li>
+                        <li><a href="#"><i class="fa-solid fa-phone"></i>+976 8014 0543</a></li>
+                    </ul>
+ 
+                    <h4 class="ft-subheading ft-follow-heading">Follow Us:</h4>
+                    <div class="d-flex gap-2 ft-social-row">
+                        <a href="#" class="ft-social" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="ft-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="ft-social" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" class="ft-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="ft-social" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h4 class="ft-col-heading">Компани</h4>
+                    <ul class="ft-link-list">
+                        <li><a href="#">Бидний тухай</a></li>
+                        <li><a href="#">Ажлын байр</a></li>
+                        <li><a href="#">Хэвлэл мэдээлэл</a></li>
+                        <li><a href="#">Холбоо барих</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h4 class="ft-col-heading">Үйлчилгээ</h4>
+                    <ul class="ft-link-list">
+                        <li><a href="#">Машин үзэх</a></li>
+                        <li><a href="#">Татварын тооцоолуур</a></li>
+                        <li><a href="#">Ачааны хяналт</a></li>
+                        <li><a href="#">Санхүүжилт</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h4 class="ft-col-heading">Нөөц</h4>
+                    <ul class="ft-link-list">
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Монголын татварын</a></li>
+                        <li><a href="#">гарын авлага</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2 text-lg-end">
+                    <p class="ft-contact-label">Асуулт байна уу? Бидэнтэй холбогдоорой:</p>
+                    <a href="mailto:support@drivenest.com" class="ft-contact-email">support@drivenest.com</a>
+                    
+                </div>
+
+            </div>
+
+            <hr class="ft-divider">
+
+            <div class="d-flex flex-wrap justify-content-between align-items-center ft-bottom">
+                <p class="ft-copyright">© 2026 Bizupon.mn. Бүх эрх хуулиар хамгаалагдсан.</p>
+                <p class="ft-status">
+                    <span class="ft-status-dot"></span> Монголд зориулан бүтээсэн.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/javascript/tracker.js"></script>   
+    <script src="javascript/popper.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+</body>
+</html>

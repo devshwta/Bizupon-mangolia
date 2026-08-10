@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Yard Out</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin-style.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body">
+    
+    <!-- Header Section -->
+    <header class="bizupon-header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between">
+
+                <!-- Logo -->
+                <a class="logo" href="/admin/index.html">
+                    <img src="/images/logo.png" alt="" srcset="">
+                </a>
+
+                <!-- User dropdown -->
+                <div class="dropdown user-dropdown">
+                <button class="btn user-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="avatar"><i class="bi bi-person-fill"></i></span>
+                    <span class="welcome-text">Welcome Bizupon User</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end user-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Change Password</a></li>
+                    <li><a class="dropdown-item" href="/login.html"><i class="bi bi-power me-2"></i> Login</a></li>
+                    <li><a class="dropdown-item" href="/user-login.html"><i class="bi bi-power me-2"></i>User Login</a></li>
+                    <li><a class="dropdown-item" href="/register.html"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
+                </ul>
+                </div>
+
+                <!-- Mobile toggler -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bizuponNav">
+               <i class="bi bi-list"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg nav-bar">
+            <div class="container-fluid px-4">
+            <div class="collapse navbar-collapse" id="bizuponNav">
+                <ul class="navbar-nav align-items-lg-center w-100">
+
+                <!-- All Categories mega dropdown -->
+                <li class="nav-item dropdown all-categories">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
+                     All Categories  
+                    </a>
+                    <ul class="dropdown-menu categories-menu">
+
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item submenu-trigger" href="#">
+                            Product Master <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <div class="dropdown-menu submenu-panel">
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Another Status</a>
+                                <a class="dropdown-item" href="#">Update Product Date</a>
+                                <a class="dropdown-item" href="#">Update Broker</a>
+                                <a class="dropdown-item" href="#">Update BL No</a>
+                                <a class="dropdown-item" href="#">Add Variant</a>
+                                <a class="dropdown-item" href="#">View Purchase</a>
+                                <a class="dropdown-item" href="#">Deleted Product</a>
+                                <a class="dropdown-item" href="#">Upload Port Image Point</a>
+                                <a class="dropdown-item" href="#">Update All Shipping</a>
+                                <a class="dropdown-item" href="#">Document Confirmation</a>
+                                <a class="dropdown-item" href="#">Update D Receive Date</a>
+                                <a class="dropdown-item" href="#">Cancel Penalty</a>
+                                <a class="dropdown-item" href="#">Approve Commission</a>
+                                <a class="dropdown-item" href="#">Add Company Bill</a>
+                                <a class="dropdown-item" href="#">View UAE Company</a>
+                                <a class="dropdown-item" href="#">View Sale my Car</a>
+                                <a class="dropdown-item" href="#">Add 50/50 Product</a>
+                            </div>
+
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Shipping Details</a>
+                                <a class="dropdown-item" href="#">Update Remark</a>
+                                <a class="dropdown-item" href="#">Update Notify &amp; CFS</a>
+                                <a class="dropdown-item" href="#">Add Product</a>
+                                <a class="dropdown-item" href="#">View Variant</a>
+                                <a class="dropdown-item" href="#">Update Variant</a>
+                                <a class="dropdown-item" href="#">Update Loading and Surrender</a>
+                                <a class="dropdown-item" href="#">Doc Send Date</a>
+                                <a class="dropdown-item" href="#">Update Inspection</a>
+                                <a class="dropdown-item" href="#">Car Auction</a>
+                                <a class="dropdown-item" href="#">PID Details</a>
+                                <a class="dropdown-item" href="#">Update Broker Special</a>
+                                <a class="dropdown-item" href="#">View Shipment Information</a>
+                                <a class="dropdown-item" href="#">View Company Bill</a>
+                                <a class="dropdown-item" href="#">Add Customs Clearance</a>
+                                <a class="dropdown-item" href="#">Unsold Sale my Car</a>
+                            </div>
+
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Inner</a>
+                                <a class="dropdown-item" href="#">Update Consignee</a>
+                                <a class="dropdown-item" href="#">Update Ship Name</a>
+                                <a class="dropdown-item" href="#">View Product</a>
+                                <a class="dropdown-item" href="#">Add Purchase</a>
+                                <a class="dropdown-item" href="#">Update Fuzokuhin</a>
+                                <a class="dropdown-item" href="#">Yard In Date</a>
+                                <a class="dropdown-item" href="#">Update Shipping</a>
+                                <a class="dropdown-item" href="#">Update Yard Out</a>
+                                <a class="dropdown-item" href="#">View Car Auction</a>
+                                <a class="dropdown-item" href="#">Ship Notification</a>
+                                <a class="dropdown-item" href="#">Shipping Information</a>
+                                <a class="dropdown-item" href="#">Assign Company</a>
+                                <a class="dropdown-item" href="#">UAE Company</a>
+                                <a class="dropdown-item" href="#">Update Customs Clearance</a>
+                                <a class="dropdown-item" href="#">View Booking</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Account Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Master <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Team management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">User Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Transport Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Blog Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Entry Point <i class="bi bi-arrow-right"></i></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Invoice Management</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
+                    <li><a class="dropdown-item" href="#">Download Voucher</a></li>
+                    <li><a class="dropdown-item" href="#">Download Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Deleted Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Old Payment History</a></li>
+                    <li><a class="dropdown-item" href="#">Make Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Invoice Management</a></li>
+                    <li><a class="dropdown-item" href="#">Payment Adjustment</a></li>
+                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
+                    <li><a class="dropdown-item" href="#">Shipped Car Voucher</a></li>
+                    <li><a class="dropdown-item" href="#">Download Invoice Mango</a></li>
+                    <li><a class="dropdown-item" href="#">Download Voucher (2024)</a></li>
+                    <li><a class="dropdown-item" href="#">View Stock Invoice</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Sales Report</a></li>
+                    <li><a class="dropdown-item" href="#">Stock Report</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Yard Report</a></li>
+                    <li><a class="dropdown-item" href="#">Port Report</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Account Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Ledger</a></li>
+                    <li><a class="dropdown-item" href="#">Balance Sheet</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">History</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                    <li><a class="dropdown-item" href="#">Login History</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Bizupon Invoices</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">All Invoices</a></li>
+                    <li><a class="dropdown-item" href="#">Draft Invoices</a></li>
+                    </ul>
+                </li>
+
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Update Another Status Form -->
+    <section class="status-page">
+      <div class="container-fluid px-4 py-4">
+
+        <h1 class="page-title">Update Another Status</h1>
+
+        <div class="status-form-card">
+          <div class="row g-4">
+
+            <!-- Category -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Category</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Category">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Car</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="car">Car</li>
+                    <li class="ss-option" data-value="bike">Bike</li>
+                    <li class="ss-option" data-value="truck">Truck</li>
+                    <li class="ss-option" data-value="machinery">Heavy Machinery</li>
+                    <li class="ss-option" data-value="parts">Parts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Select Product -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Select Product</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Product Name">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Product Name</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Product Name</li>
+                    <li class="ss-option" data-value="prado">Toyota Land Cruiser Prado</li>
+                    <li class="ss-option" data-value="cx5">Mazda CX-5</li>
+                    <li class="ss-option" data-value="xtrail">Nissan X-Trail</li>
+                    <li class="ss-option" data-value="outlander">Mitsubishi Outlander</li>
+                    <li class="ss-option" data-value="forester">Subaru Forester</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Auction House -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Auction House</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Auction Name">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Auction Name</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Auction Name</li>
+                    <li class="ss-option" data-value="usss">USS Tokyo</li>
+                    <li class="ss-option" data-value="taa">TAA Kinki</li>
+                    <li class="ss-option" data-value="jaa">JAA Osaka</li>
+                    <li class="ss-option" data-value="honda">Honda Auction</li>
+                    <li class="ss-option" data-value="arai">Arai Oyama</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shipping -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Shipping</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Shipping">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Shipping</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Shipping</li>
+                    <li class="ss-option" data-value="trans">TRANS LOGISTIC</li>
+                    <li class="ss-option" data-value="nyk">NYK Line</li>
+                    <li class="ss-option" data-value="mol">MOL Shipping</li>
+                    <li class="ss-option" data-value="kline">K Line</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Port From -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Port From</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Port From">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Port From</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Port From</li>
+                    <li class="ss-option" data-value="kisarazu">KISARAZU</li>
+                    <li class="ss-option" data-value="otaru">OTARU (VLADIVOSTOK)</li>
+                    <li class="ss-option" data-value="nagoya">NAGOYA</li>
+                    <li class="ss-option" data-value="shinmoji">SHINMOJI</li>
+                    <li class="ss-option" data-value="senboku">SENBOKU</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sold Country -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Sold Country</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Country">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Country</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Country</li>
+                    <li class="ss-option" data-value="russia">RUSSIA</li>
+                    <li class="ss-option" data-value="uae">UAE</li>
+                    <li class="ss-option" data-value="kenya">KENYA</li>
+                    <li class="ss-option" data-value="mongolia">MONGOLIA</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Type -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Product Type</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Product Type">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Product Type</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Product Type</li>
+                    <li class="ss-option" data-value="normal">Normal</li>
+                    <li class="ss-option" data-value="damaged">Damaged</li>
+                    <li class="ss-option" data-value="scrap">Scrap</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Urgent -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Urgent</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Urgent">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Urgent</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Urgent</li>
+                    <li class="ss-option" data-value="yes">Yes</li>
+                    <li class="ss-option" data-value="no">No</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Auction date -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Auction date</label>
+              <input type="date" class="form-control field-input">
+            </div>
+
+            <!-- Rikuji date -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Rikuji date</label>
+              <input type="date" class="form-control field-input">
+            </div>
+
+            <!-- D_R_Date -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">D_R_Date</label>
+              <input type="date" class="form-control field-input">
+            </div>
+
+            <!-- Reauction -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Reauction</label>
+              <div class="ss-dropdown dropdown" data-placeholder="Reauction">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">Reauction</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="">Reauction</li>
+                    <li class="ss-option" data-value="yes">Yes</li>
+                    <li class="ss-option" data-value="no">No</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sort By -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Sort By</label>
+              <div class="ss-dropdown dropdown" data-placeholder="500">
+                <button type="button" class="ss-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                  <span class="ss-toggle-text">500</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu ss-menu">
+                  <input type="text" class="form-control ss-search" placeholder="Search...">
+                  <ul class="ss-options list-unstyled mb-0">
+                    <li class="ss-option active" data-value="500">500</li>
+                    <li class="ss-option" data-value="100">100</li>
+                    <li class="ss-option" data-value="250">250</li>
+                    <li class="ss-option" data-value="1000">1000</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Registration Date -->
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <label class="field-label">Registration Date</label>
+              <input type="date" class="form-control field-input">
+            </div>
+
+            <!-- Chassis No -->
+            <div class="col-12">
+              <label class="field-label">Chassis No.</label>
+              <input type="text" class="form-control field-input chassis-input">
+            </div>
+
+            <!-- All Chassis No -->
+            <div class="col-12">
+              <label class="field-label">All Chassis No</label>
+              <textarea class="form-control field-input all-chassis-area" rows="4"></textarea>
+            </div>
+
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 d-flex flex-wrap justify-content-between gap-3">
+              <button type="button" class="btn btn-brand">Submit</button>
+              <button type="button" class="btn btn-brand">Download</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Table -->
+        <div class="status-table-wrap mt-4">
+          <div class="table-responsive">
+            <table class="table status-table align-middle mb-0">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" class="form-check-input"></th>
+                  <th>S.No.</th>
+                  <th>Chassis No.</th>
+                  <th>Car Status</th>
+                  <th>Sold</th>
+                  <th>I Type</th>
+                  <th>Shipping</th>
+                  <th>Port From</th>
+                  <th>Urgent</th>
+                  <th>No. Plate</th>
+                  <th>D-R-Date</th>
+                  <th>R Date</th>
+                  <th>Another Status</th>
+                  <th>Rikuji Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" class="form-check-input"></td>
+                  <td>1</td>
+                  <td><a href="#" class="row-link">ZC33S-505837</a></td>
+                  <td>Sold</td>
+                  <td>RUSSIA</td>
+                  <td>Normal</td>
+                  <td>TRANS LOGISTIC</td>
+                  <td>KISARAZU</td>
+                  <td>No</td>
+                  <td>Yes</td>
+                  <td>21/07/2026</td>
+                  <td>2023-02</td>
+                  <td>Export Certificate</td>
+                  <td>23/07/2026</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="form-check-input"></td>
+                  <td>2</td>
+                  <td><a href="#" class="row-link">BP5P-204020</a></td>
+                  <td>Sold</td>
+                  <td>RUSSIA</td>
+                  <td>Normal</td>
+                  <td>TRANS LOGISTIC</td>
+                  <td>OTARU (VLADIVOSTOK)</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td></td>
+                  <td>2022-07</td>
+                  <td>Export Certificate</td>
+                  <td>23/07/2026</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="form-check-input"></td>
+                  <td>3</td>
+                  <td><a href="#" class="row-link">ZGM15-0014982</a></td>
+                  <td>Sold</td>
+                  <td>RUSSIA</td>
+                  <td>Normal</td>
+                  <td>TRANS LOGISTIC</td>
+                  <td>KISARAZU</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td></td>
+                  <td>2013-09</td>
+                  <td>Export Certificate</td>
+                  <td>22/07/2026</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="form-check-input"></td>
+                  <td>4</td>
+                  <td><a href="#" class="row-link">GB5-3171992</a></td>
+                  <td>Sold</td>
+                  <td>RUSSIA</td>
+                  <td>Normal</td>
+                  <td>TRANS LOGISTIC</td>
+                  <td>KISARAZU</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td></td>
+                  <td>2021-09</td>
+                  <td>Export Certificate</td>
+                  <td>28/07/2026</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="form-check-input"></td>
+                  <td>5</td>
+                  <td><a href="#" class="row-link">KSP210-0091680</a></td>
+                  <td>Sold</td>
+                  <td>RUSSIA</td>
+                  <td>Normal</td>
+                  <td>TRANS LOGISTIC</td>
+                  <td>KISARAZU</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td></td>
+                  <td>2023-03</td>
+                  <td>Export Certificate</td>
+                  <td>21/07/2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+        <div class="row align-items-center gy-2 py-3">
+
+            <div class="col-md-6 text-center text-md-start">
+            <span class="copy-text">
+                &copy; Copyright 2020 By <a href="#" class="brand-link">Bizupon</a>
+            </span>
+            </div>
+
+            <div class="col-md-6 text-center text-md-end">
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+            </div>
+
+        </div>
+        </div>
+    </footer>
+
+    <script src="/javascript/form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
