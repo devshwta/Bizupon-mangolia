@@ -1,0 +1,33 @@
+# Ignore editor settings and system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Ignore OS-specific files
+*.log
+*.tmp
+*.temp
+
+# Ignore generated files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Ignore deployment files
+.env
+
+# Ignore archives and backups
+*.zip
+*.tar.gz
+*.rar
+*.bak
+
+# Ignore IDE files
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
