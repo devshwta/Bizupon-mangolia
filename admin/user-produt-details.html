@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Yard Out</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin-style.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body">
+    
+    <!-- Header Section -->
+    <header class="bizupon-header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between">
+
+                <!-- Logo -->
+                <a class="logo" href="/admin/index.html">
+                    <img src="/images/logo.png" alt="" srcset="">
+                </a>
+
+                <!-- User dropdown -->
+                <div class="dropdown user-dropdown">
+                <button class="btn user-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="avatar"><i class="bi bi-person-fill"></i></span>
+                    <span class="welcome-text">Welcome Bizupon User</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end user-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Change Password</a></li>
+                    <li><a class="dropdown-item" href="/login.html"><i class="bi bi-power me-2"></i> Login</a></li>
+                    <li><a class="dropdown-item" href="/user-login.html"><i class="bi bi-power me-2"></i>User Login</a></li>
+                    <li><a class="dropdown-item" href="/register.html"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
+                </ul>
+                </div>
+
+                <!-- Mobile toggler -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bizuponNav">
+               <i class="bi bi-list"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg nav-bar">
+            <div class="container-fluid px-4">
+            <div class="collapse navbar-collapse" id="bizuponNav">
+                <ul class="navbar-nav align-items-lg-center w-100">
+
+                <!-- All Categories mega dropdown -->
+                <li class="nav-item dropdown all-categories">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
+                     All Categories  
+                    </a>
+                    <ul class="dropdown-menu categories-menu">
+
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item submenu-trigger" href="#">
+                            Product Master <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <div class="dropdown-menu submenu-panel">
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Another Status</a>
+                                <a class="dropdown-item" href="#">Update Product Date</a>
+                                <a class="dropdown-item" href="#">Update Broker</a>
+                                <a class="dropdown-item" href="#">Update BL No</a>
+                                <a class="dropdown-item" href="#">Add Variant</a>
+                                <a class="dropdown-item" href="#">View Purchase</a>
+                                <a class="dropdown-item" href="#">Deleted Product</a>
+                                <a class="dropdown-item" href="#">Upload Port Image Point</a>
+                                <a class="dropdown-item" href="#">Update All Shipping</a>
+                                <a class="dropdown-item" href="#">Document Confirmation</a>
+                                <a class="dropdown-item" href="#">Update D Receive Date</a>
+                                <a class="dropdown-item" href="#">Cancel Penalty</a>
+                                <a class="dropdown-item" href="#">Approve Commission</a>
+                                <a class="dropdown-item" href="#">Add Company Bill</a>
+                                <a class="dropdown-item" href="#">View UAE Company</a>
+                                <a class="dropdown-item" href="#">View Sale my Car</a>
+                                <a class="dropdown-item" href="#">Add 50/50 Product</a>
+                            </div>
+
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Shipping Details</a>
+                                <a class="dropdown-item" href="#">Update Remark</a>
+                                <a class="dropdown-item" href="#">Update Notify &amp; CFS</a>
+                                <a class="dropdown-item" href="#">Add Product</a>
+                                <a class="dropdown-item" href="#">View Variant</a>
+                                <a class="dropdown-item" href="#">Update Variant</a>
+                                <a class="dropdown-item" href="#">Update Loading and Surrender</a>
+                                <a class="dropdown-item" href="#">Doc Send Date</a>
+                                <a class="dropdown-item" href="#">Update Inspection</a>
+                                <a class="dropdown-item" href="#">Car Auction</a>
+                                <a class="dropdown-item" href="#">PID Details</a>
+                                <a class="dropdown-item" href="#">Update Broker Special</a>
+                                <a class="dropdown-item" href="#">View Shipment Information</a>
+                                <a class="dropdown-item" href="#">View Company Bill</a>
+                                <a class="dropdown-item" href="#">Add Customs Clearance</a>
+                                <a class="dropdown-item" href="#">Unsold Sale my Car</a>
+                            </div>
+
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Inner</a>
+                                <a class="dropdown-item" href="#">Update Consignee</a>
+                                <a class="dropdown-item" href="#">Update Ship Name</a>
+                                <a class="dropdown-item" href="#">View Product</a>
+                                <a class="dropdown-item" href="#">Add Purchase</a>
+                                <a class="dropdown-item" href="#">Update Fuzokuhin</a>
+                                <a class="dropdown-item" href="#">Yard In Date</a>
+                                <a class="dropdown-item" href="#">Update Shipping</a>
+                                <a class="dropdown-item" href="#">Update Yard Out</a>
+                                <a class="dropdown-item" href="#">View Car Auction</a>
+                                <a class="dropdown-item" href="#">Ship Notification</a>
+                                <a class="dropdown-item" href="#">Shipping Information</a>
+                                <a class="dropdown-item" href="#">Assign Company</a>
+                                <a class="dropdown-item" href="#">UAE Company</a>
+                                <a class="dropdown-item" href="#">Update Customs Clearance</a>
+                                <a class="dropdown-item" href="#">View Booking</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Account Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Master <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Team management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">User Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Transport Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Blog Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Entry Point <i class="bi bi-arrow-right"></i></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Invoice Management</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
+                    <li><a class="dropdown-item" href="#">Download Voucher</a></li>
+                    <li><a class="dropdown-item" href="#">Download Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Deleted Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Old Payment History</a></li>
+                    <li><a class="dropdown-item" href="#">Make Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Invoice Management</a></li>
+                    <li><a class="dropdown-item" href="#">Payment Adjustment</a></li>
+                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
+                    <li><a class="dropdown-item" href="#">Shipped Car Voucher</a></li>
+                    <li><a class="dropdown-item" href="#">Download Invoice Mango</a></li>
+                    <li><a class="dropdown-item" href="#">Download Voucher (2024)</a></li>
+                    <li><a class="dropdown-item" href="#">View Stock Invoice</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Sales Report</a></li>
+                    <li><a class="dropdown-item" href="#">Stock Report</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Yard Report</a></li>
+                    <li><a class="dropdown-item" href="#">Port Report</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Account Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Ledger</a></li>
+                    <li><a class="dropdown-item" href="#">Balance Sheet</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">History</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                    <li><a class="dropdown-item" href="#">Login History</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Bizupon Invoices</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">All Invoices</a></li>
+                    <li><a class="dropdown-item" href="#">Draft Invoices</a></li>
+                    </ul>
+                </li>
+
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Details Page  -->
+    <main class="container my-4">
+        <!-- Header Row -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <span class="text-muted small">SWIFT SPORT/Normal</span>
+            </div>
+            <div class="d-flex gap-5">
+                <span class="fw-bold small">BIZ ID: 641202</span>
+                <span class="fw-bold small">Дата Инвойса : 18/08/2026</span>
+            </div>
+        </div>
+
+        <div class="row gx-4">
+            <!-- Left Column (Images and Specs) -->
+            <div class="col-lg-8 mb-4">
+                
+                <!-- Main Image Area -->
+               <div class="gallery-card">
+        <div class="main-image" id="mainImage">
+          <!-- <img> slides injected by JS from the carImages array below -->
+          <button class="nav-arrow prev" id="prevBtn" aria-label="Предыдущее фото"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="nav-arrow next" id="nextBtn" aria-label="Следующее фото"><i class="fa-solid fa-chevron-right"></i></button>
+          <span class="img-counter" id="imgCounter">1 / 5</span>
+        </div>
+        <div class="thumbs" id="thumbRow"></div>
+        <div class="share-row">
+          <button class="share-btn tg" title="Поделиться в Telegram" onclick="shareTo('tg')"><i class="fa-brands fa-telegram"></i></button>
+          <button class="share-btn wa" title="Поделиться в WhatsApp" onclick="shareTo('wa')"><i class="fa-brands fa-whatsapp"></i></button>
+          <button class="share-btn x" title="Поделиться в X" onclick="shareTo('x')"><i class="fa-brands fa-x-twitter"></i></button>
+        </div>
+      </div>
+
+                <!-- Characteristics Title -->
+                <div class="theme-green-bg text-center py-2 fw-bold mb-3">
+                    Характеристики Автомобиля
+                </div>
+
+                <!-- Specifications Grid -->
+                <div class="row row-cols-2 row-cols-md-4 g-2 mb-4">
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-barcode"></i><strong>ZC33S-416717</strong><span>Номер кузова</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-car"></i><strong>Suzuki</strong><span>Марка Автомобиля</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-car-side"></i><strong>Hatchback</strong><span>Тип кузова</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-regular fa-calendar"></i><strong>2021-11</strong><span>Год</span></div></div>
+                    
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-road"></i><strong>60311 KM</strong><span>Пробег</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-engine"></i><strong>1370 CC</strong><span>Объём двигателя</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-gears"></i><strong>6AT</strong><span>Трансмиссия</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-steering-wheel"></i><strong>RHD</strong><span>Руль</span></div></div>
+                    
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-gas-pump"></i><strong>Gasoline</strong><span>Тип топлива</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-file-lines"></i><strong>4.5</strong><span>Оценка</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-tire"></i><strong>FF</strong><span>Привод</span></div></div>
+                    <div class="col"><div class="spec-card"><i class="fa-solid fa-palette"></i><strong>WHITE</strong><span>Цвет</span></div></div>
+                </div>
+
+                <!-- Bottom Comments Grid -->
+                <div class="row g-2 mb-4">
+                    <div class="col-md-6">
+                        <div class="border h-100">
+                            <div class="bg-light p-2 fw-bold border-bottom" style="font-size: 14px;">Plus Point</div>
+                            <div class="p-3 theme-green-text fw-bold">-</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border h-100">
+                            <div class="bg-light p-2 fw-bold border-bottom" style="font-size: 14px;">Auctioneer Comment</div>
+                            <div class="p-3 theme-green-text fw-bold">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code -->
+                <div>
+                    <img src="https://via.placeholder.com/120x120?text=QR+Code" alt="QR Code" class="mb-2">
+                    <br>
+                    <button class="btn btn-primary btn-sm px-3"><i class="bi bi-plus-lg"></i></button>
+                </div>
+
+            </div>
+
+            <!-- Right Column (Details and Pricing) -->
+            <div class="col-lg-4">
+                
+                <!-- Price Information Card -->
+                <div class="side-card">
+                    <div class="side-card-title">Подробная информация о цене автомобиля</div>
+                    
+                    <div class="d-flex justify-content-between mb-2 small text-muted">
+                        <span>Стоимость автомобиля</span>
+                        <span class="text-dark fw-bold">¥1988333</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 small text-muted border-bottom pb-2">
+                        <span>Скидки</span>
+                        <span class="text-dark fw-bold">-¥20000</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-4 small text-muted">
+                        <span>Итого</span>
+                        <span class="text-dark fw-bold">¥1968333</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-sm mb-2" placeholder="Российский рубль">
+                        <input type="text" class="form-control form-control-sm" placeholder="Цена продажи">
+                    </div>
+                    <button class="btn theme-green-bg w-100 fw-bold border-0">ПОДТВЕРДИТЬ</button>
+                </div>
+
+                <!-- Shipping Details Card -->
+                <div class="side-card">
+                    <div class="side-card-title">Детали отгрузки</div>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="timeline-item">
+                            <div class="label">Аукцион</div>
+                            <div class="value">: JU-SHIZUOKA</div>
+                            <div class="timeline-dot dot-green"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="label">Дата Аукциона</div>
+                            <div class="value">: 18/08/2026</div>
+                            <div class="timeline-dot dot-green"></div>
+                        </div>
+                        <div class="timeline-item pb-4"> <!-- extra padding to push next item down -->
+                            <div class="label">Дата прибытия в порт</div>
+                            <div class="value">: </div>
+                            <div class="timeline-dot dot-yellow"></div>
+                        </div>
+                        <div class="timeline-item pb-4">
+                            <div class="label">Бесплатное хранение заканчивается через</div>
+                            <div class="value">: 120( дней)</div>
+                            <div class="timeline-dot dot-green"></div>
+                        </div>
+                        <div class="timeline-item pb-4">
+                            <div class="label">Дата получения экспортного сертификата</div>
+                            <div class="value">: Ожидаем документы с аукциона</div>
+                            <div class="timeline-dot dot-yellow" style="top: 15px;"></div> <!-- Middle alignment tweak -->
+                        </div>
+                        <div class="timeline-item">
+                            <div class="label">Наименование судна</div>
+                            <div class="value">: Ожидаем назначение судна</div>
+                            <div class="timeline-dot dot-yellow"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="label">Порт назначения</div>
+                            <div class="value">: VLADIVOSTOK</div>
+                            <div class="timeline-dot dot-green"></div>
+                        </div>
+                        <div class="timeline-item pb-4">
+                            <div class="label">Судоходная компания</div>
+                            <div class="value">: TRANS LOGISTIC</div>
+                            <div class="timeline-dot dot-green"></div>
+                        </div>
+                        <div class="timeline-item pb-4">
+                            <div class="label">Дата отправки</div>
+                            <div class="value">: Ожидаем судно и дату погрузки</div>
+                            <div class="timeline-dot dot-yellow" style="top: 10px;"></div>
+                        </div>
+                        <div class="timeline-item pb-3">
+                            <div class="label">Дата прибытия</div>
+                            <div class="value">: Ожидаем судно и дату погрузки</div>
+                            <div class="timeline-dot dot-yellow" style="top: 10px;"></div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="label">Сумма за хранение на ярде</div>
+                            <div class="value">: ¥0</div>
+                            <div class="timeline-dot dot-yellow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consignee Details Card -->
+                <div class="side-card">
+                    <div class="side-card-title">Детали грузополучателя</div>
+                    
+                    <div class="d-flex justify-content-between mb-2 small text-muted">
+                        <span>Грузополучатель</span>
+                        <span>:</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 small text-muted">
+                        <span>Контактный номер</span>
+                        <span>:</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 small text-muted">
+                        <span>Эл. Почта</span>
+                        <span>:</span>
+                    </div>
+                    <div class="d-flex justify-content-between small text-muted">
+                        <span>Адрес грузополучателя</span>
+                        <span>:</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+        <div class="row align-items-center gy-2 py-3">
+
+            <div class="col-md-6 text-center text-md-start">
+            <span class="copy-text">
+                &copy; Copyright 2020 By <a href="#" class="brand-link">Bizupon</a>
+            </span>
+            </div>
+
+            <div class="col-md-6 text-center text-md-end">
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+            </div>
+
+        </div>
+        </div>
+    </footer>
+
+    <script src="/javascript/form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
