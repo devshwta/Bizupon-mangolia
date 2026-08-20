@@ -101,7 +101,7 @@ document.querySelectorAll('.ss-dropdown').forEach(function(wrapper){
 // Product Details Script
 
 const carImages = [
-  { src: '/images/cars/Toyota-Alphard.jpg', alt: 'Honda N-BOX Custom — вид спереди' },
+   { src: '/images/cars/Toyota-Alphard.jpg', alt: 'Honda N-BOX Custom — вид спереди' },
   { src: '/images/cars/Honda.jpg', alt: 'Honda N-BOX Custom — вид сбоку' },
   { src: '/images/cars/BMW.jpg', alt: 'Honda N-BOX Custom — вид сзади' },
   { src: '/images/cars/Lexus.jpg', alt: 'Honda N-BOX Custom — салон' },
@@ -213,4 +213,3 @@ function showToast(msg){
   clearTimeout(toastTimer);
   toastTimer = setTimeout(()=> t.classList.remove('show'), 2600);
 }
-});
