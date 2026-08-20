@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HONDA N BOX CUSTOM — Bizupon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --ink:#151a21;
+    --ink-soft:#5b6472;
+    --line:#e6e9ee;
+    --paper:#eef1f5;
+    --card:#ffffff;
+    --green:#39a562;
+    --green-dark:#2c8850;
+    --green-pale:#e8f6ee;
+    --orange:#ef7d2c;
+    --orange-pale:#fdece0;
+    --navy:#171b23;
+    --radius:14px;
+    --shadow:0 6px 20px rgba(20,25,35,.06);
+    --shadow-lg:0 20px 50px rgba(15,20,30,.18);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.font-display{font-family:'Manrope',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ===== Top strip ===== */
+  .topstrip{
+    background:var(--navy);
+    color:#cfd6e0;
+    font-size:13px;
+  }
+  .topstrip-inner{
+    max-width:1180px;margin:0 auto;padding:10px 20px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:8px;
+  }
+  .country-flag{
+    display:inline-flex;align-items:center;gap:8px;font-weight:600;letter-spacing:.06em;color:#fff;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:#e5484d;display:inline-block;box-shadow:0 0 0 4px rgba(229,72,77,.18);animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,72,77,.35);}70%{box-shadow:0 0 0 8px rgba(229,72,77,0);}100%{box-shadow:0 0 0 0 rgba(229,72,77,0);}}
+  .breadcrumbs{color:#8a93a3;}
+  .breadcrumbs a:hover{color:#fff;}
+
+  /* ===== Page shell ===== */
+  .page{max-width:1180px;margin:0 auto;padding:26px 20px 60px;}
+
+  .title-row{
+    display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+    margin-bottom:20px;flex-wrap:wrap;
+  }
+  .title-row h1{
+    font-size:26px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em;
+  }
+  .biz-id{
+    color:var(--ink-soft);font-size:13px;font-weight:600;
+    background:#fff;border:1px solid var(--line);padding:5px 12px;border-radius:20px;white-space:nowrap;
+  }
+
+  /* ===== Layout grid ===== */
+  .layout{display:grid;grid-template-columns:1.55fr 1fr;gap:22px;align-items:start;}
+
+  /* ===== Gallery ===== */
+  .gallery-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+  .main-image{
+    position:relative;background:#0f1216;aspect-ratio:4/3;
+  }
+  .main-image img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease;}
+  .main-image img.active{opacity:1;}
+  .slide-layer{position:absolute;inset:0;}
+  .nav-arrow{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:42px;height:42px;border-radius:50%;border:none;
+    background:rgba(255,255,255,.92);color:var(--ink);font-size:16px;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);transition:transform .15s, background .15s;
+  }
+  .nav-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.07);}
+  .nav-arrow.prev{left:14px;}
+  .nav-arrow.next{right:14px;}
+  .img-counter{
+    position:absolute;bottom:12px;right:14px;background:rgba(15,18,22,.65);color:#fff;
+    font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;letter-spacing:.03em;
+  }
+  .thumbs{
+    display:flex;gap:8px;padding:12px;overflow-x:auto;scrollbar-width:thin;
+  }
+  .thumbs::-webkit-scrollbar{height:6px;}
+  .thumbs::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px;}
+  .thumb{
+    flex:0 0 auto;width:78px;height:58px;border-radius:8px;overflow:hidden;cursor:pointer;
+    border:2px solid transparent;opacity:.65;transition:opacity .15s, border-color .15s;background:#0f1216;
+  }
+  .thumb img{width:100%;height:100%;object-fit:cover;}
+  .thumb:hover{opacity:.9;}
+  .thumb.active{opacity:1;border-color:var(--green);}
+  .share-row{display:flex;gap:8px;padding:0 12px 14px;}
+  .share-btn{
+    width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:14px;border:none;cursor:pointer;transition:filter .15s, transform .15s;
+  }
+  .share-btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
+  .share-btn.tg{background:#28a7e9;}
+  .share-btn.wa{background:#28c76f;}
+  .share-btn.x{background:#111;}
+
+  /* ===== Tabs ===== */
+  .tabs-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-top:18px;overflow:hidden;}
+  .tab-heads{display:flex;border-bottom:1px solid var(--line);}
+  .tab-head{
+    flex:1;text-align:center;padding:15px 10px;font-weight:700;font-size:14px;color:var(--ink-soft);
+    background:#fafbfc;cursor:pointer;border:none;border-bottom:3px solid transparent;transition:all .15s;
+  }
+  .tab-head:hover{color:var(--ink);}
+  .tab-head.active{color:var(--green-dark);background:#fff;border-bottom-color:var(--green);}
+  .tab-panels{padding:22px;}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;animation:fadein .25s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  .empty-note{color:var(--ink-soft);font-size:14px;padding:6px 2px;}
+
+  .spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .spec-tile{
+    background:#fafbfc;border:1px solid var(--line);border-radius:12px;padding:16px 10px;text-align:center;
+    transition:border-color .15s, transform .15s;
+  }
+  .spec-tile:hover{border-color:var(--green);transform:translateY(-2px);}
+  .spec-tile i{font-size:20px;color:var(--green);margin-bottom:8px;display:block;}
+  .spec-tile .val{font-weight:800;font-size:14px;color:var(--ink);}
+  .spec-tile .lbl{font-size:12px;color:var(--ink-soft);margin-top:2px;}
+
+  .about-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  .about-list li{display:flex;gap:10px;font-size:14px;align-items:flex-start;}
+  .about-list i{color:var(--green);margin-top:3px;}
+  .about-list b{color:var(--ink-soft);font-weight:600;margin-right:4px;}
+
+  /* ===== Similar cars ===== */
+  .similar{margin-top:26px;}
+  .similar h2{font-size:19px;font-weight:800;margin:0 0 12px;}
+  .empty-state{
+    background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);
+    padding:34px 20px;text-align:center;color:var(--ink-soft);font-size:14px;
+  }
+  .empty-state i{font-size:26px;color:#c7ccd4;margin-bottom:8px;display:block;}
+
+  /* ===== Side panel ===== */
+  .side{position:sticky;top:18px;display:flex;flex-direction:column;gap:14px;}
+  .price-card{
+    border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+  }
+  .price-card.cf{background:var(--green-pale);border:1px solid #c9ecd8;}
+  .price-card.turnkey{background:var(--orange-pale);border:1px solid #fbd7b8;}
+  .price-card .lbl{font-size:12.5px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.03em;}
+  .price-card.cf .lbl{color:#2c8850;}
+  .price-card.turnkey .lbl{color:#c85f14;}
+  .price-card .amt{font-size:21px;font-weight:800;margin-top:2px;}
+  .price-card.cf .amt{color:var(--green-dark);}
+  .price-card.turnkey .amt{color:var(--orange);}
+  .info-dot{
+    width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.08);border:none;
+    display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-soft);
+    cursor:pointer;position:relative;flex:0 0 auto;
+  }
+  .info-dot .tip{
+    position:absolute;bottom:calc(100% + 8px);right:-6px;width:210px;background:var(--navy);color:#fff;
+    font-size:12px;font-weight:500;line-height:1.4;padding:9px 11px;border-radius:8px;
+    opacity:0;visibility:hidden;transform:translateY(4px);transition:all .15s;text-align:left;z-index:5;
+  }
+  .info-dot:hover .tip{opacity:1;visibility:visible;transform:translateY(0);}
+
+  .spec-panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;}
+  .spec-panel ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+  .spec-panel li{display:flex;justify-content:space-between;gap:10px;font-size:14px;border-bottom:1px dashed var(--line);padding-bottom:9px;}
+  .spec-panel li:last-child{border-bottom:none;padding-bottom:0;}
+  .spec-panel .k{display:flex;gap:8px;align-items:center;color:var(--ink-soft);}
+  .spec-panel .k i{color:var(--green);font-size:13px;}
+  .spec-panel .v{font-weight:700;text-align:right;}
+
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;padding:13px 16px;border-radius:11px;border:none;cursor:pointer;
+    font-weight:700;font-size:14.5px;transition:transform .12s, box-shadow .12s, background .15s;
+  }
+  .btn:active{transform:scale(.98);}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(57,165,98,.32);}
+  .btn-primary:hover{background:var(--green-dark);}
+  .btn-outline{background:#fff;border:1.5px solid var(--line);color:var(--ink);}
+  .btn-outline:hover{border-color:var(--green);color:var(--green-dark);}
+  .btn-dark{background:var(--navy);color:#fff;}
+  .btn-dark:hover{background:#0c0f14;}
+
+  /* ===== Modals ===== */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(12,15,20,.55);backdrop-filter:blur(2px);
+    display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:#fff;border-radius:16px;max-width:520px;width:100%;max-height:86vh;overflow-y:auto;
+    box-shadow:var(--shadow-lg);position:relative;animation:pop .2s ease;
+  }
+  @keyframes pop{from{opacity:0;transform:scale(.96) translateY(8px);}to{opacity:1;transform:scale(1) translateY(0);}}
+  .modal-close{
+    position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;border:none;
+    background:#f1f3f6;color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .15s;z-index:2;
+  }
+  .modal-close:hover{background:#e6e9ee;}
+  .modal-head{padding:24px 24px 6px;font-size:19px;font-weight:800;display:flex;align-items:center;gap:10px;}
+  .modal-head i{color:var(--green);}
+  .modal-body{padding:14px 24px 26px;font-size:14px;color:var(--ink-soft);line-height:1.65;}
+  .modal-body strong{color:var(--ink);}
+
+  .bank-row{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);margin:14px 0 4px;}
+  .wa-line{
+    display:flex;align-items:center;gap:8px;background:var(--green-pale);color:var(--green-dark);
+    font-weight:700;padding:9px 12px;border-radius:9px;margin-bottom:4px;font-size:13.5px;
+  }
+
+  /* Registration modal */
+  .reg-tabs{display:flex;}
+  .reg-tab{
+    flex:1;text-align:center;padding:16px;font-weight:700;font-size:14px;cursor:pointer;border:none;
+    background:#f1f3f6;color:var(--ink-soft);
+  }
+  .reg-tab.active{background:var(--green);color:#fff;}
+  .reg-tab:first-child{border-top-left-radius:16px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:22px 24px 6px;}
+  .field label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:6px;}
+  .field input{
+    width:100%;padding:11px 12px;border-radius:9px;border:1.5px solid var(--line);font-size:14px;
+    font-family:inherit;transition:border-color .15s;
+  }
+  .field input:focus{outline:none;border-color:var(--green);}
+  .booking-type{display:flex;gap:16px;padding-top:8px;}
+  .radio-opt{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;cursor:pointer;}
+  .radio-opt input{accent-color:var(--green);width:16px;height:16px;}
+  .form-footer{padding:20px 24px 26px;}
+
+  /* Managers modal */
+  .mgr-list{padding:8px 20px 22px;display:grid;gap:8px;}
+  .mgr-row{
+    display:flex;align-items:center;justify-content:space-between;background:#fafbfc;border:1px solid var(--line);
+    border-radius:10px;padding:10px 14px;font-size:14px;
+  }
+  .mgr-info{display:flex;flex-direction:column;}
+  .mgr-info .num{font-weight:700;color:var(--ink);}
+  .mgr-info .name{color:var(--ink-soft);font-size:12.5px;}
+  .mgr-icons{display:flex;gap:8px;}
+  .mgr-icons a{
+    width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;
+    transition:transform .15s;
+  }
+  .mgr-icons a:hover{transform:scale(1.08);}
+  .mgr-icons .wa{background:#28c76f;}
+  .mgr-icons .tg{background:#28a7e9;}
+
+  .toast{
+    position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
+    background:var(--navy);color:#fff;padding:12px 20px;border-radius:10px;font-size:13.5px;font-weight:600;
+    opacity:0;pointer-events:none;transition:all .25s;z-index:1200;box-shadow:var(--shadow-lg);
+    display:flex;align-items:center;gap:8px;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  .toast i{color:var(--green);}
+
+  footer{margin-top:40px;border-top:1px solid var(--line);padding:22px 20px;}
+  .footer-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--ink-soft);}
+  .footer-inner a{color:var(--ink-soft);margin-left:14px;}
+  .footer-inner a:hover{color:var(--green-dark);}
+
+  /* ===== Responsive ===== */
+  @media (max-width:992px){
+    .layout{grid-template-columns:1fr;}
+    .side{position:static;}
+    .spec-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (max-width:640px){
+    .title-row h1{font-size:21px;}
+    .tab-head{font-size:12.5px;padding:12px 6px;}
+    .spec-grid{grid-template-columns:repeat(2,1fr);}
+    .form-grid{grid-template-columns:1fr;}
+    .price-card .amt{font-size:18px;}
+    .modal-head{font-size:17px;padding:20px 20px 4px;}
+    .modal-body{padding:12px 20px 22px;}
+  }
+  @media (max-width:420px){
+    .nav-arrow{width:36px;height:36px;font-size:14px;}
+    .thumb{width:62px;height:46px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  <div class="topstrip-inner">
+    <span class="country-flag"><span class="dot"></span> JAPAN</span>
+    <span class="breadcrumbs"><a href="#">Каталог</a> / <a href="#">Honda</a> / N BOX CUSTOM</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="title-row">
+    <div>
+      <h1>HONDA N BOX CUSTOM, L TURBO STYLE+ BLACK</h1>
+    </div>
+    <span class="biz-id">BIZ ID: 641501</span>
+  </div>
+
+  <div class="layout">
+
+    <!-- LEFT: gallery + tabs -->
+    <div>
+      <div class="gallery-card">
+        <div class="main-image" id="mainImage">
+          <!-- <img> slides injected by JS from the carImages array below -->
+          <button class="nav-arrow prev" id="prevBtn" aria-label="Предыдущее фото"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="nav-arrow next" id="nextBtn" aria-label="Следующее фото"><i class="fa-solid fa-chevron-right"></i></button>
+          <span class="img-counter" id="imgCounter">1 / 5</span>
+        </div>
+        <div class="thumbs" id="thumbRow"></div>
+        <div class="share-row">
+          <button class="share-btn tg" title="Поделиться в Telegram" onclick="shareTo('tg')"><i class="fa-brands fa-telegram"></i></button>
+          <button class="share-btn wa" title="Поделиться в WhatsApp" onclick="shareTo('wa')"><i class="fa-brands fa-whatsapp"></i></button>
+          <button class="share-btn x" title="Поделиться в X" onclick="shareTo('x')"><i class="fa-brands fa-x-twitter"></i></button>
+        </div>
+      </div>
+
+      <div class="tabs-card">
+        <div class="tab-heads">
+          <button class="tab-head active" data-tab="about">Об Автомобиле</button>
+          <button class="tab-head" data-tab="specs">Характеристики</button>
+          <button class="tab-head" data-tab="auction">Аукционный лист</button>
+        </div>
+        <div class="tab-panels">
+
+          <div class="tab-panel active" id="tab-about">
+            <div class="spec-grid">
+              <div class="spec-tile"><i class="fa-solid fa-hashtag"></i><div class="val">JF4-1219144</div><div class="lbl">Номер кузова</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-car"></i><div class="val">Honda</div><div class="lbl">Марка автомобиля</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-truck-pickup"></i><div class="val">Light Car</div><div class="lbl">Тип кузова</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-calendar"></i><div class="val">2021-12</div><div class="lbl">Год</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-gauge"></i><div class="val">112 000 км</div><div class="lbl">Пробег</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-gear"></i><div class="val">658 cc</div><div class="lbl">Объем двигателя</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-cogs"></i><div class="val">AT</div><div class="lbl">Трансмиссия</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-steering-wheel"></i><div class="val">RHD</div><div class="lbl">Руль</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-gas-pump"></i><div class="val">Gasoline</div><div class="lbl">Тип топлива</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-star-half-stroke"></i><div class="val">3.5</div><div class="lbl">Оценка</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-road"></i><div class="val">Full-time 4WD</div><div class="lbl">Привод</div></div>
+              <div class="spec-tile"><i class="fa-solid fa-fill-drip"></i><div class="val">Black</div><div class="lbl">Цвет</div></div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-specs">
+            <ul class="about-list">
+              <li><i class="fa-solid fa-check"></i><span><b>Делать:</b> Honda</span></li>
+              <li><i class="fa-solid fa-check"></i><span><b>Модель:</b> N BOX CUSTOM</span></li>
+              <li><i class="fa-solid fa-check"></i><span><b>Год/Месяц:</b> 2021-12</span></li>
+              <li><i class="fa-solid fa-check"></i><span><b>Аукционная оценка:</b> 3.5</span></li>
+              <li><i class="fa-solid fa-check"></i><span><b>Объем двигателя:</b> 658 cc</span></li>
+              <li><i class="fa-solid fa-check"></i><span><b>Топливо:</b> Gasoline</span></li>
+              <li><i class="fa-solid fa-check"></i><span><b>Пробег:</b> 112 000 км</span></li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-auction">
+            <p class="empty-note"><i class="fa-regular fa-folder-open"></i> Не найдено</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="similar">
+        <h2>Похожие автомобили</h2>
+        <div class="empty-state">
+          <i class="fa-regular fa-face-frown"></i>
+          Похожих автомобилей пока не найдено
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: price + actions -->
+    <div class="side">
+
+      <div class="price-card cf">
+        <div>
+          <div class="lbl">Цена C&amp;F (Йен)</div>
+          <div class="amt">¥850,000</div>
+        </div>
+        <button class="info-dot"><i class="fa-solid fa-info"></i>
+          <span class="tip">Cost &amp; Freight — стоимость автомобиля с доставкой до порта назначения, без учёта растаможки.</span>
+        </button>
+      </div>
+
+      <div class="price-card turnkey">
+        <div>
+          <div class="lbl">Цена под ключ (Рублей)</div>
+          <div class="amt">₽602,700</div>
+        </div>
+        <button class="info-dot"><i class="fa-solid fa-info"></i>
+          <span class="tip">Итоговая цена с растаможкой и постановкой на учёт — доплат сверху не потребуется.</span>
+        </button>
+      </div>
+
+      <div class="spec-panel">
+        <ul>
+          <li><span class="k"><i class="fa-solid fa-circle-check"></i>Делать</span><span class="v">Honda</span></li>
+          <li><span class="k"><i class="fa-solid fa-circle-check"></i>Модель</span><span class="v">N BOX CUSTOM</span></li>
+          <li><span class="k"><i class="fa-solid fa-circle-check"></i>Год/Месяц</span><span class="v">2021-12</span></li>
+          <li><span class="k"><i class="fa-solid fa-circle-check"></i>Аукционная оценка</span><span class="v">3.5</span></li>
+          <li><span class="k"><i class="fa-solid fa-circle-check"></i>Объем Двигателя</span><span class="v">658</span></li>
+          <li><span class="k"><i class="fa-solid fa-circle-check"></i>Топливо</span><span class="v">Gasoline</span></li>
+          <li><span class="k"><i class="fa-solid fa-circle-check"></i>Пробег</span><span class="v">112,000 KM</span></li>
+        </ul>
+      </div>
+
+      <button class="btn btn-primary" onclick="openModal('registerModal')"><i class="fa-solid fa-bookmark"></i> Забронировать</button>
+      <button class="btn btn-dark" onclick="openModal('managersModal')"><i class="fa-solid fa-headset"></i> Связаться с менеджером</button>
+      <button class="btn btn-outline" onclick="openModal('paymentModal')"><i class="fa-solid fa-credit-card"></i> Способы оплаты</button>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>© Copyright 2020 By <strong>Bizupon</strong></span>
+    <span><a href="#">О нас</a><a href="#">Контакты</a><a href="#">Политика конфиденциальности</a></span>
+  </div>
+</footer>
+
+<!-- ===== PAYMENT MODAL ===== -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('paymentModal')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-head"><i class="fa-solid fa-credit-card"></i> Способы оплаты</div>
+    <div class="modal-body">
+      <p>Оплата инвойсов на депозит и последующие платежи за автомобиль могут быть совершены через платёжных агентов с офисами во Владивостоке и других городах России, а также через банки. Актуальный курс уточняйте напрямую в банке или у выбранного платёжного агента, используя контакты ниже.</p>
+
+      <div class="bank-row"><i class="fa-solid fa-building-columns"></i> Банки, принимающие оплату:</div>
+      <ul style="margin:6px 0 4px 20px;padding:0;">
+        <li>ATB</li><li>SOLID</li><li>SBI</li>
+      </ul>
+      <p style="font-size:12.5px;">(Пожалуйста, уточняйте наличие офиса в вашем регионе напрямую в банке).</p>
+
+      <div class="bank-row"><i class="fa-solid fa-handshake"></i> Контакты платёжных агентов:</div>
+      <p style="margin-bottom:4px;"><strong>DZEN PAY</strong> — оплата принимается в рублях и йенах. WhatsApp:</p>
+      <div class="wa-line"><i class="fa-brands fa-whatsapp"></i> +7 914 736 2461</div>
+      <p style="margin:12px 0 4px;"><strong>ZEN PAY</strong> — оплата в рублях и йенах. WhatsApp:</p>
+      <div class="wa-line"><i class="fa-brands fa-whatsapp"></i> +7 914 736 2461</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== REGISTRATION MODAL ===== -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('registerModal')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="reg-tabs">
+      <button class="reg-tab active" id="tabNew" onclick="switchRegTab('new')">Новая регистрация</button>
+      <button class="reg-tab" id="tabLogin" onclick="switchRegTab('login')">Вход по паролю</button>
+    </div>
+
+    <div id="regNewForm">
+      <div class="modal-head" style="padding-top:20px;">Регистрация пользователя</div>
+      <form class="form-grid" onsubmit="submitReg(event)">
+        <div class="field"><label>Имя</label><input type="text" required></div>
+        <div class="field"><label>Фамилия</label><input type="text" required></div>
+        <div class="field"><label>Email</label><input type="email" required></div>
+        <div class="field"><label>Код страны</label><input type="text" value="+7 — РОССИЯ" readonly></div>
+        <div class="field"><label>Номер телефона</label><input type="tel" placeholder="+7" required></div>
+        <div class="field">
+          <label>Тип бронирования</label>
+          <div class="booking-type">
+            <label class="radio-opt"><input type="radio" name="booking" checked> Под ключ (₽)</label>
+            <label class="radio-opt"><input type="radio" name="booking"> C&amp;F (¥)</label>
+          </div>
+        </div>
+        <div class="form-footer" style="grid-column:1/-1;padding:6px 0 0;">
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Регистрация</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="regLoginForm" style="display:none;">
+      <div class="modal-head" style="padding-top:20px;">Вход в аккаунт</div>
+      <form class="form-grid" style="grid-template-columns:1fr;" onsubmit="submitReg(event)">
+        <div class="field"><label>Email</label><input type="email" required></div>
+        <div class="field"><label>Пароль</label><input type="password" required></div>
+        <div class="form-footer" style="padding:6px 0 0;">
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Войти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MANAGERS MODAL ===== -->
+<div class="modal-overlay" id="managersModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('managersModal')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-head"><i class="fa-solid fa-headset"></i> Наши менеджеры</div>
+    <div class="mgr-list" id="mgrList"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastText"></span></div>
+
+<script>
+
+const carImages = [
+  { src: 'https://images.unsplash.com/photo-1617469767053-8f35aaa39fef?w=1000&q=80&auto=format&fit=crop', alt: 'Honda N-BOX Custom — вид спереди' },
+  { src: 'https://images.unsplash.com/photo-1583267746897-2cf415887172?w=1000&q=80&auto=format&fit=crop', alt: 'Honda N-BOX Custom — вид сбоку' },
+  { src: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=1000&q=80&auto=format&fit=crop', alt: 'Honda N-BOX Custom — вид сзади' },
+  { src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1000&q=80&auto=format&fit=crop', alt: 'Honda N-BOX Custom — салон' },
+  { src: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1000&q=80&auto=format&fit=crop', alt: 'Honda N-BOX Custom — колёса' }
+];
+
+let current = 0;
+const mainImage = document.getElementById('mainImage');
+const thumbRow = document.getElementById('thumbRow');
+const counter = document.getElementById('imgCounter');
+
+carImages.forEach((s,i)=>{
+  const img = document.createElement('img');
+  img.src = s.src;
+  img.alt = s.alt;
+  img.loading = i===0 ? 'eager' : 'lazy';
+  if(i===0) img.classList.add('active');
+  mainImage.insertBefore(img, mainImage.querySelector('.nav-arrow'));
+
+  const t = document.createElement('div');
+  t.className = 'thumb' + (i===0?' active':'');
+  const timg = document.createElement('img');
+  timg.src = s.src;
+  timg.alt = s.alt;
+  timg.loading = 'lazy';
+  t.appendChild(timg);
+  t.addEventListener('click', ()=> goTo(i));
+  thumbRow.appendChild(t);
+});
+
+function render(){
+  document.querySelectorAll('#mainImage > img').forEach((el,i)=> el.classList.toggle('active', i===current));
+  document.querySelectorAll('.thumb').forEach((el,i)=> el.classList.toggle('active', i===current));
+  counter.textContent = (current+1) + ' / ' + carImages.length;
+}
+function goTo(i){ current = (i + carImages.length) % carImages.length; render(); }
+document.getElementById('prevBtn').addEventListener('click', ()=> goTo(current-1));
+document.getElementById('nextBtn').addEventListener('click', ()=> goTo(current+1));
+render();
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('.tab-head').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab-head').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- Modals ---------- */
+function openModal(id){ document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+document.querySelectorAll('.modal-overlay').forEach(ov=>{
+  ov.addEventListener('click', e=>{ if(e.target===ov) closeModal(ov.id); });
+});
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(ov=>closeModal(ov.id));
+});
+
+function switchRegTab(which){
+  document.getElementById('tabNew').classList.toggle('active', which==='new');
+  document.getElementById('tabLogin').classList.toggle('active', which==='login');
+  document.getElementById('regNewForm').style.display = which==='new' ? 'block' : 'none';
+  document.getElementById('regLoginForm').style.display = which==='login' ? 'block' : 'none';
+}
+
+function submitReg(e){
+  e.preventDefault();
+  closeModal('registerModal');
+  showToast('Заявка отправлена — менеджер свяжется с вами.');
+}
+
+/* ---------- Managers ---------- */
+const managers = [
+  {phone:'+81 80-7505-1919', name:'Anna'},
+  {phone:'+81 80-2956-1568', name:'Lyudmila'},
+  {phone:'+81 80-8016-3056', name:'Nominal'},
+  {phone:'+81 70-2620-6438', name:'Nadezhda'},
+  {phone:'+81 90-8493-4040', name:'Anya'},
+  {phone:'+81 90-2638-9090', name:'Alexandra'},
+  {phone:'+81 70-3967-0694', name:'Lyuda'},
+  {phone:'+81 80-1457-5050', name:'Gleb'},
+  {phone:'+81 90-2461-4251', name:'Igor'},
+];
+const mgrList = document.getElementById('mgrList');
+managers.forEach(m=>{
+  const row = document.createElement('div');
+  row.className = 'mgr-row';
+  row.innerHTML = `
+    <div class="mgr-info"><span class="num">${m.phone}</span><span class="name">${m.name}</span></div>
+    <div class="mgr-icons">
+      <a class="wa" href="#" title="WhatsApp" onclick="showToast('Открываем чат с ${m.name}…');return false;"><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="tg" href="#" title="Telegram" onclick="showToast('Открываем Telegram — ${m.name}…');return false;"><i class="fa-brands fa-telegram"></i></a>
+    </div>`;
+  mgrList.appendChild(row);
+});
+
+/* ---------- Actions / toast ---------- */
+function shareTo(kind){
+  const label = kind==='tg' ? 'Telegram' : kind==='wa' ? 'WhatsApp' : 'X';
+  showToast('Ссылка готова к отправке в ' + label);
+}
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById('toast');
+  document.getElementById('toastText').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=> t.classList.remove('show'), 2600);
+}
+</script>
+</body>
+</html>

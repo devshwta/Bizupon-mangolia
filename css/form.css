@@ -1,0 +1,215 @@
+.form-section{
+    max-width: 980px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #e5e9e7;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px -28px rgba(20,107,48,0.25);
+    padding: 34px 38px 38px;
+}
+
+.section-header{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5e9e7;
+}
+
+.section-header .icon-badge{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #1987541a;
+    color: #198754;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 1.3rem;
+}
+.section-title{
+    font-weight: 800;
+    font-size: 1.35rem;
+    margin: 0;
+    color: #0d0d0d;
+}
+.section-subtitle{
+    font-size: 0.86rem;
+    color: #52575ce0;
+    margin: 2px 0 0;
+}
+
+.field-label{
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #0d0d0d;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.field-label i{ color: #198754; font-size: 0.95rem; }
+
+.form-control,
+.Admin-form-select{
+    border: 1.5px solid #d8dedb;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 0.94rem;
+    background-color: #FBFDFB;
+    transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.form-control:focus,
+.Admin-form-select:focus{
+    border-color: #198754;
+    box-shadow: 0 0 0 3px rgba(25,135,84,0.15);
+    background-color: #fff;
+}
+
+.field-group{ margin-bottom: 26px; }
+
+/* Yard Out Yes/No toggle */
+.yard-toggle{
+    display:inline-flex;
+    border: 1.5px solid #d8dedb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.yard-toggle input{ display:none; }
+.yard-toggle label{
+    padding: 10px 26px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #52575ce0;
+    cursor: pointer;
+    margin: 0;
+    transition: background .15s ease, color .15s ease;
+    display:flex;
+    align-items:center;
+    gap: 6px;
+}
+.yard-toggle label.yes-label{ border-right: 1.5px solid #d8dedb; }
+.yard-toggle input:checked + label.yes-label{
+    background: #1987541a;
+    color: #024526;
+}
+.yard-toggle input:checked + label.no-label{
+    background: #FBEAEA;
+    color: #B23A3A;
+}
+
+.action-row{
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid #e5e9e7;
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn-primary-green{
+    background: #198754;
+    border: 1.5px solid #198754;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 10px 30px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .15s ease, transform .15s ease;
+}
+.btn-primary-green:hover{
+    background: #024526;
+    border-color: #024526;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-outline-green{
+    background: #fff;
+    border: 1.5px solid #198754;
+    color: #024526;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 26px;
+    border-radius: 10px;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    transition: background .15s ease, transform .15s ease;
+    margin-left: auto;
+}
+.btn-outline-green:hover{
+    background: #1987541a;
+    color: #024526;
+    transform: translateY(-1px);
+}
+
+/* Back button (Port Images form) */
+.btn-back{
+    background: #fff;
+    border: 1.5px solid #d8dedb;
+    color: #52575ce0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 24px;
+    border-radius: 10px;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.btn-back:hover{
+    background: #f4f6f9;
+    border-color: #b7bdb9;
+    color: #0d0d0d;
+}
+
+.btn-delete{
+    background: #fff;
+    border: 1.5px solid #E1B3B3;
+    color: #B23A3A;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 22px;
+    border-radius: 10px;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.btn-delete:hover{
+    background: #FBEAEA;
+    border-color: #B23A3A;
+    color: #8f2c2c;
+}
+
+input[type="file"].form-control::file-selector-button{
+    background: #1987541a;
+    color: #024526;
+    border: none;
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-right: 12px;
+    transition: background .15s ease;
+}
+input[type="file"].form-control::file-selector-button:hover{
+    background: #19875433;
+}
+
+.btn-search{
+    padding: 11px 26px;
+    font-size: 0.94rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px){
+    .form-section{ padding: 26px 20px 30px; }
+    .btn-outline-green{ margin-left: 0; }
+}

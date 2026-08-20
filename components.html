@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bizupon UI Component Library</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<style>
+:root{
+    --green: #198754;
+    --green-dark: #024526;
+    --green-soft: #E9F8EF;
+    --green-tint: #1987541a;
+    --ink: #0d0d0d;
+    --muted: #6b7770;
+    --line: #E1E7E3;
+    --bg: #F6F9F7;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+/* ===== Layout shell ===== */
+.lib-header{
+    background: linear-gradient(180deg, #ffffff 0%, var(--green-soft) 100%);
+    border-bottom: 1px solid var(--line);
+    padding: 34px 0 26px;
+}
+.lib-header h1{
+    font-weight: 800;
+    font-size: 1.9rem;
+    margin-bottom: 6px;
+}
+.lib-header h1 .accent{ color: var(--green); }
+.lib-header p{ color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+.lib-shell{
+    display:flex;
+    align-items:flex-start;
+    gap: 34px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px 100px;
+}
+
+.lib-nav{
+    position: sticky;
+    top: 20px;
+    width: 240px;
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+}
+.lib-nav a{
+    display:flex;
+    align-items:center;
+    gap: 9px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+    transition: background .15s ease, color .15s ease;
+}
+.lib-nav a i{ color: var(--green); font-size: 0.95rem; width: 16px; }
+.lib-nav a:hover{ background: var(--green-tint); color: var(--green-dark); }
+
+.lib-main{ flex: 1; min-width: 0; }
+
+.lib-section{
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 30px 32px;
+    margin-bottom: 26px;
+    scroll-margin-top: 20px;
+}
+.lib-section-head{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+.lib-section-head .num{
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: var(--green-tint);
+    color: var(--green);
+    display:flex; align-items:center; justify-content:center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+.lib-section-head h2{
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0;
+}
+.lib-section-head p{
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 2px 0 0;
+}
+
+.variant-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+.variant-card{
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    background: #FBFDFB;
+}
+.variant-label{
+    display:inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    background: var(--green-tint);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+/* ===== Shared form theming ===== */
+.form-control, .form-select{
+    border: 1.5px solid #d8dedb;
+    border-radius: 10px;
+    padding: 10px 13px;
+    font-size: 0.9rem;
+    background-color: #fff;
+}
+.form-control:focus, .form-select:focus{
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(25,135,84,0.15);
+}
+label.field-label{
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    display:block;
+}
+
+.btn-green{
+    background: var(--green);
+    border: 1.5px solid var(--green);
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.88rem;
+    padding: 9px 20px;
+    border-radius: 10px;
+}
+.btn-green:hover{ background: var(--green-dark); border-color: var(--green-dark); color:#fff; }
+.btn-outline-g{
+    background: #fff;
+    border: 1.5px solid var(--green);
+    color: var(--green-dark);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 8px 18px;
+    border-radius: 10px;
+}
+.btn-outline-g:hover{ background: var(--green-tint); color: var(--green-dark); }
+
+/* ===== 1. Searchable dropdown ===== */
+.combo-wrap{ position: relative; }
+.combo-panel{
+    position:absolute;
+    top: calc(100% + 6px);
+    left:0; right:0;
+    background:#fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 16px 30px -14px rgba(2,69,38,0.25);
+    max-height: 190px;
+    overflow-y:auto;
+    z-index: 20;
+    display:none;
+}
+.combo-panel.show{ display:block; }
+.combo-option{
+    padding: 9px 14px;
+    font-size: 0.88rem;
+    cursor:pointer;
+}
+.combo-option:hover, .combo-option.active{ background: var(--green-tint); color: var(--green-dark); }
+.combo-option.hidden{ display:none; }
+
+.dd-search-menu{
+    padding: 8px;
+    min-width: 240px;
+}
+.dd-search-menu input{ margin-bottom: 8px; }
+.dd-search-menu .dropdown-item{
+    border-radius: 7px;
+    font-size: 0.87rem;
+    padding: 7px 10px;
+}
+.dd-search-menu .dropdown-item:hover{ background: var(--green-tint); color: var(--green-dark); }
+.dd-search-menu .dropdown-item.hidden{ display:none; }
+
+/* ===== 2. Radio variations ===== */
+.form-check-input:checked{ background-color: var(--green); border-color: var(--green); }
+.form-check-input:focus{ box-shadow: 0 0 0 3px rgba(25,135,84,0.15); }
+
+.radio-card{ display:flex; flex-direction:column; gap: 8px; }
+.radio-card-opt{
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    cursor:pointer;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: border-color .15s ease, background .15s ease;
+}
+.radio-card-opt input{ accent-color: var(--green); }
+.radio-card-opt:has(input:checked){
+    border-color: var(--green);
+    background: var(--green-tint);
+    color: var(--green-dark);
+}
+
+.seg-toggle{
+    display:inline-flex;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    overflow:hidden;
+}
+.seg-toggle input{ display:none; }
+.seg-toggle label{
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor:pointer;
+    margin:0;
+}
+.seg-toggle label:not(:last-of-type){ border-right: 1.5px solid var(--line); }
+.seg-toggle input:checked + label{ background: var(--green); color: #fff; }
+
+/* ===== 3. Checkbox variations ===== */
+.chip-check{ display:inline-flex; flex-wrap:wrap; gap: 8px; }
+.chip-check input{ display:none; }
+.chip-check label{
+    padding: 7px 16px;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor:pointer;
+    margin:0;
+}
+.chip-check input:checked + label{
+    background: var(--green);
+    border-color: var(--green);
+    color:#fff;
+}
+
+.tile-check{ display:flex; flex-direction:column; gap:8px; }
+.tile-check-opt{
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    cursor:pointer;
+}
+.tile-check-opt:has(input:checked){ border-color: var(--green); background: var(--green-tint); }
+
+/* ===== 4. Toggle / Switch ===== */
+.form-switch .form-check-input{ width: 2.6em; height: 1.4em; }
+.form-switch .form-check-input:checked{ background-color: var(--green); border-color: var(--green); }
+
+.big-switch{
+    position:relative;
+    width: 56px; height: 30px;
+    display:inline-block;
+}
+.big-switch input{ opacity:0; width:0; height:0; }
+.big-switch .track{
+    position:absolute; inset:0;
+    background:#d8dedb;
+    border-radius: 999px;
+    transition: background .2s ease;
+    cursor:pointer;
+}
+.big-switch .track::before{
+    content:"";
+    position:absolute;
+    width: 24px; height: 24px;
+    left: 3px; top: 3px;
+    background:#fff;
+    border-radius: 50%;
+    transition: transform .2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.big-switch input:checked + .track{ background: var(--green); }
+.big-switch input:checked + .track::before{ transform: translateX(26px); }
+
+.icon-switch{ display:flex; align-items:center; gap:10px; }
+.icon-switch i{ font-size: 1rem; color: var(--muted); }
+.icon-switch input:checked ~ i.on-icon{ color: var(--green); }
+
+/* ===== 5. Input groups ===== */
+.input-group-text{
+    background: var(--green-tint);
+    border: 1.5px solid #d8dedb;
+    color: var(--green-dark);
+}
+
+/* ===== 6. Ranges ===== */
+input[type="range"]{ accent-color: var(--green); }
+.range-value{
+    font-weight: 700;
+    color: var(--green-dark);
+    font-size: 0.85rem;
+}
+.dual-range{ position: relative; height: 34px; }
+.dual-range input[type="range"]{
+    position:absolute;
+    width:100%;
+    top: 8px;
+    background: transparent;
+    pointer-events: none;
+}
+.dual-range input[type="range"]::-webkit-slider-thumb{ pointer-events: auto; }
+.dual-range .track-bg{
+    position:absolute;
+    top: 14px;
+    height: 5px;
+    left:0; right:0;
+    background: #e3e8e5;
+    border-radius: 4px;
+}
+.dual-range .track-fill{
+    position:absolute;
+    top: 14px;
+    height: 5px;
+    background: var(--green);
+    border-radius: 4px;
+}
+
+/* ===== 7. Accordion ===== */
+.accordion-button:not(.collapsed){
+    background: var(--green-tint);
+    color: var(--green-dark);
+    box-shadow: none;
+}
+.accordion-button:focus{ box-shadow: 0 0 0 3px rgba(25,135,84,0.15); }
+.accordion-button::after{ filter: hue-rotate(70deg) saturate(2); }
+
+.acc-icon .accordion-button{
+    gap: 10px;
+}
+.acc-icon .acc-num{
+    width: 26px; height: 26px;
+    border-radius: 7px;
+    background: var(--green);
+    color:#fff;
+    font-size: 0.75rem;
+    font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+}
+
+/* ===== 8. Pagination ===== */
+.pagination .page-link{ color: var(--green-dark); border-color: var(--line); font-size: 0.86rem; }
+.pagination .page-item.active .page-link{ background: var(--green); border-color: var(--green); }
+.pagination .page-link:hover{ background: var(--green-tint); color: var(--green-dark); }
+.pagination-pill .page-link{ border-radius: 999px !important; margin: 0 3px; border: 1.5px solid var(--line); }
+
+/* ===== 9. Upload ===== */
+.dropzone{
+    border: 2px dashed #b9d9c4;
+    border-radius: 12px;
+    padding: 26px 16px;
+    text-align:center;
+    background: var(--green-soft);
+    cursor:pointer;
+    transition: border-color .15s ease, background .15s ease;
+}
+.dropzone:hover, .dropzone.dragover{ border-color: var(--green); background: #DEF5E7; }
+.dropzone i{ font-size: 1.6rem; color: var(--green); margin-bottom: 6px; display:block; }
+.dropzone p{ margin: 0; font-size: 0.84rem; color: var(--muted); }
+.dropzone small{ color:#8a9590; }
+
+.file-list{ margin-top: 12px; display:flex; flex-direction:column; gap:6px; }
+.file-chip{
+    display:flex; align-items:center; justify-content:space-between;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 0.82rem;
+    background:#fff;
+}
+.file-chip i{ color: var(--green); margin-right: 6px; }
+
+.preview-grid{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+.preview-thumb{
+    width: 64px; height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+}
+
+@media (max-width: 991px){
+    .lib-shell{ flex-direction: column; }
+    .lib-nav{ position: static; width:100%; display:flex; flex-wrap:wrap; gap:4px; }
+    .lib-nav a{ width:auto; }
+    .variant-grid{ grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="lib-header">
+    <div class="lib-shell" style="padding-bottom:0; align-items:flex-start;">
+        <div style="width:240px; flex-shrink:0;" class="d-none d-lg-block"></div>
+        <div>
+            <h1><span class="accent">Component Library</span></h1>
+        </div>
+    </div>
+</div>
+
+<div class="lib-shell">
+
+    <!-- SIDE NAV -->
+    <nav class="lib-nav">
+        <a href="#dropdown-search"><i class="bi bi-caret-down-square"></i> Searchable Dropdown</a>
+        <a href="#radios"><i class="bi bi-record-circle"></i> Radio Buttons</a>
+        <a href="#checkboxes"><i class="bi bi-check-square"></i> Checkboxes</a>
+        <a href="#switches"><i class="bi bi-toggle-on"></i> Toggle / Switch</a>
+        <a href="#input-groups"><i class="bi bi-layout-text-window"></i> Input Groups</a>
+        <a href="#ranges"><i class="bi bi-sliders"></i> Ranges</a>
+        <a href="#accordion"><i class="bi bi-list-nested"></i> Accordion</a>
+        <a href="#pagination"><i class="bi bi-three-dots"></i> Pagination</a>
+        <a href="#upload"><i class="bi bi-cloud-upload"></i> Upload</a>
+        <a href="#inputs"><i class="bi bi-input-cursor-text"></i> Form Inputs</a>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="lib-main">
+
+        <!-- 1. SEARCHABLE DROPDOWN -->
+        <section id="dropdown-search" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">1</div>
+                <div>
+                    <h2>Dropdown with Search</h2>
+                    <p>For long option lists — ships, ports, companies — where scrolling a plain select is slow.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Native Datalist</span>
+                    <label class="field-label">Ship Name</label>
+                    <input class="form-control" list="shipList" placeholder="Type to search...">
+                    <datalist id="shipList">
+                        <option value="MOL Guardian">
+                        <option value="Hoegh Xiamen">
+                        <option value="NYK Delphinus">
+                        <option value="Glovis Splendor">
+                        <option value="Asian King">
+                    </datalist>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Dropdown Menu + Search</span>
+                    <label class="field-label">Ship Name</label>
+                    <div class="dropdown">
+                        <button class="form-control text-start dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Select ship
+                        </button>
+                        <div class="dropdown-menu dd-search-menu" onclick="event.stopPropagation()">
+                            <input type="text" class="form-control form-control-sm" placeholder="Search..." oninput="filterDDMenu(this)">
+                            <a class="dropdown-item" href="#">MOL Guardian</a>
+                            <a class="dropdown-item" href="#">Hoegh Xiamen</a>
+                            <a class="dropdown-item" href="#">NYK Delphinus</a>
+                            <a class="dropdown-item" href="#">Glovis Splendor</a>
+                            <a class="dropdown-item" href="#">Asian King</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Custom Combobox</span>
+                    <label class="field-label">Ship Name</label>
+                    <div class="combo-wrap">
+                        <input type="text" class="form-control" placeholder="Type to search..."
+                               onfocus="toggleCombo(this,true)" oninput="filterCombo(this)">
+                        <div class="combo-panel">
+                            <div class="combo-option" onclick="selectCombo(this)">MOL Guardian</div>
+                            <div class="combo-option" onclick="selectCombo(this)">Hoegh Xiamen</div>
+                            <div class="combo-option" onclick="selectCombo(this)">NYK Delphinus</div>
+                            <div class="combo-option" onclick="selectCombo(this)">Glovis Splendor</div>
+                            <div class="combo-option" onclick="selectCombo(this)">Asian King</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. RADIO BUTTONS -->
+        <section id="radios" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">2</div>
+                <div>
+                    <h2>Radio Buttons</h2>
+                    <p>Single choice from a small set of options.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Standard</span>
+                    <label class="field-label">Document Status</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rA" id="rA1" checked>
+                        <label class="form-check-label" for="rA1">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rA" id="rA2">
+                        <label class="form-check-label" for="rA2">No</label>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Selectable Cards</span>
+                    <label class="field-label">Transport Type</label>
+                    <div class="radio-card">
+                        <label class="radio-card-opt">
+                            <input type="radio" name="rB" checked>
+                            <i class="bi bi-truck"></i> Carrier Truck
+                        </label>
+                        <label class="radio-card-opt">
+                            <input type="radio" name="rB">
+                            <i class="bi bi-car-front"></i> Self Drive
+                        </label>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Segmented Pills</span>
+                    <label class="field-label">Yard Out</label>
+                    <div class="seg-toggle">
+                        <input type="radio" name="rC" id="rC1" checked>
+                        <label for="rC1">Yes</label>
+                        <input type="radio" name="rC" id="rC2">
+                        <label for="rC2">No</label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. CHECKBOXES -->
+        <section id="checkboxes" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">3</div>
+                <div>
+                    <h2>Checkboxes</h2>
+                    <p>Multiple selections from a list.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Standard</span>
+                    <label class="field-label">Document Types</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cA1" checked>
+                        <label class="form-check-label" for="cA1">Bill of Lading</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cA2">
+                        <label class="form-check-label" for="cA2">Invoice</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="cA3">
+                        <label class="form-check-label" for="cA3">Inspection Report</label>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Chips</span>
+                    <label class="field-label">Ports</label>
+                    <div class="chip-check">
+                        <input type="checkbox" id="cB1" checked><label for="cB1">Nagoya</label>
+                        <input type="checkbox" id="cB2"><label for="cB2">Yokohama</label>
+                        <input type="checkbox" id="cB3"><label for="cB3">Osaka</label>
+                        <input type="checkbox" id="cB4"><label for="cB4">Kobe</label>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Tiles</span>
+                    <label class="field-label">Notify Via</label>
+                    <div class="tile-check">
+                        <label class="tile-check-opt">
+                            <span><i class="bi bi-envelope me-2"></i>Email</span>
+                            <input type="checkbox" class="form-check-input" checked>
+                        </label>
+                        <label class="tile-check-opt">
+                            <span><i class="bi bi-chat-dots me-2"></i>SMS</span>
+                            <input type="checkbox" class="form-check-input">
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. TOGGLE / SWITCH -->
+        <section id="switches" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">4</div>
+                <div>
+                    <h2>Toggle / Switch</h2>
+                    <p>On/off settings.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Bootstrap Switch</span>
+                    <label class="field-label">Auto Confirm Documents</label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" checked>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Large Switch</span>
+                    <label class="field-label">Yard Lookup Active</label>
+                    <label class="big-switch">
+                        <input type="checkbox" checked>
+                        <span class="track"></span>
+                    </label>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Icon Switch</span>
+                    <label class="field-label">Vehicle Status</label>
+                    <div class="icon-switch">
+                        <i class="bi bi-x-circle off-icon"></i>
+                        <div class="form-check form-switch m-0">
+                            <input class="form-check-input" type="checkbox" checked>
+                        </div>
+                        <i class="bi bi-check-circle on-icon" style="color:var(--green)"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. INPUT GROUPS -->
+        <section id="input-groups" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">5</div>
+                <div>
+                    <h2>Input Groups</h2>
+                    <p>Inputs paired with icons, buttons, or affixed text.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Icon Prefix</span>
+                    <label class="field-label">Chassis No.</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-upc-scan"></i></span>
+                        <input type="text" class="form-control" placeholder="Enter chassis number">
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Input + Button</span>
+                    <label class="field-label">Search Chassis</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Chassis number">
+                        <button class="btn btn-green" type="button"><i class="bi bi-search"></i> Search</button>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Prefix / Suffix</span>
+                    <label class="field-label">Penalty Amount</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" placeholder="0.00">
+                        <span class="input-group-text">USD</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. RANGES -->
+        <section id="ranges" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">6</div>
+                <div>
+                    <h2>Ranges</h2>
+                    <p>Selecting a number or bounds along a scale.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Basic</span>
+                    <label class="field-label">Storage Days Allowed</label>
+                    <input type="range" class="form-range" min="0" max="60" value="20">
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Live Value</span>
+                    <label class="field-label">Yard Capacity: <span class="range-value" id="rangeVal">65%</span></label>
+                    <input type="range" class="form-range" min="0" max="100" value="65"
+                           oninput="document.getElementById('rangeVal').textContent = this.value + '%'">
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Dual Range</span>
+                    <label class="field-label">Vehicle Age (yrs): <span class="range-value" id="dualVal">2 – 8</span></label>
+                    <div class="dual-range">
+                        <div class="track-bg"></div>
+                        <div class="track-fill" id="dualFill"></div>
+                        <input type="range" id="dualMin" min="0" max="15" value="2" oninput="updateDual()">
+                        <input type="range" id="dualMax" min="0" max="15" value="8" oninput="updateDual()">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. ACCORDION -->
+        <section id="accordion" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">7</div>
+                <div>
+                    <h2>Accordion</h2>
+                    <p>Grouping related content that expands on demand.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Standard</span>
+                    <div class="accordion" id="accA">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accA1">Shipping Details</button>
+                            </h2>
+                            <div id="accA1" class="accordion-collapse collapse show" data-bs-parent="#accA">
+                                <div class="accordion-body small text-muted">Ship name, port, and ETA information.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accA2">Document Status</button>
+                            </h2>
+                            <div id="accA2" class="accordion-collapse collapse" data-bs-parent="#accA">
+                                <div class="accordion-body small text-muted">Upload and confirm required paperwork.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Flush</span>
+                    <div class="accordion accordion-flush" id="accB">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accB1">Yard Activity</button>
+                            </h2>
+                            <div id="accB1" class="accordion-collapse collapse" data-bs-parent="#accB">
+                                <div class="accordion-body small text-muted">In/out logs for this vehicle.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accB2">Payment History</button>
+                            </h2>
+                            <div id="accB2" class="accordion-collapse collapse" data-bs-parent="#accB">
+                                <div class="accordion-body small text-muted">Past invoices and adjustments.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Numbered / Icon</span>
+                    <div class="accordion acc-icon" id="accC">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accC1">
+                                    <span class="acc-num">1</span> Vehicle Info
+                                </button>
+                            </h2>
+                            <div id="accC1" class="accordion-collapse collapse show" data-bs-parent="#accC">
+                                <div class="accordion-body small text-muted">Chassis, model, and registration.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accC2">
+                                    <span class="acc-num">2</span> Buyer Details
+                                </button>
+                            </h2>
+                            <div id="accC2" class="accordion-collapse collapse" data-bs-parent="#accC">
+                                <div class="accordion-body small text-muted">Consignee and contact info.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 8. PAGINATION -->
+        <section id="pagination" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">8</div>
+                <div>
+                    <h2>Pagination</h2>
+                    <p>Navigating multi-page tables and lists.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Standard</span>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Arrows Only</span>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0">
+                            <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+                            <li class="page-item"><span class="page-link" style="border:none; background:none; color:var(--muted);">Page 2 of 12</span></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Pill</span>
+                    <nav>
+                        <ul class="pagination pagination-sm pagination-pill mb-0">
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 9. UPLOAD -->
+        <section id="upload" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">9</div>
+                <div>
+                    <h2>Upload Images / Documents</h2>
+                    <p>Port images, bills of lading, inspection reports.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Simple File Input</span>
+                    <label class="field-label">Browse Image</label>
+                    <input type="file" class="form-control" accept="image/*">
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Drag & Drop Zone</span>
+                    <label class="field-label">Upload Document</label>
+                    <div class="dropzone" id="dz1" onclick="document.getElementById('dzFile1').click()">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                        <p>Drag & drop or <strong>click to browse</strong></p>
+                        <small>PDF, JPG, PNG up to 10MB</small>
+                    </div>
+                    <input type="file" id="dzFile1" class="d-none" onchange="handleDzFiles(this,'dz1list')">
+                    <div class="file-list" id="dz1list"></div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Multi Image + Preview</span>
+                    <label class="field-label">Port Images</label>
+                    <div class="dropzone" onclick="document.getElementById('dzFile2').click()">
+                        <i class="bi bi-images"></i>
+                        <p>Select multiple images</p>
+                        <small>JPG, PNG</small>
+                    </div>
+                    <input type="file" id="dzFile2" class="d-none" accept="image/*" multiple onchange="handleImagePreview(this)">
+                    <div class="preview-grid" id="previewGrid"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 10. FORM INPUTS -->
+        <section id="inputs" class="lib-section">
+            <div class="lib-section-head">
+                <div class="num">10</div>
+                <div>
+                    <h2>Different Kinds of Inputs</h2>
+                    <p>The full native input palette, themed consistently.</p>
+                </div>
+            </div>
+            <div class="variant-grid">
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant A — Basic Fields</span>
+                    <div class="mb-2">
+                        <label class="field-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="John Doe">
+                    </div>
+                    <div class="mb-2">
+                        <label class="field-label">Email</label>
+                        <input type="email" class="form-control" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="field-label">Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant B — Numeric & Date/Time</span>
+                    <div class="mb-2">
+                        <label class="field-label">Quantity</label>
+                        <input type="number" class="form-control" value="1" min="0">
+                    </div>
+                    <div class="mb-2">
+                        <label class="field-label">Yard Out Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div>
+                        <label class="field-label">Pickup Time</label>
+                        <input type="time" class="form-control">
+                    </div>
+                </div>
+
+                <div class="variant-card">
+                    <span class="variant-label">Variant C — Textarea, Select, Color</span>
+                    <div class="mb-2">
+                        <label class="field-label">Remarks</label>
+                        <textarea class="form-control" rows="2" placeholder="Add a note..."></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label class="field-label">Vehicle Color</label>
+                        <input type="color" class="form-control form-control-color" value="#198754">
+                    </div>
+                    <div>
+                        <label class="field-label">Priority</label>
+                        <select class="form-select">
+                            <option>Low</option>
+                            <option selected>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/javascript/components.js"></script>
+</body>
+</html>

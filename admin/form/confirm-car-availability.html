@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizupon Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin-style.css">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body style="background-color: #fff !important;">
+    
+    <!-- Header Section -->
+    <header class="bizupon-header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between">
+
+                <!-- Logo -->
+                <a class="logo" href="/admin/index.html">
+                    <img src="/images/logo.png" alt="" srcset="">
+                </a>
+
+                <!-- User dropdown -->
+                <div class="dropdown user-dropdown">
+                <button class="btn user-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="avatar"><i class="bi bi-person-fill"></i></span>
+                    <span class="welcome-text">Welcome Bizupon User</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end user-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Change Password</a></li>
+                    <li><a class="dropdown-item" href="/login.html"><i class="bi bi-power me-2"></i> Login</a></li>
+                    <li><a class="dropdown-item" href="/user-login.html"><i class="bi bi-power me-2"></i>User Login</a></li>
+                    <li><a class="dropdown-item" href="/register.html"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
+                </ul>
+                </div>
+
+                <!-- Mobile toggler -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bizuponNav">
+               <i class="bi bi-list"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg nav-bar">
+            <div class="container-fluid px-4">
+            <div class="collapse navbar-collapse" id="bizuponNav">
+                <ul class="navbar-nav align-items-lg-center w-100">
+
+                <!-- All Categories mega dropdown -->
+                <li class="nav-item dropdown all-categories">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
+                     All Categories  
+                    </a>
+                    <ul class="dropdown-menu categories-menu">
+
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item submenu-trigger" href="#">
+                            Product Master <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <div class="dropdown-menu submenu-panel">
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Another Status</a>
+                                <a class="dropdown-item" href="#">Update Product Date</a>
+                                <a class="dropdown-item" href="#">Update Broker</a>
+                                <a class="dropdown-item" href="#">Update BL No</a>
+                                <a class="dropdown-item" href="#">Add Variant</a>
+                                <a class="dropdown-item" href="#">View Purchase</a>
+                                <a class="dropdown-item" href="#">Deleted Product</a>
+                                <a class="dropdown-item" href="#">Upload Port Image Point</a>
+                                <a class="dropdown-item" href="#">Update All Shipping</a>
+                                <a class="dropdown-item" href="#">Document Confirmation</a>
+                                <a class="dropdown-item" href="#">Update D Receive Date</a>
+                                <a class="dropdown-item" href="#">Cancel Penalty</a>
+                                <a class="dropdown-item" href="#">Approve Commission</a>
+                                <a class="dropdown-item" href="#">Add Company Bill</a>
+                                <a class="dropdown-item" href="#">View UAE Company</a>
+                                <a class="dropdown-item" href="#">View Sale my Car</a>
+                                <a class="dropdown-item" href="#">Add 50/50 Product</a>
+                            </div>
+
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Shipping Details</a>
+                                <a class="dropdown-item" href="#">Update Remark</a>
+                                <a class="dropdown-item" href="#">Update Notify &amp; CFS</a>
+                                <a class="dropdown-item" href="#">Add Product</a>
+                                <a class="dropdown-item" href="#">View Variant</a>
+                                <a class="dropdown-item" href="#">Update Variant</a>
+                                <a class="dropdown-item" href="#">Update Loading and Surrender</a>
+                                <a class="dropdown-item" href="#">Doc Send Date</a>
+                                <a class="dropdown-item" href="#">Update Inspection</a>
+                                <a class="dropdown-item" href="#">Car Auction</a>
+                                <a class="dropdown-item" href="#">PID Details</a>
+                                <a class="dropdown-item" href="#">Update Broker Special</a>
+                                <a class="dropdown-item" href="#">View Shipment Information</a>
+                                <a class="dropdown-item" href="#">View Company Bill</a>
+                                <a class="dropdown-item" href="#">Add Customs Clearance</a>
+                                <a class="dropdown-item" href="#">Unsold Sale my Car</a>
+                            </div>
+
+                            <div class="submenu-col">
+                                <a class="dropdown-item" href="#">Update Inner</a>
+                                <a class="dropdown-item" href="#">Update Consignee</a>
+                                <a class="dropdown-item" href="#">Update Ship Name</a>
+                                <a class="dropdown-item" href="#">View Product</a>
+                                <a class="dropdown-item" href="#">Add Purchase</a>
+                                <a class="dropdown-item" href="#">Update Fuzokuhin</a>
+                                <a class="dropdown-item" href="#">Yard In Date</a>
+                                <a class="dropdown-item" href="#">Update Shipping</a>
+                                <a class="dropdown-item" href="#">Update Yard Out</a>
+                                <a class="dropdown-item" href="#">View Car Auction</a>
+                                <a class="dropdown-item" href="#">Ship Notification</a>
+                                <a class="dropdown-item" href="#">Shipping Information</a>
+                                <a class="dropdown-item" href="#">Assign Company</a>
+                                <a class="dropdown-item" href="#">UAE Company</a>
+                                <a class="dropdown-item" href="#">Update Customs Clearance</a>
+                                <a class="dropdown-item" href="#">View Booking</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Account Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Master <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Team management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">User Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Transport Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Blog Management <i class="bi bi-arrow-right"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Entry Point <i class="bi bi-arrow-right"></i></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Invoice Management</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
+                    <li><a class="dropdown-item" href="#">Download Voucher</a></li>
+                    <li><a class="dropdown-item" href="#">Download Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Deleted Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Old Payment History</a></li>
+                    <li><a class="dropdown-item" href="#">Make Invoice</a></li>
+                    <li><a class="dropdown-item" href="#">Invoice Management</a></li>
+                    <li><a class="dropdown-item" href="#">Payment Adjustment</a></li>
+                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
+                    <li><a class="dropdown-item" href="#">Shipped Car Voucher</a></li>
+                    <li><a class="dropdown-item" href="#">Download Invoice Mango</a></li>
+                    <li><a class="dropdown-item" href="#">Download Voucher (2024)</a></li>
+                    <li><a class="dropdown-item" href="#">View Stock Invoice</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Sales Report</a></li>
+                    <li><a class="dropdown-item" href="#">Stock Report</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Yard Report</a></li>
+                    <li><a class="dropdown-item" href="#">Port Report</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Account Report</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Ledger</a></li>
+                    <li><a class="dropdown-item" href="#">Balance Sheet</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">History</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                    <li><a class="dropdown-item" href="#">Login History</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Bizupon Invoices</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">All Invoices</a></li>
+                    <li><a class="dropdown-item" href="#">Draft Invoices</a></li>
+                    </ul>
+                </li>
+
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Confirm Car Availability -->
+    <div id="ConfirmCarAvailabilityForm" class="form-section">
+        <div class="section-header">
+            <div class="icon-badge"><i class="bi bi-box-arrow-right"></i></div>
+            <div>
+                <h3 class="section-title">Confirm Car Availability</h3>
+                <p class="section-subtitle">Record and update vehicle yard-out details</p>
+            </div>
+        </div>
+
+        <form>
+            <div class="row">
+
+                <div class="col-md-3 field-group">
+                    <label class="field-label" for="chassisNo"><i class="bi bi-upc-scan"></i>Chassis No.</label>
+                    <input type="text" id="chassisNo" class="form-control" placeholder="Enter chassis number">
+                </div>
+
+                <div class="col-md-3 field-group">
+                    <label class="field-label" for="shipName"><i class="bi bi-water"></i>Ship Name</label>
+                    <select id="shipName" class="Admin-form-select">
+                        <option selected disabled>Ship Name</option>
+                        <option>MOL Guardian</option>
+                        <option>Hoegh Xiamen</option>
+                        <option>NYK Delphinus</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3 field-group">
+                    <label class="field-label" for="terminal-name"><i class="bi bi-truck"></i>Terminal Name</label>
+                    <select id="terminal-name" class="Admin-form-select">
+                        <option selected disabled>Terminal Name</option>
+                        <option>Self Drive</option>
+                        <option>Carrier Truck</option>
+                        <option>Trailer</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3 field-group">
+                    <label class="field-label" for="inv-type"><i class="bi bi-truck"></i>Inv Type</label>
+                    <select id="inv-type" class="Admin-form-select">
+                        <option selected disabled>All</option>
+                        <option>Normal</option>
+                        <option>Container</option>
+                        <option>Cut & Constructor</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 field-group">
+                    <label class="field-label" for="found"><i class="bi bi-truck"></i>Found</label>
+                    <select id="found" class="Admin-form-select">
+                        <option selected disabled>All</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 field-group">
+                    <label class="field-label" for="sortBy"><i class="bi bi-truck"></i>Sort By</label>
+                    <select id="sortBy" class="Admin-form-select">
+                        <option selected disabled>100</option>
+                        <option>500</option>
+                        <option>1000</option>
+                        <option>5000</option>
+                        <option>10000</option>
+                        <option>15000</option>
+                        <option>20000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="action-row">
+                <button type="button" class="btn-primary-green">
+                    <i class="bi bi-check2"></i> Search
+                </button>
+
+            </div>
+        </form>
+
+    </div>
+
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
