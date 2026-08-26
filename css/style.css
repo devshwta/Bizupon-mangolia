@@ -301,11 +301,12 @@ hr{
 }
 
 .sc-paragraph {
-    color: #6b6b6b;
+    color: #beb9b9;
     font-size: 14px;
     line-height: 1.75;
     max-width: 460px;
     margin-bottom: 2rem;
+    font-weight: 500;
 }
 
 .sc-feature-list {
