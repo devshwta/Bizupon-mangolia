@@ -130,15 +130,91 @@ a {
     color: var(--dn-black) !important;
 }
 
+/* Turn dn-hero into a carousel wrapper - remove the old single background/padding */
 .dn-hero {
     position: relative;
-    background-image: linear-gradient(100deg, rgba(13, 13, 13, 0.94) 30%, #0d0d0d1a 65%, rgba(13, 13, 13, 0.15) 100%), url(/images/Hero-banner.jpg);
+    overflow: hidden;
+    /* margin-bottom: -110px; */
+    padding: 0;
+}
+
+/* Each slide now carries its own background image + the original hero padding */
+.dn-hero-slide {
     background-size: cover;
     background-position: center;
     padding-top: 5rem;
     padding-bottom: 7rem;
-    overflow: hidden;
-    margin-bottom: -110px;
+    /* min-height: 640px; */
+    display: flex;
+    align-items: center;
+}
+
+/* Bootstrap fade-carousel needs the active slide positioned normally */
+.dn-hero .carousel-item.dn-hero-slide {
+    position: relative;
+}
+
+/* Indicators - restyle to match the yellow accent */
+.dn-hero-indicators {
+    bottom: 26px;
+    margin-bottom: 0;
+    z-index: 3;
+}
+
+.dn-hero-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border: none !important;
+    opacity: 1 !important;
+    margin: 0 5px !important;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.dn-hero-indicators button.active {
+    background-color: #ffc400 !important;
+    transform: scale(1.2);
+}
+
+/* Prev / Next arrows */
+.dn-hero-control {
+    width: 5%;
+    opacity: 1;
+    z-index: 3;
+}
+
+.dn-hero-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    border: 1px solid rgba(255, 196, 0, 0.4);
+    backdrop-filter: blur(2px);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.dn-hero-control:hover .dn-hero-arrow {
+    background-color: #ffc400;
+    color: #14100a;
+    border-color: #ffc400;
+}
+
+@media (max-width: 767.98px) {
+    .dn-hero-slide {
+        min-height: 560px;
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+        text-align: center;
+    }
+
+    .dn-hero-control {
+        display: none; /* keep it clean on mobile, rely on indicators/autoplay */
+    }
 }
 
 .dn-hero-overlay {
@@ -3210,5 +3286,421 @@ hr{
 @media (max-width: 991px) {
     .dn-logo {
         height: 36px;
+    }
+}
+
+.dn-hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background-color: #ffc400;
+    color: #14100a !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.7rem;
+    border-radius: 50px;
+    border: 1px solid #ffc400;
+    white-space: nowrap;
+    text-decoration:none;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.dn-hero-btn-primary i {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.dn-hero-btn-primary:hover {
+    background-color: #e6b000;
+    border-color: #e6b000;
+    color: #14100a !important;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(255, 196, 0, 0.35);
+}
+
+.dn-hero-btn-primary:hover i {
+    transform: translateX(3px);
+}
+
+.dn-hero-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.9rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.dn-hero-btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #ffffff;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 575.98px) {
+    .dn-hero-buttons {
+        width: 100%;
+    }
+
+    .dn-hero-btn-primary,
+    .dn-hero-btn-outline {
+        flex: 1 1 auto;
+    }
+}
+
+.dn-hero-eyebrow {
+    display: inline-block;
+    background-color: rgba(255, 196, 0, 0.12);
+    border: 1px solid rgba(255, 196, 0, 0.5);
+    color: #ffc400;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    margin-bottom: 1.1rem;
+}
+
+@media (max-width: 575.98px) {
+    .dn-hero-eyebrow {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.9rem;
+    }
+}
+
+/* Custum Changes */
+.wi-section {
+    background-color: #0a0a0c;
+    padding: 5rem 1rem;
+}
+
+.wi-header {
+    max-width: 780px;
+    margin: 0 auto 3rem;
+}
+
+.wi-eyebrow {
+    display: inline-block;
+    background-color: rgba(255, 196, 0, 0.12);
+    border: 1px solid rgba(255, 196, 0, 0.5);
+    color: #ffc400;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    margin-bottom: 1.3rem;
+}
+
+.wi-heading {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.9rem;
+    line-height: 1.35;
+    margin-bottom: 0;
+}
+
+.wi-card-row {
+    row-gap: 1.5rem;
+}
+
+.wi-card {
+    background-color: #141417;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.8rem 1.7rem 2rem;
+    height: 100%;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.wi-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.wi-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    margin-bottom: 1.3rem;
+}
+
+.wi-tag i {
+    font-size: 0.75rem;
+}
+
+.wi-tag-orange {
+    background-color: rgba(255, 159, 28, 0.12);
+    border: 1px solid rgba(255, 159, 28, 0.45);
+    color: #ff9f1c;
+}
+
+.wi-tag-blue {
+    background-color: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.45);
+    color: #3b82f6;
+}
+
+.wi-tag-green {
+    background-color: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.45);
+    color: #22c55e;
+}
+
+.wi-card-title {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.9rem;
+}
+
+.wi-card-text {
+    color: #9a9aa2;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    margin-bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+    .wi-heading {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .wi-section {
+        padding: 3.5rem 0.75rem;
+    }
+
+    .wi-header {
+        margin-bottom: 2.2rem;
+    }
+
+    .wi-heading {
+        font-size: 1.4rem;
+    }
+
+    .wi-card {
+        padding: 1.6rem 1.4rem 1.8rem;
+    }
+}
+
+.jc-section {
+    background-color: #0a0a0c;
+    padding: 5rem 1rem;
+}
+
+.jc-row {
+    row-gap: 2.5rem;
+}
+
+/* ===== Image + overlay card ===== */
+.jc-img-wrap {
+    position: relative;
+    max-width: 480px;
+}
+
+.jc-img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.jc-stat-card {
+    position: absolute;
+    left: -16px;
+    bottom: -30px;
+    width: calc(100% - 20px);
+    max-width: 420px;
+    background-color: #16161a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.2rem 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.jc-stat-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.jc-stat-label {
+    color: #9a9aa2;
+    font-size: 0.78rem;
+}
+
+.jc-stat-number {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.jc-stat-btn {
+    background-color: #ffc400;
+    color: #14100a !important;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.jc-stat-btn:hover {
+    background-color: #e6b000;
+}
+
+/* ===== Content ===== */
+.jc-content {
+    padding-left: 0.5rem;
+}
+
+.jc-eyebrow {
+    display: inline-block;
+    background-color: rgba(255, 196, 0, 0.12);
+    border: 1px solid rgba(255, 196, 0, 0.5);
+    color: #ffc400;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+}
+
+.jc-heading {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.9rem;
+    line-height: 1.35;
+    margin-bottom: 1.2rem;
+}
+
+.jc-paragraph {
+    color: #a3a3ab;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
+}
+
+.jc-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jc-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+}
+
+.jc-checklist li:last-child {
+    margin-bottom: 0;
+}
+
+.jc-check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid #ffc400;
+    color: #ffc400;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.jc-check-text {
+    color: #a3a3ab;
+    font-size: 0.87rem;
+    line-height: 1.7;
+}
+
+.jc-check-text strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991.98px) {
+    .jc-heading {
+        font-size: 1.6rem;
+    }
+
+    .jc-img-wrap {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .jc-content {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .jc-section {
+        padding: 3.5rem 0.75rem;
+    }
+
+    .jc-heading {
+        font-size: 1.4rem;
+    }
+
+    .jc-img {
+        height: 340px;
+    }
+
+    .jc-stat-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        left: 8px;
+        width: calc(100% - 16px);
+        bottom: -24px;
+    }
+
+    .jc-stat-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .jc-checklist li {
+        gap: 0.7rem;
+    }
+
+    .jc-check-text {
+        font-size: 0.83rem;
     }
 }
