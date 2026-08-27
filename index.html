@@ -51,39 +51,161 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="dn-hero">
-        <div class="dn-hero-overlay"></div>
-        <div class="container dn-hero-content">
-            <div class="row">
-                <div class="col-lg-7">
-                    <h1 class="dn-hero-title">
-                        Өөрт тохирох төгс <br> автомашинаа 
-                         <span class="dn-text-accent">олооройr</span>
-                    </h1>
-                    <p class="dn-hero-subtitle">
-                        Найдвартай борлуулагчдаас баталгаажсан олон мянган автомашинаас сонголтоо хийгээрэй.
-                        Хамгийн боломжийн үнэ. 
-                        
-                    </p>
+    <section class="dn-hero p-0">
+        <div id="dnHeroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
 
-                    <div class="d-flex flex-wrap gap-4 gap-md-5 dn-hero-stats">
-                        <div class="dn-stat">
-                            <i class="fa-solid fa-car dn-stat-icon"></i>
-                            <div>
-                                <div class="dn-stat-number">10,000+</div>
-                                <div class="dn-stat-label">Бүртгэлтэй автомашин</div>
-                            </div>
-                        </div>
-                        <div class="dn-stat">
-                            <i class="fa-solid fa-user-shield dn-stat-icon"></i>
-                            <div>
-                                <div class="dn-stat-number">Найдвартай борлуулагчид</div>
-                                <div class="dn-stat-label">Баталгаажсан, хянан шалгагдсан</div>
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active dn-hero-slide" style="background-image: linear-gradient(100deg, rgba(13,13,13,0.94) 30%, #0d0d0d1a 65%, rgba(13,13,13,0.15) 100%), url(images/banner/banner-img1.webp);">
+                    <div class="dn-hero-overlay"></div>
+                    <div class="container dn-hero-content">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <span class="dn-hero-eyebrow">Монголд хамгийн их эрэлттэй</span>
+                                <h1 class="dn-hero-title">
+                                    Toyota Land Cruiser — Монголын зам нуруунд зориулсан
+                                </h1>
+                                <p class="dn-hero-subtitle">
+                                    Найдвартай, хүчирхэг, туйлын нөхцөлд зориулсан. Бүрэн шалгалттайгаар Японоос шууд авчирна.
+                                </p>
+                                <div class="d-flex flex-wrap gap-3 dn-hero-buttons">
+                                    <a href="vehicle.html" class="dn-hero-btn-primary">
+                                        Нөөц үзэх
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="calculator.html" class="dn-hero-btn-outline">
+                                        Татвар тооцоолох
+                                    </a>
+                                </div>
+                            
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item dn-hero-slide" style="background-image: linear-gradient(100deg, rgba(13,13,13,0.94) 30%, #0d0d0d1a 65%, rgba(13,13,13,0.15) 100%), url(images/banner/banner-img2.webp);">
+                    <div class="dn-hero-overlay"></div>
+                    <div class="container dn-hero-content">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <span class="dn-hero-eyebrow">Хамгийн ашигтай</span>
+                                <h1 class="dn-hero-title">
+                                    Lexus — Японы тансаглал, Улаанбаатарт хүргэлттэй
+                                </h1>
+                                <p class="dn-hero-subtitle">
+                                    Дээд зэрэглэлийн гар урлал, итгэмжит найдвартай байдал. Дуусгавараас таны хаалга хүртэл бид бүгдийг зохицуулна.
+                                </p>
+
+                            <div class="d-flex flex-wrap gap-3 dn-hero-buttons">
+                                    <a href="vehicle.html" class="dn-hero-btn-primary">
+                                        Нөөц үзэх
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="calculator.html" class="dn-hero-btn-outline">
+                                        Татвар тооцоолох
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item dn-hero-slide" style="background-image: linear-gradient(100deg, rgba(13,13,13,0.94) 30%, #0d0d0d1a 65%, rgba(13,13,13,0.15) 100%), url(images/banner/banner-img3.webp);">
+                    <div class="dn-hero-overlay"></div>
+                    <div class="container dn-hero-content">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <span class="dn-hero-eyebrow">Хамгийн их борлуулалт</span>
+                                <h1 class="dn-hero-title">
+                                Япон, Солонгосын шилдэг SUV машинууд
+                                </h1>
+                                <p class="dn-hero-subtitle">
+                                Өрсөлдөхүйц үнэтэй, бага гүйлттэй SUV-ууд. Өдөр бүр шинэчлэгдэх дэлхийн нөөцийг үзнэ үү.
+                                </p>
+
+                                <div class="d-flex flex-wrap gap-3 dn-hero-buttons">
+                                    <a href="vehicle.html" class="dn-hero-btn-primary">
+                                        Нөөц үзэх
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="calculator.html" class="dn-hero-btn-outline">
+                                        Татвар тооцоолох
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carousel-item dn-hero-slide" style="background-image: linear-gradient(100deg, rgba(13,13,13,0.94) 30%, #0d0d0d1a 65%, rgba(13,13,13,0.15) 100%), url(images/banner/banner-img4.webp);">
+                    <div class="dn-hero-overlay"></div>
+                    <div class="container dn-hero-content">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <span class="dn-hero-eyebrow">Хамгийн ашигтай</span>
+                                <h1 class="dn-hero-title">
+                                    Хэмнэлттэй Седан, Гибрид машинууд
+                                </h1>
+                                <p class="dn-hero-subtitle">
+                                    Хотын зорчилтод зориулсан гибрид, цахилгаан машинууд. Нийт зардлаа шууд тооцоолно уу.
+                                </p>
+                                
+                                <div class="d-flex flex-wrap gap-3 dn-hero-buttons">
+                                    <a href="vehicle.html" class="dn-hero-btn-primary">
+                                        Нөөц үзэх
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="calculator.html" class="dn-hero-btn-outline">
+                                        Татвар тооцоолох
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="carousel-item dn-hero-slide" style="background-image: linear-gradient(100deg, rgba(13,13,13,0.94) 30%, #0d0d0d1a 65%, rgba(13,13,13,0.15) 100%), url(images/banner/banner-img5.webp);">
+                    <div class="dn-hero-overlay"></div>
+                    <div class="container dn-hero-content">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <span class="dn-hero-eyebrow">Шууд импорт</span>
+                                <h1 class="dn-hero-title">
+                                    Японы спорт, өндөр гүйцэтгэлтэй машинууд
+                                </h1>
+                                <p class="dn-hero-subtitle">
+                                Хүссэнийхээ JDM болон дэлхийн өндөр гүйцэтгэлтэй машинуудыг бид олж өгнө.
+                                </p>
+
+                            <div class="d-flex flex-wrap gap-3 dn-hero-buttons">
+                                    <a href="vehicle.html" class="dn-hero-btn-primary">
+                                        Нөөц үзэх
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="calculator.html" class="dn-hero-btn-outline">
+                                        Татвар тооцоолох
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev dn-hero-control" type="button" data-bs-target="#dnHeroCarousel" data-bs-slide="prev">
+                <span class="dn-hero-arrow"><i class="fa-solid fa-chevron-left"></i></span>
+            </button>
+            <button class="carousel-control-next dn-hero-control" type="button" data-bs-target="#dnHeroCarousel" data-bs-slide="next">
+                <span class="dn-hero-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+            </button>
+
         </div>
     </section>
 
@@ -175,69 +297,64 @@
     </div>
 
     <!-- About Section -->
-    <section class="sc-section">
-        <div class="container-xl pb-5">
- 
-            <div class="row align-items-center sc-row-top">
-                <div class="col-lg-6 sc-col-text">
-                    <h6 class="beidge">Танд хэрэгтэй бүх зүйл</h6>
-                    <h2 class="sc-heading">Bizupon яагаад Монголын №1 автомашин импортлогч вэ?</h2>
-                    <p class="sc-paragraph">
-                       Bizupon нь арваас дээш жилийн туршид хэрэглэгч төвтэй хандлагаараа алдартай. Бид таны гэрээг дуусгавар талбайгаас Улаанбаатар хүртэл бүрэн тунгалаг зардлаар төгс туршлага болгохыг амлаж байна.
-                    </p>
-                </div>
- 
-                <div class="col-lg-6 sc-col-image">
-                    <div class="sc-hero-shape">
-                        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" alt="Featured car" class="sc-hero-img">
-                    </div>
-                </div>
+    <section class="wi-section">
+        <div class="container">
+            <div class="wi-header text-center">
+                <span class="wi-eyebrow">ТАНД ХЭРЭГТЭЙ БҮХ ЗҮЙЛ</span>
+                <h2 class="wi-heading">Яагаад Bizupon Монголын #1 автомашин импортлогч вэ</h2>
             </div>
- 
-            <div class="row align-items-center sc-row-bottom">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="sc-gallery-card">
-                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=500&q=80" alt="Model one" class="sc-gallery-img">
+
+            <div class="row wi-card-row">
+
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wi-card">
+                        <span class="wi-tag wi-tag-orange">
+                            <i class="fa-solid fa-heart"></i> ЯАГААД
+                        </span>
+                        <h3 class="wi-card-title">Яагаад Bizupon?</h3>
+                        <p class="wi-card-text">
+                            Bizupon нь арваас дээш жилийн туршид хэрэглэгч төвтэй хандлагаараа алдартай.
+                            Бид таны гэрээг дуусгавар талбайгаас Улаанбаатар хүртэл бүрэн тунгалаг
+                            зардлаар төгс туршлага болгохыг амлаж байна.
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="sc-gallery-card">
-                        <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=500&q=80" alt="Model two" class="sc-gallery-img">
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wi-card">
+                        <span class="wi-tag wi-tag-blue">
+                            <i class="fa-solid fa-cart-shopping"></i> ЯАЖ
+                        </span>
+                        <h3 class="wi-card-title">Яаж худалдаж авах вэ?</h3>
+                        <p class="wi-card-text">
+                            Bizupon нь бүртгэлтэй гишүүддээ шууд дуусгавар дээр санал тавих болон өөрийн
+                            гараар сонгосон нөөцөөс хоёр замаар машин авах боломж олгодог. Хоёр замд ч
+                            Монголын логистикийн бүрэн дэмжлэг байна.
+                        </p>
                     </div>
                 </div>
- 
-                <div class="col-lg-6 sc-col-showcase">
-                    <h3 class="sc-showcase-heading">Яагаад Bizupon-г сонгох ёстой вэ?</h3>
-                    <p class="pb-2 sc-paragraph"> Bizupon нь хэрэглэгчийн сэтгэл ханамжийг хамгийн түрүүнд тавьдаг. Манай Монгол дахь баг автомашин худалдан авах бүх үе шатанд танд тусалж, хамтран ажиллана.</p>
-                    <div class="row gy-4 sc-links">
-                        <div class="col-sm-6">
-                            <h6 class="beidge">Худалдан авах</h6>
-                            <p class="sc-paragraph">
-                                Bizupon-ийн бүртгэлтэй хэрэглэгчид шууд дуудлага худалдаанд оролцож, автомашин худалдан авах боломжтой. 
-                            </p>
-                        </div>
-                        <div class="col-sm-6">
-                            <h6 class="beidge">Бид хэн бэ</h6>
-                            <p class="sc-paragraph">
-                                Бид шинэ болон хуучин автомашины тэргүүлэгч нийлүүлэгчдийн нэг бөгөөд найдвартай.
-                            </p>
-                        </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wi-card">
+                        <span class="wi-tag wi-tag-green">
+                            <i class="fa-solid fa-user-group"></i> ХЭРХЭН
+                        </span>
+                        <h3 class="wi-card-title">Бид хэн бэ?</h3>
+                        <p class="wi-card-text">
+                            Бид Япон, Солонгос, АНУ болон Европоос Монголд шинэ болон хэрэглэсэн машин
+                            нийлүүлдэг тэргүүлэх компаниудын нэг юм. Bizupon хэрэглэгчдийн туршлагыг тэргүүн
+                            зэргийн асуудал гэж үздэг — Монголын баг маань таны хажууд байна.
+                        </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Cta Section -->
-    <section class="ps-section">
-        <div class="ps-overlay"></div>
-        <div class="container ps-content">
-            <div class="text-center ps-header">
-                <h2 class="ps-heading">Японы Автомашин Дуусгаврын <br> Соёлыг Мэдэж аваарай </h2>
-                <p class="ps-subtext">Японы автомашины дуудлага худалдаанаас хуучин автомашиныг шууд импортлоорой. Bizupon нь Японоос хуучин автомашин, тусгай зориулалтын техник хэрэгслийг дэлхийн өнцөг булан бүрийн хэрэглэгчдэд нийлүүлдэг тэргүүлэгч компаниудын нэг юм.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Auction Section -->
     <section class="pr-section">
@@ -317,6 +434,86 @@
         </div>
     </section>
     
+    <!-- Vission Section -->
+    <section class="jc-section">
+        <div class="container">
+            <div class="row align-items-center jc-row">
+
+                <!-- Left: Image with overlay stat card -->
+                <div class="col-lg-6">
+                    <div class="jc-img-wrap">
+                        <img src="/images/about-us.jpg" alt="Японы автомашин дуусгаврын шалгалт" class="jc-img">
+
+                        <div class="jc-stat-card">
+                            <div class="jc-stat-text">
+                                <span class="jc-stat-label">Японы дуусгавар дахь машин</span>
+                                <span class="jc-stat-number">7 хоногт 150,000+</span>
+                            </div>
+                            <a href="#" class="jc-stat-btn">Шууд нэвтрэлт</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="col-lg-6">
+                    <div class="jc-content">
+                        <span class="jc-eyebrow">ЯПОНЫ АВТОМАШИН ДУУСГАВАР</span>
+
+                        <h2 class="jc-heading">
+                            Японы Автомашин Дуусгаврын Соёлыг Мэдэж ааарай
+                        </h2>
+
+                        <p class="jc-paragraph">
+                            Японы дуусгаврын байнуудаас шууд Японы хэрэгласан машин импортол.
+                            Bizupon нь 10 гаруй жилийн туршид Японоос Монгол зах зээлд машин, тоног
+                            техеэрэмж нийлүүлдэг тэргүүлэх дилерүүдийн нэг юм.
+                        </p>
+
+                        <ul class="jc-checklist">
+                            <li>
+                                <span class="jc-check-icon"><i class="fa-solid fa-check"></i></span>
+                                <span class="jc-check-text">
+                                    <strong>Дуусгаврын Зэрэглэлийн Систем</strong> — Япон нь бүх машинд хатуу зэрэглэлийн
+                                    шкала (1–5) ашигладаг. 4+ зэрэглэл нь маш сайн байдал, бага элэгдэлтэй гэсэн үг.
+                                </span>
+                            </li>
+                            <li>
+                                <span class="jc-check-icon"><i class="fa-solid fa-check"></i></span>
+                                <span class="jc-check-text">
+                                    <strong>Баталгаажсан Үзлэгийн Хуудас</strong> — Дуусгаврын бүх машин бүх хонхорхой,
+                                    зураас, механикийн тэмдэглэлийг харуулсан нарийвчилсан үзлэгийн хуудастай.
+                                </span>
+                            </li>
+                            <li>
+                                <span class="jc-check-icon"><i class="fa-solid fa-check"></i></span>
+                                <span class="jc-check-text">
+                                    <strong>Шууд Санал Тавих Процесс</strong> — Дуусгавар Даваа–Бямба гарагуудад
+                                    явагдана. Bizupon-ы орон нутгийн агентууд Японы томоохон дуусгавар дээр таны
+                                    өмнөөс шууд санал тавьдаг.
+                                </span>
+                            </li>
+                            <li>
+                                <span class="jc-check-icon"><i class="fa-solid fa-check"></i></span>
+                                <span class="jc-check-text">
+                                    <strong>Бүрэн Үнийн Тунгалаг байдал</strong> — Та молоткны үнэ, дуусгаврын хөлс,
+                                    тээвэр, даатгал, Монголын татварыг — бүгдийг эвшээрэхийн өмнө харна.
+                                </span>
+                            </li>
+                            <li>
+                                <span class="jc-check-icon"><i class="fa-solid fa-check"></i></span>
+                                <span class="jc-check-text">
+                                    <strong>Хамгийн Өргөн Сонголт</strong> — Жижиг кей-карнаас 200 серийн Land Cruiser,
+                                    хүнд тоног техеэрэмж хүртэл — Японы дуусгавар бүгдийг агуулдаг.
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Feature Stock Section -->
     <section class="fc-section">
         <div class="container-xl">
