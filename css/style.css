@@ -3528,19 +3528,22 @@ hr{
 
 .jc-stat-card {
     position: absolute;
-    left: -16px;
-    bottom: -30px;
-    width: calc(100% - 20px);
-    max-width: 420px;
-    background-color: #16161a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 1.2rem 1.3rem;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    max-width: none;
+    background-color: rgba(20, 20, 24, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 1.1rem 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .jc-stat-text {
@@ -3550,31 +3553,32 @@ hr{
 }
 
 .jc-stat-label {
-    color: #9a9aa2;
+    color: #c9c9d1;
     font-size: 0.78rem;
 }
 
 .jc-stat-number {
-    color: #ffffff;
+    color: #ffc400;
     font-weight: 800;
     font-size: 1.05rem;
 }
 
 .jc-stat-btn {
-    background-color: #ffc400;
-    color: #14100a !important;
+    background-color: transparent;
+    color: #ffc400 !important;
     font-weight: 700;
-    font-size: 0.82rem;
-    padding: 0.6rem 1.1rem;
-    border-radius: 8px;
+    font-size: 0.85rem;
+    padding: 0.6rem 0.2rem;
+    border-radius: 0;
     white-space: nowrap;
-    transition: background-color 0.2s ease;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 0.2s ease;
 }
 
 .jc-stat-btn:hover {
-    background-color: #e6b000;
+    opacity: 0.8;
 }
-
 /* ===== Content ===== */
 .jc-content {
     padding-left: 0.5rem;
@@ -3681,7 +3685,7 @@ hr{
     }
 
     .jc-stat-card {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 0.8rem;
         left: 8px;
@@ -3690,7 +3694,6 @@ hr{
     }
 
     .jc-stat-btn {
-        width: 100%;
         text-align: center;
     }
 }
@@ -3702,5 +3705,18 @@ hr{
 
     .jc-check-text {
         font-size: 0.83rem;
+    }
+     .jc-stat-card {
+        flex-direction: column;
+        align-items: flex-start;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 1rem;
+    }
+
+    .jc-stat-btn {
+        align-self: flex-start;
+        padding-left: 0;
     }
 }
