@@ -11,193 +11,180 @@
 </head>
 <body>
     
-    <!-- Header Section -->
-    <header class="bizupon-header">
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="container-fluid px-4">
-            <div class="d-flex align-items-center justify-content-between">
+ <!-- Header Section -->
+<header class="bizupon-header-v2">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between">
 
-                <!-- Logo -->
-                <a class="logo" href="/index.html">
-                    <img src="/images/logo.png" alt="" srcset="">
-                </a>
+            <!-- Logo -->
+            <a class="logo" href="/index.html">
+                <img src="/images/logo.png" alt="" srcset="">
+            </a>
 
-                <!-- User dropdown -->
-                <div class="dropdown user-dropdown">
-                <button class="btn user-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="avatar"><i class="bi bi-person-fill"></i></span>
-                    <span class="welcome-text">Welcome Bizupon User</span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end user-menu">
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Change Password</a></li>
-                    <li><a class="dropdown-item" href="/login.html"><i class="bi bi-power me-2"></i> Login</a></li>
-                    <li><a class="dropdown-item" href="/user-login.html"><i class="bi bi-power me-2"></i>User Login</a></li>
-                    <li><a class="dropdown-item" href="/register.html"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
-                    
-                </ul>
-                </div>
-
-                <!-- Mobile toggler -->
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bizuponNav">
-               <i class="bi bi-list"></i>
-                </button>
+            <!-- User dropdown -->
+            <div class="dropdown user-dropdown">
+            <button class="btn user-toggle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="avatar"><i class="bi bi-person-fill"></i></span>
+                <span class="welcome-text">Welcome Bizupon User</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end user-menu">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Change Password</a></li>
+                <li><a class="dropdown-item" href="/login.html"><i class="bi bi-power me-2"></i> Login</a></li>
+                <li><a class="dropdown-item" href="/user-login.html"><i class="bi bi-power me-2"></i>User Login</a></li>
+                <li><a class="dropdown-item" href="/register.html"><i class="bi bi-box-arrow-in-right me-2"></i>Register</a></li>
+                
+            </ul>
             </div>
-            </div>
+
+            <!-- Mobile toggler -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bizuponNav">
+            <i class="bi bi-list"></i>
+            </button>
         </div>
-        <!-- Nav Bar -->
-        <nav class="navbar navbar-expand-lg nav-bar">
-            <div class="container-fluid px-4">
+        </div>
+    </div>
+
+    <!-- Nav Bar -->
+    <nav class="header-navline navbar navbar-expand-lg">
+        <div class="container-fluid px-4">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#bizuponNav">
+                <i class="bi bi-list"></i>
+            </button>
+
             <div class="collapse navbar-collapse" id="bizuponNav">
                 <ul class="navbar-nav align-items-lg-center w-100">
 
-                <!-- All Categories mega dropdown -->
-                <li class="nav-item dropdown all-categories">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
-                     All Categories  
-                    </a>
-                    <ul class="dropdown-menu categories-menu">
-
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item submenu-trigger" href="#">
-                            Product Master <i class="bi bi-arrow-right"></i>
+                    <!-- ================= ALL MODULES (light, 4-col) ================= -->
+                    <li class="nav-item dropdown all-modules">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-display="static">
+                            <i class="bi bi-grid-1x2-fill"></i> All Modules
                         </a>
 
-                        <div class="dropdown-menu submenu-panel">
-                            <div class="submenu-col">
-                                <a class="dropdown-item" href="/admin/update-another-status.html">Update Another Status</a>
-                                <a class="dropdown-item" href="#">Update Product Date</a>
-                                <a class="dropdown-item" href="#">Update Broker</a>
-                                <a class="dropdown-item" href="#">Update BL No</a>
-                                <a class="dropdown-item" href="#">Add Variant</a>
-                                <a class="dropdown-item" href="#">View Purchase</a>
-                                <a class="dropdown-item" href="#">Deleted Product</a>
-                                <a class="dropdown-item" href="#">Upload Port Image Point</a>
-                                <a class="dropdown-item" href="#">Update All Shipping</a>
-                                <a class="dropdown-item" href="#">Document Confirmation</a>
-                                <a class="dropdown-item" href="#">Update D Receive Date</a>
-                                <a class="dropdown-item" href="#">Cancel Penalty</a>
-                                <a class="dropdown-item" href="#">Approve Commission</a>
-                                <a class="dropdown-item" href="#">Add Company Bill</a>
-                                <a class="dropdown-item" href="#">View UAE Company</a>
-                                <a class="dropdown-item" href="#">View Sale my Car</a>
-                                <a class="dropdown-item" href="#">Add 50/50 Product</a>
+                        <div class="dropdown-menu dropdown-menu-Bz mega-menu">
+                            <div class="mega-sidebar">
+                                <!-- Replaced mega-sidebar-title with Search Input Box -->
+                                <div class="mega-sidebar-search">
+                                    <i class="bi bi-search search-icon"></i>
+                                    <input type="text" class="mega-search-input" placeholder="Search modules..." id="moduleSearchInput" autocomplete="off">
+                                </div>
+                                <a class="mega-sidebar-item active" href="#"><i class="bi bi-box-seam"></i> Product Master</a>
+                                <a class="mega-sidebar-item" href="#"><i class="bi bi-person-badge"></i> Account Management</a>
+                                <a class="mega-sidebar-item" href="#"><i class="bi bi-layers"></i> Master</a>
+                                <a class="mega-sidebar-item" href="#"><i class="bi bi-people"></i> Team Management</a>
+                                <a class="mega-sidebar-item" href="#"><i class="bi bi-person-lines-fill"></i> User Management</a>
+                                <a class="mega-sidebar-item" href="#"><i class="bi bi-truck"></i> Transport Management</a>
+                                <a class="mega-sidebar-item" href="#"><i class="bi bi-journal-richtext"></i> Blog Management</a>
+                                <a class="mega-sidebar-item" href="#"><i class="bi bi-plug"></i> Entry Point</a>
                             </div>
 
-                            <div class="submenu-col">
-                                <a class="dropdown-item" href="#">Update Shipping Details</a>
-                                <a class="dropdown-item" href="#">Update Remark</a>
-                                <a class="dropdown-item" href="#">Update Notify &amp; CFS</a>
-                                <a class="dropdown-item" href="#">Add Product</a>
-                                <a class="dropdown-item" href="#">View Variant</a>
-                                <a class="dropdown-item" href="#">Update Variant</a>
-                                <a class="dropdown-item" href="#">Update Loading and Surrender</a>
-                                <a class="dropdown-item" href="#">Doc Send Date</a>
-                                <a class="dropdown-item" href="#">Update Inspection</a>
-                                <a class="dropdown-item" href="#">Car Auction</a>
-                                <a class="dropdown-item" href="#">PID Details</a>
-                                <a class="dropdown-item" href="#">Update Broker Special</a>
-                                <a class="dropdown-item" href="#">View Shipment Information</a>
-                                <a class="dropdown-item" href="#">View Company Bill</a>
-                                <a class="dropdown-item" href="#">Add Customs Clearance</a>
-                                <a class="dropdown-item" href="#">Unsold Sale my Car</a>
-                            </div>
-
-                            <div class="submenu-col">
-                                <a class="dropdown-item" href="#">Update Inner</a>
-                                <a class="dropdown-item" href="#">Update Consignee</a>
-                                <a class="dropdown-item" href="#">Update Ship Name</a>
-                                <a class="dropdown-item" href="#">View Product</a>
-                                <a class="dropdown-item" href="#">Add Purchase</a>
-                                <a class="dropdown-item" href="#">Update Fuzokuhin</a>
-                                <a class="dropdown-item" href="#">Yard In Date</a>
-                                <a class="dropdown-item" href="#">Update Shipping</a>
-                                <a class="dropdown-item" href="#">Update Yard Out</a>
-                                <a class="dropdown-item" href="#">View Car Auction</a>
-                                <a class="dropdown-item" href="#">Ship Notification</a>
-                                <a class="dropdown-item" href="#">Shipping Information</a>
-                                <a class="dropdown-item" href="#">Assign Company</a>
-                                <a class="dropdown-item" href="#">UAE Company</a>
-                                <a class="dropdown-item" href="#">Update Customs Clearance</a>
-                                <a class="dropdown-item" href="#">View Booking</a>
+                            <div class="mega-content">
+                                <!-- 4 columns -->
+                                <div class="mega-content-grid">
+                                    <div class="mega-col">
+                                        <a class="mega-item" href="/admin/update-another-status.html"><span class="mega-item-icon"><i class="bi bi-calendar-event"></i></span>Update Product Date<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-person-badge"></i></span>Update Broker<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-file-earmark-text"></i></span>Update BL No<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-plus-circle"></i></span>Add Product<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-grid"></i></span>Add Variant<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-eye"></i></span>View Purchase<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-trash"></i></span>Deleted Product<i class="bi bi-chevron-right chevron"></i></a>
+                                    </div>
+                                    <div class="mega-col">
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-truck"></i></span>Update Shipping Details<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-pencil-square"></i></span>Update Remark<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-bell"></i></span>Update Notify &amp; CFS<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-cart-plus"></i></span>Add Purchase<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-eye"></i></span>View Variant<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-pencil"></i></span>Update Variant<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-arrow-left-right"></i></span>Update Loading &amp; Surrender<i class="bi bi-chevron-right chevron"></i></a>
+                                    </div>
+                                    <div class="mega-col">
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-truck"></i></span>Update Shipping<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-calendar-check"></i></span>Yard In Date<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-truck"></i></span>Yard Out<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-car-front"></i></span>View Car Auction<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-bell"></i></span>Ship Notification<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-file-earmark-text"></i></span>PID Details<i class="bi bi-chevron-right chevron"></i></a>
+                                    </div>
+                                    <div class="mega-col">
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-building"></i></span>UAE Company<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-file-earmark-check"></i></span>Document Confirmation<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-x-circle"></i></span>Cancel Penalty<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-check-circle"></i></span>Approve Commission<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-bar-chart"></i></span>Inventory Overview<i class="bi bi-chevron-right chevron"></i></a>
+                                        <a class="mega-item" href="#"><span class="mega-item-icon"><i class="bi bi-clock-history"></i></span>User Activity Log<i class="bi bi-chevron-right chevron"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
 
-                    <li><a class="dropdown-item" href="#">Account Management <i class="bi bi-arrow-right"></i></a></li>
-                    <li><a class="dropdown-item" href="#">Master <i class="bi bi-arrow-right"></i></a></li>
-                    <li><a class="dropdown-item" href="#">Team management <i class="bi bi-arrow-right"></i></a></li>
-                    <li><a class="dropdown-item" href="#">User Management <i class="bi bi-arrow-right"></i></a></li>
-                    <li><a class="dropdown-item" href="#">Transport Management <i class="bi bi-arrow-right"></i></a></li>
-                    <li><a class="dropdown-item" href="#">Blog Management <i class="bi bi-arrow-right"></i></a></li>
-                    <li><a class="dropdown-item" href="#">Entry Point <i class="bi bi-arrow-right"></i></a></li>
-                    </ul>
-                </li>
+                    <!-- ================= INVOICE MANAGEMENT ================= -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-display="static"><i class="bi bi-receipt"></i> Invoice Management</a>
+                        <div class="dropdown-menu dark-mega-menu">
+                            <div class="dark-mega-grid">
+                                <div class="dark-mega-col">
+                                    <div class="dark-mega-heading"><i class="bi bi-file-earmark-text"></i> Invoices</div>
+                                    <a class="dark-mega-item" href="#">Invoice Management<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="/admin/make-invoice.html">Make Invoice<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Download Invoice<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Download Invoice Mango<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Deleted Invoice<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">View Stock Invoice<i class="bi bi-chevron-right"></i></a>
+                                </div>
+                                <div class="dark-mega-col">
+                                    <div class="dark-mega-heading"><i class="bi bi-journal-text"></i> Vouchers</div>
+                                    <a class="dark-mega-item" href="#">Voucher Management<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Download Voucher<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Download Voucher (2024)<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Shipped Car Voucher<i class="bi bi-chevron-right"></i></a>
+                                </div>
+                                <div class="dark-mega-col">
+                                    <div class="dark-mega-heading"><i class="bi bi-cash-coin"></i> Payments</div>
+                                    <a class="dark-mega-item" href="#">Payment Adjustment<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Old Payment History<i class="bi bi-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Invoice Management</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
-                    <li><a class="dropdown-item" href="#">Download Voucher</a></li>
-                    <li><a class="dropdown-item" href="#">Download Invoice</a></li>
-                    <li><a class="dropdown-item" href="#">Deleted Invoice</a></li>
-                    <li><a class="dropdown-item" href="#">Old Payment History</a></li>
-                    <li><a class="dropdown-item" href="/admin/make-invoice.html">Make Invoice</a></li>
-                    <li><a class="dropdown-item" href="#">Invoice Management</a></li>
-                    <li><a class="dropdown-item" href="#">Payment Adjustment</a></li>
-                    <li><a class="dropdown-item" href="#">Voucher Management</a></li>
-                    <li><a class="dropdown-item" href="#">Shipped Car Voucher</a></li>
-                    <li><a class="dropdown-item" href="#">Download Invoice Mango</a></li>
-                    <li><a class="dropdown-item" href="#">Download Voucher (2024)</a></li>
-                    <li><a class="dropdown-item" href="#">View Stock Invoice</a></li>
-                    </ul>
-                </li>
+                    <!-- ================= REPORT ================= -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-display="static"><i class="bi bi-bar-chart-fill"></i> Report</a>
+                        <div class="dropdown-menu dark-mega-menu">
+                            <div class="dark-mega-grid">
+                                <div class="dark-mega-col">
+                                    <div class="dark-mega-heading"><i class="bi bi-graph-up"></i> Reports</div>
+                                    <a class="dark-mega-item" href="#">Sales Report<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Stock Report<i class="bi bi-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Report</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Sales Report</a></li>
-                    <li><a class="dropdown-item" href="#">Stock Report</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Other Report</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Yard Report</a></li>
-                    <li><a class="dropdown-item" href="#">Port Report</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Account Report</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Ledger</a></li>
-                    <li><a class="dropdown-item" href="#">Balance Sheet</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">History</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
-                    <li><a class="dropdown-item" href="#">Login History</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Bizupon Invoices</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">All Invoices</a></li>
-                    <li><a class="dropdown-item" href="#">Draft Invoices</a></li>
-                    </ul>
-                </li>
+                    <!-- ================= OTHER REPORT ================= -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-display="static"><i class="bi bi-file-earmark-bar-graph"></i> Other Report</a>
+                        <div class="dropdown-menu dark-mega-menu">
+                            <div class="dark-mega-grid">
+                                <div class="dark-mega-col">
+                                    <div class="dark-mega-heading"><i class="bi bi-signpost-split"></i> Other Reports</div>
+                                    <a class="dark-mega-item" href="#">Yard Report<i class="bi bi-chevron-right"></i></a>
+                                    <a class="dark-mega-item" href="#">Port Report<i class="bi bi-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
                 </ul>
             </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
 
     <!-- Yard Section -->
     <section class="yard-section">
