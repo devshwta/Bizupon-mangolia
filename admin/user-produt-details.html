@@ -203,200 +203,236 @@
 
     <!-- Product Details Page  -->
     <main class="container my-4">
-        <!-- Header Row -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <div>
-                <span class="text-muted small">SWIFT SPORT/Normal</span>
-            </div>
-            <div class="d-flex gap-5">
-                <span class="fw-bold small">BIZ ID: 641202</span>
-                <span class="fw-bold small">Дата Инвойса : 18/08/2026</span>
-            </div>
-        </div>
+        
 
-        <div class="row gx-4">
+        <div class="row gx-4 mt-5">
             <!-- Left Column (Images and Specs) -->
             <div class="col-lg-8 mb-4">
-                
-                <!-- Main Image Area -->
-               <div class="gallery-card">
-        <div class="main-image" id="mainImage">
-          <!-- <img> slides injected by JS from the carImages array below -->
-          <button class="nav-arrow prev" id="prevBtn" aria-label="Предыдущее фото"><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="nav-arrow next" id="nextBtn" aria-label="Следующее фото"><i class="fa-solid fa-chevron-right"></i></button>
-          <span class="img-counter" id="imgCounter">1 / 5</span>
-        </div>
-        <div class="thumbs" id="thumbRow"></div>
-        <div class="share-row">
-          <button class="share-btn tg" title="Поделиться в Telegram" onclick="shareTo('tg')"><i class="fa-brands fa-telegram"></i></button>
-          <button class="share-btn wa" title="Поделиться в WhatsApp" onclick="shareTo('wa')"><i class="fa-brands fa-whatsapp"></i></button>
-          <button class="share-btn x" title="Поделиться в X" onclick="shareTo('x')"><i class="fa-brands fa-x-twitter"></i></button>
-        </div>
-      </div>
 
-                <!-- Characteristics Title -->
-                <div class="theme-green-bg text-center py-2 fw-bold mb-3">
-                    Характеристики Автомобиля
-                </div>
-
-                <!-- Specifications Grid -->
-                <div class="row row-cols-2 row-cols-md-4 g-2 mb-4">
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-barcode"></i><strong>ZC33S-416717</strong><span>Номер кузова</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-car"></i><strong>Suzuki</strong><span>Марка Автомобиля</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-car-side"></i><strong>Hatchback</strong><span>Тип кузова</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-regular fa-calendar"></i><strong>2021-11</strong><span>Год</span></div></div>
-                    
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-road"></i><strong>60311 KM</strong><span>Пробег</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-engine"></i><strong>1370 CC</strong><span>Объём двигателя</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-gears"></i><strong>6AT</strong><span>Трансмиссия</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-steering-wheel"></i><strong>RHD</strong><span>Руль</span></div></div>
-                    
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-gas-pump"></i><strong>Gasoline</strong><span>Тип топлива</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-file-lines"></i><strong>4.5</strong><span>Оценка</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-tire"></i><strong>FF</strong><span>Привод</span></div></div>
-                    <div class="col"><div class="spec-card"><i class="fa-solid fa-palette"></i><strong>WHITE</strong><span>Цвет</span></div></div>
-                </div>
-
-                <!-- Bottom Comments Grid -->
-                <div class="row g-2 mb-4">
-                    <div class="col-md-6">
-                        <div class="border h-100">
-                            <div class="bg-light p-2 fw-bold border-bottom" style="font-size: 14px;">Plus Point</div>
-                            <div class="p-3 theme-green-text fw-bold">-</div>
-                        </div>
+                <!-- Main Image Area (unchanged) -->
+                <div class="gallery-card">
+                    <div class="main-image" id="mainImage">
+                    <!-- <img> slides injected by JS from the carImages array below -->
+                    <button class="nav-arrow prev" id="prevBtn" aria-label="Предыдущее фото"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="nav-arrow next" id="nextBtn" aria-label="Следующее фото"><i class="fa-solid fa-chevron-right"></i></button>
+                    <span class="img-counter" id="imgCounter">1 / 5</span>
                     </div>
-                    <div class="col-md-6">
-                        <div class="border h-100">
-                            <div class="bg-light p-2 fw-bold border-bottom" style="font-size: 14px;">Auctioneer Comment</div>
-                            <div class="p-3 theme-green-text fw-bold">-</div>
-                        </div>
+                    <div class="thumbs" id="thumbRow"></div>
+                    <div class="share-row">
+                    <button class="share-btn tg" title="Поделиться в Telegram" onclick="shareTo('tg')"><i class="fa-brands fa-telegram"></i></button>
+                    <button class="share-btn wa" title="Поделиться в WhatsApp" onclick="shareTo('wa')"><i class="fa-brands fa-whatsapp"></i></button>
+                    <button class="share-btn x" title="Поделиться в X" onclick="shareTo('x')"><i class="fa-brands fa-x-twitter"></i></button>
                     </div>
                 </div>
 
-                <!-- QR Code -->
-                <div>
-                    <img src="https://via.placeholder.com/120x120?text=QR+Code" alt="QR Code" class="mb-2">
-                    <br>
-                    <button class="btn btn-primary btn-sm px-3"><i class="bi bi-plus-lg"></i></button>
-                </div>
+                <!-- ============ SVG icon sprite (paste once; icons are referenced with <use>) ============ -->
+                <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+                    <!-- Vehicle body number -->
+                    <symbol id="ic-barcode" viewBox="0 0 64 64">
+                    <rect x="5" y="12" width="54" height="40" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <path d="M12 19v22M16 19v22M19 19v22M24 19v22M27 19v22M33 19v22M36 19v22M41 19v22M45 19v22M50 19v22" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 46h40" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </symbol>
+                    <!-- Car brand (front view) -->
+                    <symbol id="ic-car" viewBox="0 0 64 64">
+                    <path d="M12 28l3-11c.8-2.8 3.3-5 6.300-5h21.400c3 0 5.500 2.200 6.300 5l3 11c2 .8 3.500 2.800 3.500 5v11c0 1.100-.9 2-2 2h-4v3c0 1.100-.9 2-2 2h-5c-1.100 0-2-.9-2-2v-3H23v3c0 1.100-.9 2-2 2h-5c-1.100 0-2-.9-2-2v-3h-4c-1.100 0-2-.9-2-2V33c0-2.200 1.500-4.200 3.500-5z"/>
+                    <path d="M18 18.500c.4-1.300 1.600-2.500 3.300-2.500h21.400c1.700 0 2.900 1.200 3.300 2.500L47.500 26h-31z" fill="#fff"/>
+                    <circle cx="19" cy="36" r="3" fill="#fff"/><circle cx="45" cy="36" r="3" fill="#fff"/>
+                    <rect x="26" y="38" width="12" height="3" rx="1.500" fill="#fff"/>
+                    </symbol>
+                    <!-- Body type (side view) -->
+                    <symbol id="ic-sedan" viewBox="0 0 64 64">
+                    <path d="M4 40c0-2.500 1.500-4.500 4-5l9-2 9-9c1.100-1 2.500-1.500 4-1.500h12c2 0 3.800.9 5 2.500l5 7.500c3 .6 5 2.700 5 5.500V41c0 1.100-.9 2-2 2H6c-1.100 0-2-.9-2-2z"/>
+                    <path d="M24 32l6-6h5v6zM38 26h4.500l4.500 6H38z" fill="#fff"/>
+                    <circle cx="17" cy="43" r="6.500" stroke="#fff" stroke-width="2"/>
+                    <circle cx="47" cy="43" r="6.500" stroke="#fff" stroke-width="2"/>
+                    </symbol>
+                    <!-- Year -->
+                    <symbol id="ic-calendar" viewBox="0 0 64 64">
+                    <rect x="10" y="12" width="44" height="42" rx="4"/>
+                    <rect x="18" y="6" width="5" height="12" rx="2.500"/><rect x="41" y="6" width="5" height="12" rx="2.500"/>
+                    <rect x="16" y="26" width="32" height="22" rx="1.500" fill="#fff"/>
+                    <path d="M20 30h6v6h-6zM29 30h6v6h-6zM38 30h6v6h-6zM20 39h6v6h-6zM29 39h6v6h-6z"/>
+                    </symbol>
+                    <!-- Mileage -->
+                    <symbol id="ic-road" viewBox="0 0 64 64">
+                    <path d="M24 8h16l16 48H8z"/>
+                    <path d="M30 12h4v7h-4zM29 25h6v9h-6zM27.500 40h9v12h-9z" fill="#fff"/>
+                    </symbol>
+                    <!-- Engine displacement -->
+                    <symbol id="ic-engine" viewBox="0 0 64 64">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+                        <path d="M18 22h8v-6h14v6h6l4 5h4v-3h5v18h-5v-3h-4l-4 5H24l-6-6v-6h-6v-8h6z"/>
+                        <path d="M34 26l-6 9h7l-4 8"/>
+                    </g>
+                    </symbol>
+                    <!-- Transmission -->
+                    <symbol id="ic-shift" viewBox="0 0 64 64">
+                    <circle cx="26" cy="13" r="7"/>
+                    <path d="M23 19h6l5 22h-9z"/>
+                    <path d="M8 49l30-8 18 6-30 10z"/>
+                    </symbol>
+                    <!-- Steering wheel -->
+                    <symbol id="ic-wheel" viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="6"/>
+                    <path d="M8 33c8 0 14 3 24 3s16-3 24-3" fill="none" stroke="currentColor" stroke-width="6"/>
+                    <path d="M32 36v20" fill="none" stroke="currentColor" stroke-width="7"/>
+                    <circle cx="32" cy="35" r="7"/>
+                    </symbol>
+                    <!-- Fuel type -->
+                    <symbol id="ic-fuel" viewBox="0 0 64 64">
+                    <circle cx="32" cy="34" r="24" fill="none" stroke="currentColor" stroke-width="5" stroke-dasharray="6 4.500"/>
+                    <circle cx="32" cy="34" r="19" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M32 18c-5 7-10 12-10 18a10 10 0 0 0 20 0c0-6-5-11-10-18z" fill="none" stroke="currentColor" stroke-width="3"/>
+                    </symbol>
+                    <!-- Grade -->
+                    <symbol id="ic-grade" viewBox="0 0 64 64">
+                    <path d="M16 6h22l12 12v40H16z"/>
+                    <path d="M38 6l12 12H38z" fill="#fff"/>
+                    <path fill-rule="evenodd" fill="#fff" d="M32 22l-7 17h4l1.200-3.500h5.600L37 39h4zM32 28.500l1.800 4.500h-3.600z"/>
+                    <path d="M22 44h20M22 50h20" stroke="#fff" stroke-width="2.500"/>
+                    </symbol>
+                    <!-- Drive -->
+                    <symbol id="ic-tire" viewBox="0 0 64 64">
+                    <rect x="18" y="6" width="28" height="52" rx="13"/>
+                    <path d="M24 15h16M23 23h18M23 31h18M23 39h18M24 47h16" stroke="#fff" stroke-width="3"/>
+                    </symbol>
+                    <!-- Color -->
+                    <symbol id="ic-palette" viewBox="0 0 64 64">
+                    <path d="M32 6C17 6 6 17 6 31s11 27 24 27c4 0 6-3 4-6-2-4 0-8 5-8h8c6 0 11-4 11-10C58 17 47 6 32 6z"/>
+                    <circle cx="19" cy="31" r="4" fill="#fff"/><circle cx="27" cy="18" r="4" fill="#fff"/>
+                    <circle cx="41" cy="18" r="4" fill="#fff"/><circle cx="49" cy="29" r="4" fill="#fff"/>
+                    </symbol>
+                </svg>
+
+                <!-- ============ Tabs ============ -->
+                <section class="ct-card" aria-label="Car information">
+
+                    <div class="ct-tabs" role="tablist">
+                    <button class="ct-tab active" id="car-tab-about" type="button" role="tab"
+                            data-bs-toggle="tab" data-bs-target="#car-pane-about"
+                            aria-controls="car-pane-about" aria-selected="true">
+                        <i class="fa-solid fa-car-side"></i> About the Car
+                    </button>
+                    <button class="ct-tab" id="car-tab-char" type="button" role="tab"
+                            data-bs-toggle="tab" data-bs-target="#car-pane-char"
+                            aria-controls="car-pane-char" aria-selected="false">
+                        <i class="fa-solid fa-list-check"></i> Characteristics
+                    </button>
+                    <button class="ct-tab" id="car-tab-auction" type="button" role="tab"
+                            data-bs-toggle="tab" data-bs-target="#car-pane-auction"
+                            aria-controls="car-pane-auction" aria-selected="false">
+                        <i class="fa-solid fa-file-lines"></i> Auction sheet
+                    </button>
+                    </div>
+
+                    <div class="tab-content ct-panel">
+
+                    <!-- 1) About the Car -->
+                    <div class="tab-pane fade show active" id="car-pane-about" role="tabpanel" aria-labelledby="car-tab-about" tabindex="0">
+                        <div class="row row-cols-2 row-cols-md-4 g-2">
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-barcode"/></svg><strong>ZC33S-416717</strong><span>Номер кузова</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-car"/></svg><strong>Suzuki</strong><span>Марка Автомобиля</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-sedan"/></svg><strong>Hatchback</strong><span>Тип кузова</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-calendar"/></svg><strong>2021-11</strong><span>Год</span></div></div>
+
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-road"/></svg><strong>60311 KM</strong><span>Пробег</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-engine"/></svg><strong>1370 CC</strong><span>Объём двигателя</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-shift"/></svg><strong>6AT</strong><span>Трансмиссия</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-wheel"/></svg><strong>RHD</strong><span>Руль</span></div></div>
+
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-fuel"/></svg><strong>Gasoline</strong><span>Тип топлива</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-grade"/></svg><strong>4.5</strong><span>Оценка</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-tire"/></svg><strong>FF</strong><span>Привод</span></div></div>
+                        <div class="col"><div class="spec-card"><svg class="ac-icon" aria-hidden="true"><use href="#ic-palette"/></svg><strong>WHITE</strong><span>Цвет</span></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 2) Characteristics -->
+                    <div class="tab-pane fade" id="car-pane-char" role="tabpanel" aria-labelledby="car-tab-char" tabindex="0">
+                        <ul class="ct-list">
+                        <li><i class="fa-solid fa-check"></i><span class="ct-list__k">Марка:</span><span class="ct-list__v">Honda</span></li>
+                        <li><i class="fa-solid fa-check"></i><span class="ct-list__k">Модель:</span><span class="ct-list__v">N BOX CUSTOM</span></li>
+                        <li><i class="fa-solid fa-check"></i><span class="ct-list__k">Год/Месяц:</span><span class="ct-list__v">2021-12</span></li>
+                        <li><i class="fa-solid fa-check"></i><span class="ct-list__k">Аукционная оценка:</span><span class="ct-list__v">3.5</span></li>
+                        <li><i class="fa-solid fa-check"></i><span class="ct-list__k">Объем двигателя:</span><span class="ct-list__v">658 cc</span></li>
+                        <li><i class="fa-solid fa-check"></i><span class="ct-list__k">Топливо:</span><span class="ct-list__v">Gasoline</span></li>
+                        <li><i class="fa-solid fa-check"></i><span class="ct-list__k">Пробег:</span><span class="ct-list__v">112 000 км</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- 3) Auction sheet -->
+                    <div class="tab-pane fade" id="car-pane-auction" role="tabpanel" aria-labelledby="car-tab-auction" tabindex="0">
+                        
+                        <div class="ct-empty">
+                        <span class="ct-empty__ico"><i class="fa-solid fa-folder-open"></i></span>
+                        <p class="ct-empty__text">Не найдено</p>
+                        </div>
+                    </div>
+
+                    </div>
+                </section>
 
             </div>
 
             <!-- Right Column (Details and Pricing) -->
             <div class="col-lg-4">
-                
-                <!-- Price Information Card -->
-                <div class="side-card">
-                    <div class="side-card-title">Подробная информация о цене автомобиля</div>
-                    
-                    <div class="d-flex justify-content-between mb-2 small text-muted">
-                        <span>Стоимость автомобиля</span>
-                        <span class="text-dark fw-bold">¥1988333</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-3 small text-muted border-bottom pb-2">
-                        <span>Скидки</span>
-                        <span class="text-dark fw-bold">-¥20000</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-4 small text-muted">
-                        <span>Итого</span>
-                        <span class="text-dark fw-bold">¥1968333</span>
-                    </div>
+            <aside class="bk-side" aria-label="Price and booking">
 
-                    <div class="mb-3">
-                        <input type="text" class="form-control form-control-sm mb-2" placeholder="Российский рубль">
-                        <input type="text" class="form-control form-control-sm" placeholder="Цена продажи">
+                <!-- Prices + quick specs -->
+                <div class="bk-card">
+
+                <div class="bk-price bk-price--cf">
+                    <div class="bk-price__body">
+                    <span class="bk-price__label">C&amp;F Price (Yen)</span>
+                    <strong class="bk-price__amt">¥9,999,999,999</strong>
                     </div>
-                    <button class="btn theme-green-bg w-100 fw-bold border-0">ПОДТВЕРДИТЬ</button>
+                    <button type="button" class="bk-info" data-bs-toggle="tooltip" data-bs-placement="left"
+                            title="Cost &amp; Freight: car price plus shipping to the destination port."
+                            aria-label="About C&amp;F price"><i class="fa-solid fa-circle-info"></i></button>
                 </div>
 
-                <!-- Shipping Details Card -->
-                <div class="side-card">
-                    <div class="side-card-title">Детали отгрузки</div>
-                    
-                    <div class="timeline-container">
-                        <div class="timeline-line"></div>
-                        
-                        <div class="timeline-item">
-                            <div class="label">Аукцион</div>
-                            <div class="value">: JU-SHIZUOKA</div>
-                            <div class="timeline-dot dot-green"></div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="label">Дата Аукциона</div>
-                            <div class="value">: 18/08/2026</div>
-                            <div class="timeline-dot dot-green"></div>
-                        </div>
-                        <div class="timeline-item pb-4"> <!-- extra padding to push next item down -->
-                            <div class="label">Дата прибытия в порт</div>
-                            <div class="value">: </div>
-                            <div class="timeline-dot dot-yellow"></div>
-                        </div>
-                        <div class="timeline-item pb-4">
-                            <div class="label">Бесплатное хранение заканчивается через</div>
-                            <div class="value">: 120( дней)</div>
-                            <div class="timeline-dot dot-green"></div>
-                        </div>
-                        <div class="timeline-item pb-4">
-                            <div class="label">Дата получения экспортного сертификата</div>
-                            <div class="value">: Ожидаем документы с аукциона</div>
-                            <div class="timeline-dot dot-yellow" style="top: 15px;"></div> <!-- Middle alignment tweak -->
-                        </div>
-                        <div class="timeline-item">
-                            <div class="label">Наименование судна</div>
-                            <div class="value">: Ожидаем назначение судна</div>
-                            <div class="timeline-dot dot-yellow"></div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="label">Порт назначения</div>
-                            <div class="value">: VLADIVOSTOK</div>
-                            <div class="timeline-dot dot-green"></div>
-                        </div>
-                        <div class="timeline-item pb-4">
-                            <div class="label">Судоходная компания</div>
-                            <div class="value">: TRANS LOGISTIC</div>
-                            <div class="timeline-dot dot-green"></div>
-                        </div>
-                        <div class="timeline-item pb-4">
-                            <div class="label">Дата отправки</div>
-                            <div class="value">: Ожидаем судно и дату погрузки</div>
-                            <div class="timeline-dot dot-yellow" style="top: 10px;"></div>
-                        </div>
-                        <div class="timeline-item pb-3">
-                            <div class="label">Дата прибытия</div>
-                            <div class="value">: Ожидаем судно и дату погрузки</div>
-                            <div class="timeline-dot dot-yellow" style="top: 10px;"></div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="label">Сумма за хранение на ярде</div>
-                            <div class="value">: ¥0</div>
-                            <div class="timeline-dot dot-yellow"></div>
-                        </div>
+                <div class="bk-price bk-price--tk">
+                    <div class="bk-price__body">
+                    <span class="bk-price__label">Turnkey price (Rubles)</span>
+                    <strong class="bk-price__amt">₽9,999,999,999,000</strong>
                     </div>
+                    <button type="button" class="bk-info" data-bs-toggle="tooltip" data-bs-placement="left"
+                            title="Final price delivered to your door, including all fees."
+                            aria-label="About turnkey price"><i class="fa-solid fa-circle-info"></i></button>
                 </div>
 
-                <!-- Consignee Details Card -->
-                <div class="side-card">
-                    <div class="side-card-title">Детали грузополучателя</div>
-                    
-                    <div class="d-flex justify-content-between mb-2 small text-muted">
-                        <span>Грузополучатель</span>
-                        <span>:</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2 small text-muted">
-                        <span>Контактный номер</span>
-                        <span>:</span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2 small text-muted">
-                        <span>Эл. Почта</span>
-                        <span>:</span>
-                    </div>
-                    <div class="d-flex justify-content-between small text-muted">
-                        <span>Адрес грузополучателя</span>
-                        <span>:</span>
-                    </div>
+                <ul class="bk-specs">
+                    <li><span class="bk-specs__k"><i class="fa-solid fa-check-double"></i>Make</span><span class="bk-specs__v">Daihatsu</span></li>
+                    <li><span class="bk-specs__k"><i class="fa-solid fa-check-double"></i>Model</span><span class="bk-specs__v">COPEN</span></li>
+                    <li><span class="bk-specs__k"><i class="fa-solid fa-check-double"></i>Year / Month</span><span class="bk-specs__v">2022-09</span></li>
+                    <li><span class="bk-specs__k"><i class="fa-solid fa-check-double"></i>Auction rating</span><span class="bk-specs__v">4.5</span></li>
+                    <li><span class="bk-specs__k"><i class="fa-solid fa-check-double"></i>Engine capacity</span><span class="bk-specs__v">658 cc</span></li>
+                    <li><span class="bk-specs__k"><i class="fa-solid fa-check-double"></i>Fuel</span><span class="bk-specs__v">Gasoline</span></li>
+                    <li><span class="bk-specs__k"><i class="fa-solid fa-check-double"></i>Mileage</span><span class="bk-specs__v">95,000 km</span></li>
+                </ul>
                 </div>
 
+                <!-- Actions -->
+                <div class="bk-card bk-actions">
+                <button type="button" class="bk-btn bk-btn--solid" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="fa-solid fa-calendar-check"></i> Book now
+                </button>
+                <!-- <button type="button" class="bk-btn bk-btn--outline" data-bs-toggle="modal" data-bs-target="#managersModal">
+                    <i class="fa-solid fa-headset"></i> Contact the manager
+                </button> -->
+                <!-- <a href="#" class="bk-btn bk-btn--ghost">
+                    <i class="fa-regular fa-credit-card"></i> Payment methods
+                </a> -->
+                </div>
+
+            </aside>
             </div>
+
+
+
+
+
         </div>
     </main>
 
@@ -423,6 +459,128 @@
         </div>
         </div>
     </footer>
+
+
+  <!-- Registration / Login modal -->
+<div class="modal fade bk-modal" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable bk-dialog-lg">
+    <div class="modal-content">
+      <button type="button" class="btn-close bk-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div class="bk-tabs" role="tablist">
+        <button class="bk-tab active" id="tab-register" type="button" role="tab"
+                data-bs-toggle="tab" data-bs-target="#pane-register"
+                aria-controls="pane-register" aria-selected="true">New registration</button>
+        <button class="bk-tab" id="tab-login" type="button" role="tab"
+                data-bs-toggle="tab" data-bs-target="#pane-login"
+                aria-controls="pane-login" aria-selected="false">Login with password</button>
+      </div>
+
+      <div class="tab-content">
+
+        <!-- Registration -->
+        <div class="tab-pane fade show active" id="pane-register" role="tabpanel" aria-labelledby="tab-register" tabindex="0">
+          <h2 class="bk-title" id="authModalLabel">User registration</h2>
+          <form class="bk-form needs-validation" action="/register" method="post" novalidate>
+            <!-- CI4: <?= csrf_field() ?>   Laravel: @csrf -->
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <label class="bk-label" for="reg-name">Name</label>
+                <input class="form-control bk-input" id="reg-name" name="name" type="text" autocomplete="given-name" required>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="bk-label" for="reg-surname">Surname</label>
+                <input class="form-control bk-input" id="reg-surname" name="surname" type="text" autocomplete="family-name" required>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="bk-label" for="reg-email">Email</label>
+                <input class="form-control bk-input" id="reg-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="bk-label" for="reg-country">Country code</label>
+                <select class="form-select bk-input" id="reg-country" name="country_code" required>
+                  <option value="+7" selected>+7-RUSSIA</option>
+                  <option value="+7">+7-KAZAKHSTAN</option>
+                  <option value="+375">+375-BELARUS</option>
+                  <option value="+380">+380-UKRAINE</option>
+                  <option value="+374">+374-ARMENIA</option>
+                  <option value="+995">+995-GEORGIA</option>
+                  <option value="+996">+996-KYRGYZSTAN</option>
+                  <option value="+998">+998-UZBEKISTAN</option>
+                  <option value="+81">+81-JAPAN</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="bk-label" for="reg-phone">Phone number</label>
+                <input class="form-control bk-input" id="reg-phone" name="phone" type="tel" inputmode="tel"
+                       autocomplete="tel-national" placeholder="9XX XXX XX XX" required>
+              </div>
+              <div class="col-12 col-sm-6">
+                <span class="bk-label" id="reg-booking-label">Booking type</span>
+                <div class="bk-radios" role="radiogroup" aria-labelledby="reg-booking-label">
+                  <label class="bk-radio"><input type="radio" name="booking_type" value="turnkey" checked><span>Turnkey (₽)</span></label>
+                  <label class="bk-radio"><input type="radio" name="booking_type" value="cf"><span>C&amp;F (¥)</span></label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="bk-btn bk-btn--solid bk-submit">Registration</button>
+          </form>
+        </div>
+
+        <!-- Login -->
+        <div class="tab-pane fade" id="pane-login" role="tabpanel" aria-labelledby="tab-login" tabindex="0">
+          <h2 class="bk-title">Entrance</h2>
+          <form class="bk-form needs-validation" action="/login" method="post" novalidate>
+            <!-- CI4: <?= csrf_field() ?>   Laravel: @csrf -->
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <label class="bk-label" for="login-user">User ID/Email</label>
+                <input class="form-control bk-input" id="login-user" name="login" type="text" autocomplete="username" required>
+              </div>
+              <div class="col-12 col-sm-6">
+                <label class="bk-label" for="login-pass">Password</label>
+                <div class="bk-pass">
+                  <input class="form-control bk-input" id="login-pass" name="password" type="password" autocomplete="current-password" required>
+                  <button type="button" class="bk-pass__toggle" aria-label="Show password" aria-pressed="false">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-12">
+                <span class="bk-label" id="login-booking-label">Booking type</span>
+                <div class="bk-radios" role="radiogroup" aria-labelledby="login-booking-label">
+                  <label class="bk-radio"><input type="radio" name="booking_type" value="turnkey" checked><span>Turnkey (₽)</span></label>
+                  <label class="bk-radio"><input type="radio" name="booking_type" value="cf"><span>C&amp;F (¥)</span></label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="bk-btn bk-btn--solid bk-submit">Login</button>
+            <a href="/forgot-password" class="bk-link">Forgot your password?</a>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our Managers modal (rows are rendered by booking-sidebar.js) -->
+<div class="modal  fade bk-modal" id="managersModal" tabindex="-1" aria-labelledby="managersModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="bk-mhead">
+        <h2 class="bk-mtitle" id="managersModalLabel">
+          <span class="bk-mtitle__ico"><i class="fa-solid fa-headset"></i></span>
+          Our Managers
+        </h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <ul class="bk-mgr-list" id="managersList"></ul>
+    </div>
+  </div>
+</div>
+
+
 
     <script src="/javascript/form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
