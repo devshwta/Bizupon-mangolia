@@ -175,3 +175,37 @@ const toggleBtns = document.querySelectorAll('.pr-toggle-btn');
             // initial stepper state
             goToStep(1);
         })();
+
+// vehicle Filter Box
+// Brand list -> syncs with hidden #ivMake select
+document.querySelectorAll('#ivBrandList .iv-brand-item').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelectorAll('#ivBrandList .iv-brand-item').forEach(function (i) {
+            i.classList.remove('iv-brand-active');
+        });
+        this.classList.add('iv-brand-active');
+
+        var make = document.getElementById('ivMake');
+        make.value = this.dataset.brand;
+        make.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+});
+
+// Categories -> get selected values in your filter function
+function getSelectedCategories() {
+    return Array.from(document.querySelectorAll('.iv-cat-check:checked')).map(function (c) { return c.value; });
+}
+document.querySelectorAll('.iv-cat-check').forEach(function (c) {
+    c.addEventListener('change', function () {
+        // call your existing filter function here, e.g. applyFilters();
+    });
+});
+
+// Reset: also clear brand + categories
+document.getElementById('ivReset').addEventListener('click', function () {
+    document.querySelectorAll('.iv-cat-check').forEach(function (c) { c.checked = false; });
+    document.querySelectorAll('#ivBrandList .iv-brand-item').forEach(function (i) {
+        i.classList.toggle('iv-brand-active', i.dataset.brand === 'all');
+    });
+});

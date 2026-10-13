@@ -70,88 +70,77 @@
             <div class="row g-4">
               
                 <div class="col-lg-3">
-                    <aside class="iv-filters">
-                        <div class="d-flex align-items-center justify-content-between iv-filters-head">
-                            <h5><i class="fa-solid fa-sliders"></i> Шүүлтүүр</h5>
-                            <button type="button" class="iv-reset-btn" id="ivReset">Reset</button>
-                        </div>
 
-                        <!-- Make -->
-                        <div class="iv-filter-group">
-                            <label class="iv-filter-label">Брэнд</label>
-                            <select class="form-select iv-select" id="ivMake">
-                                <option value="all">All Makes</option>
-                                <option value="Toyota">Toyota</option>
-                                <option value="Mercedes-Benz">Mercedes-Benz</option>
-                                <option value="Hyundai">Hyundai</option>
-                                <option value="Lexus">Lexus</option>
-                                <option value="BMW">BMW</option>
-                                <option value="Honda">Honda</option>
-                                <option value="Tesla">Tesla</option>
-                            </select>
-                        </div>
+                    <!-- Mobile toggle -->
+                    <button class="iv-mobile-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#ivSidebar" aria-expanded="false" aria-controls="ivSidebar">
+                        <span><i class="fa-solid fa-sliders"></i> Шүүлтүүр</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
 
-                        <!-- Fuel Type -->
-                        <div class="iv-filter-group">
-                            <label class="iv-filter-label">Түлшний төрөл</label>
-                            <div class="iv-pill-group" id="ivFuelGroup">
-                                <button type="button" class="iv-pill iv-pill-active" data-value="all">Бүгд</button>
-                                <button type="button" class="iv-pill" data-value="Petrol">Цахилгаан</button>
-                                <button type="button" class="iv-pill" data-value="Diesel">Бензин</button>
-                                <button type="button" class="iv-pill" data-value="Hybrid">Дизель</button>
-                                <button type="button" class="iv-pill" data-value="Electric">Гибрид</button>
+                    <div class="collapse d-lg-block" id="ivSidebar">
+                        <aside class="iv-filters">
+
+                            <div class="d-flex align-items-center justify-content-between iv-filters-head">
+                                <h5><i class="fa-solid fa-sliders"></i> Шүүлтүүр</h5>
+                                <button type="button" class="iv-reset-btn" id="ivReset">Reset</button>
                             </div>
-                        </div>
 
-                        <!-- Drive Type -->
-                        <div class="iv-filter-group">
-                            <label class="iv-filter-label">Хөтлөгч</label>
-                            <div class="iv-pill-group iv-pill-three" id="ivDriveGroup">
-                                <button type="button" class="iv-pill iv-pill-active" data-value="all">All</button>
-                                <button type="button" class="iv-pill" data-value="FWD">FWD</button>
-                                <button type="button" class="iv-pill" data-value="AWD">AWD</button>
+                            <!-- Brand list (with logos + counts) -->
+                            <div class="iv-filter-group">
+                                <label class="iv-filter-label">Брэнд</label>
+                                <ul class="iv-brand-list" id="ivBrandList">
+                                    <!-- <li><a href="#" class="iv-brand-item iv-brand-active" data-brand="all"><span class="iv-brand-logo"><i class="fa-solid fa-car"></i></span><span class="iv-brand-name">Бүгд</span></a></li> -->
+                                    <li><a href="#" class="iv-brand-item" data-brand="Toyota"><span class="iv-brand-logo"><img src="images/brand/logo_toyota.png" alt="Toyota"></span><span class="iv-brand-name">Toyota</span><span class="iv-count">48</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Nissan"><span class="iv-brand-logo"><img src="images/brand/logo_nissan.png" alt="Nissan"></span><span class="iv-brand-name">Nissan</span><span class="iv-count">13</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Honda"><span class="iv-brand-logo"><img src="images/brand/logo_honda.png" alt="Honda"></span><span class="iv-brand-name">Honda</span><span class="iv-count">109</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Subaru"><span class="iv-brand-logo"><img src="images/brand/logo_subaru.png" alt="Subaru"></span><span class="iv-brand-name">Subaru</span><span class="iv-count">3</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Mazda"><span class="iv-brand-logo"><img src="images/brand/logo_mazda.png" alt="Mazda"></span><span class="iv-brand-name">Mazda</span><span class="iv-count">9</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Mitsubishi"><span class="iv-brand-logo"><img src="images/brand/logo_mitsubishi.png" alt="Mitsubishi"></span><span class="iv-brand-name">Mitsubishi</span><span class="iv-count">4</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Suzuki"><span class="iv-brand-logo"><img src="images/brand/logo_suzuki.png" alt="Suzuki"></span><span class="iv-brand-name">Suzuki</span><span class="iv-count">20</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="BMW"><span class="iv-brand-logo"><img src="images/brand/logo_bmw.png" alt="BMW"></span><span class="iv-brand-name">BMW</span><span class="iv-count">3</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Audi"><span class="iv-brand-logo"><img src="images/brand/logo_audi.png" alt="Audi"></span><span class="iv-brand-name">Audi</span><span class="iv-count">4</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Volkswagen"><span class="iv-brand-logo"><img src="images/brand/logo_volkswagen.png" alt="Volkswagen"></span><span class="iv-brand-name">Volkswagen</span><span class="iv-count">6</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Mercedes-Benz"><span class="iv-brand-logo"><img src="images/brand/logo_mercedes.png" alt="Mercedes"></span><span class="iv-brand-name">Mercedes</span><span class="iv-count">2</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Daihatsu"><span class="iv-brand-logo"><img src="images/brand/logo_daihatsu.png" alt="Daihatsu"></span><span class="iv-brand-name">Daihatsu</span><span class="iv-count">14</span></a></li>
+                                    <li><a href="#" class="iv-brand-item" data-brand="Peugeot"><span class="iv-brand-logo"><img src="images/brand/logo_peugeot.png" alt="Peugeot"></span><span class="iv-brand-name">Peugeot</span><span class="iv-count">1</span></a></li>
+                                </ul>
+
+                                <!-- Hidden select kept so your existing JS (ivMake) still works -->
+                                <select class="form-select iv-select d-none" id="ivMake">
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Nissan">Nissan</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="Subaru">Subaru</option>
+                                    <option value="Mazda">Mazda</option>
+                                    <option value="Mitsubishi">Mitsubishi</option>
+                                    <option value="Suzuki">Suzuki</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="Audi">Audi</option>
+                                    <option value="Volkswagen">Volkswagen</option>
+                                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                    <option value="Daihatsu">Daihatsu</option>
+                                    <option value="Peugeot">Peugeot</option>
+                                </select>
                             </div>
-                        </div>
 
-                        <!-- Source Location -->
-                        <div class="iv-filter-group">
-                            <label class="iv-filter-label">Эх сурвалж</label>
-                            <select class="form-select iv-select" id="ivLocation">
-                                <option value="all">All Locations</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Korea">Korea</option>
-                                <option value="USA">USA</option>
-                                <option value="Europe">Europe</option>
-                            </select>
-                        </div>
-
-                        <!-- Year From -->
-                        <div class="iv-filter-group">
-                            <div class="d-flex justify-content-between">
-                                <label class="iv-filter-label">Он: 2010 – 2026</label>
-                                <span class="iv-range-value" id="ivYearValue">2010</span>
+                            <!-- Categories -->
+                            <div class="iv-filter-group">
+                                <label class="iv-filter-label">Categories</label>
+                                <ul class="iv-cat-list" id="ivCategoryList">
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Sedan"><span class="iv-checkmark"></span><span class="iv-cat-name">Sedan</span><span class="iv-count">57</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Suv"><span class="iv-checkmark"></span><span class="iv-cat-name">Suv</span><span class="iv-count">28</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Station Wagon"><span class="iv-checkmark"></span><span class="iv-cat-name">Station Wagon</span><span class="iv-count">8</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Coupe"><span class="iv-checkmark"></span><span class="iv-cat-name">Coupe</span><span class="iv-count">2</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Convertible"><span class="iv-checkmark"></span><span class="iv-cat-name">Convertible</span><span class="iv-count">2</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Hatchback"><span class="iv-checkmark"></span><span class="iv-cat-name">Hatchback</span><span class="iv-count">48</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Mini Van"><span class="iv-checkmark"></span><span class="iv-cat-name">Mini Van</span><span class="iv-count">74</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Wagon"><span class="iv-checkmark"></span><span class="iv-cat-name">Wagon</span><span class="iv-count">13</span></label></li>
+                                    <li><label class="iv-cat-item"><input type="checkbox" class="iv-cat-check" value="Light Car"><span class="iv-checkmark"></span><span class="iv-cat-name">Light Car</span><span class="iv-count">6</span></label></li>
+                                </ul>
                             </div>
-                            <input type="range" class="form-range iv-range" id="ivYear" min="2010" max="2025" step="1" value="2010">
-                        </div>
 
-                        <!-- Max Mileage -->
-                        <div class="iv-filter-group">
-                            <div class="d-flex justify-content-between">
-                                <label class="iv-filter-label">Дээд гүйлт (км):</label>
-                                <span class="iv-range-value" id="ivMileageValue">200,000</span>
-                            </div>
-                            <input type="range" class="form-range iv-range" id="ivMileage" min="0" max="200000" step="1000" value="200000">
-                        </div>
-
-                        <!-- Max Price -->
-                        <div class="iv-filter-group">
-                            <div class="d-flex justify-content-between">
-                                <label class="iv-filter-label">Үнийн хязгаар (USD):</label>
-                                <span class="iv-range-value" id="ivPriceValue">$250,000</span>
-                            </div>
-                            <input type="range" class="form-range iv-range" id="ivPrice" min="0" max="250000" step="1000" value="250000">
-                        </div>
-                    </aside>
+                        </aside>
+                    </div>
                 </div>
 
                 <div class="col-lg-9">

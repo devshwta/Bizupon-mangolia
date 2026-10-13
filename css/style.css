@@ -3720,3 +3720,217 @@ hr{
         padding-left: 0;
     }
 }
+
+/* Custome Css */
+:root {
+    --iv-yellow: #ffc107;
+    --iv-yellow-dark: #e0a800;
+    --iv-black: #0d0d0d;
+    --iv-card: #1a1a1a;
+    --iv-border: #2c2c2c;
+    --iv-text: #e9e9e9;
+    --iv-muted: #9a9a9a;
+}
+
+/* Mobile toggle */
+.iv-mobile-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--iv-yellow);
+    color: var(--iv-black);
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.iv-mobile-toggle[aria-expanded="true"] .fa-chevron-down { transform: rotate(180deg); }
+.iv-mobile-toggle .fa-chevron-down { transition: transform .2s; }
+
+/* Sidebar */
+.iv-filters {
+    background: var(--iv-black);
+    color: var(--iv-text);
+    border: 1px solid var(--iv-border);
+    border-top: 4px solid var(--iv-yellow);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+@media (min-width: 992px) {
+    .iv-filters { position: sticky; top: 90px; overflow-y: auto; }
+}
+
+.iv-filters-head {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--iv-border);
+}
+.iv-filters-head h5 { margin: 0; color: #fff; font-weight: 700; font-size: 1.05rem; }
+.iv-filters-head h5 i { color: var(--iv-yellow); margin-right: 6px; }
+
+.iv-reset-btn {
+    background: transparent;
+    color: var(--iv-yellow);
+    border: 1px solid var(--iv-yellow);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: .8rem;
+    font-weight: 600;
+    transition: .2s;
+}
+.iv-reset-btn:hover { background: var(--iv-yellow); color: var(--iv-black); }
+
+.iv-filter-group { margin-bottom: 22px; }
+.iv-filter-label {
+    display: block;
+    color: var(--iv-yellow);
+    font-weight: 700;
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+}
+
+/* Brand list */
+.iv-brand-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 4px 0 0;
+    overflow-y: auto;
+}
+.iv-brand-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border-bottom: 1px solid var(--iv-border);
+    color: var(--iv-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .92rem;
+    transition: .2s;
+}
+.iv-brand-list li:last-child .iv-brand-item { border-bottom: 0; }
+.iv-brand-logo {
+    width: 34px; height: 34px;
+    flex: 0 0 34px;
+    display: flex; align-items: center; justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    color: var(--iv-black);
+}
+.iv-brand-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.iv-brand-name { flex: 1; }
+.iv-brand-item:hover { background: var(--iv-card); color: var(--iv-yellow); }
+.iv-brand-active { background: var(--iv-yellow); color: var(--iv-black) !important; }
+.iv-brand-active .iv-count { background: var(--iv-black); color: var(--iv-yellow); }
+
+/* Count badge */
+.iv-count {
+    margin-left: auto;
+    min-width: 32px;
+    text-align: center;
+    background: var(--iv-card);
+    color: var(--iv-yellow);
+    border: 1px solid var(--iv-border);
+    border-radius: 20px;
+    padding: 1px 8px;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+/* Categories */
+.iv-cat-list { list-style: none; margin: 0; padding: 0; }
+.iv-cat-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 4px;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--iv-text);
+    transition: color .2s;
+}
+.iv-cat-item:hover { color: var(--iv-yellow); }
+.iv-cat-item input { position: absolute; opacity: 0; pointer-events: none; }
+.iv-checkmark {
+    width: 18px; height: 18px;
+    border: 2px solid var(--iv-muted);
+    border-radius: 4px;
+    flex: 0 0 18px;
+    position: relative;
+    transition: .2s;
+}
+.iv-cat-item input:checked ~ .iv-checkmark { background: var(--iv-yellow); border-color: var(--iv-yellow); }
+.iv-cat-item input:checked ~ .iv-checkmark::after {
+    content: "";
+    position: absolute;
+    left: 4px; top: 0;
+    width: 5px; height: 10px;
+    border: solid var(--iv-black);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.iv-cat-item input:focus-visible ~ .iv-checkmark { box-shadow: 0 0 0 3px rgba(255,193,7,.4); }
+.iv-cat-item input:checked ~ .iv-cat-name { color: var(--iv-yellow); }
+
+/* Select */
+.iv-select {
+    background-color: var(--iv-card);
+    color: var(--iv-text);
+    border: 1px solid var(--iv-border);
+    border-radius: 8px;
+}
+.iv-select:focus {
+    background-color: var(--iv-card);
+    color: #fff;
+    border-color: var(--iv-yellow);
+    box-shadow: 0 0 0 .2rem rgba(255,193,7,.25);
+}
+
+/* Pills */
+.iv-pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.iv-pill {
+    flex: 1 1 auto;
+    background: var(--iv-card);
+    color: var(--iv-text);
+    border: 1px solid var(--iv-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: .82rem;
+    font-weight: 600;
+    transition: .2s;
+}
+.iv-pill:hover { border-color: var(--iv-yellow); color: var(--iv-yellow); }
+.iv-pill-active, .iv-pill-active:hover {
+    background: var(--iv-yellow);
+    color: var(--iv-black);
+    border-color: var(--iv-yellow);
+}
+.iv-pill-three .iv-pill { flex: 1 1 0; }
+
+/* Range */
+.iv-range-value { color: var(--iv-yellow); font-weight: 700; font-size: .85rem; }
+.iv-range { accent-color: var(--iv-yellow); }
+.iv-range::-webkit-slider-runnable-track { background: var(--iv-border); height: 6px; border-radius: 4px; }
+.iv-range::-webkit-slider-thumb { background: var(--iv-yellow); margin-top: -5px; }
+.iv-range::-moz-range-track { background: var(--iv-border); height: 6px; border-radius: 4px; }
+.iv-range::-moz-range-thumb { background: var(--iv-yellow); border: 0; }
+
+/* Scrollbars */
+.iv-brand-list::-webkit-scrollbar, .iv-filters::-webkit-scrollbar { width: 6px; }
+.iv-brand-list::-webkit-scrollbar-thumb, .iv-filters::-webkit-scrollbar-thumb { background: var(--iv-yellow); border-radius: 6px; }
+.iv-brand-list::-webkit-scrollbar-track, .iv-filters::-webkit-scrollbar-track { background: var(--iv-card); }
+
+/* Small screens */
+@media (max-width: 575.98px) {
+    .iv-filters { padding: 14px; }
+    .iv-brand-list { max-height: 280px; }
+}
