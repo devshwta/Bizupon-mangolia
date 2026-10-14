@@ -3934,3 +3934,82 @@ hr{
     .iv-filters { padding: 14px; }
     .iv-brand-list { max-height: 280px; }
 }
+
+.iv-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding-top: 12px;
+    list-style: none;
+}
+
+.iv-pagination .page-item { margin: 0; }
+
+.iv-pagination .page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 16px;
+    background: #0d0d0d;
+    color: #ffc107;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: .9rem;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: none;
+    transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+
+.iv-pagination .page-link:hover {
+    background: #ffc107;
+    color: #0d0d0d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 193, 7, .3);
+}
+
+.iv-pagination .page-link:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, .4);
+}
+
+/* Active page number (if you render numbers between Prev/Next) */
+.iv-pagination .page-item.active .page-link {
+    background: #ffc107;
+    color: #0d0d0d;
+    border-color: #ffc107;
+}
+
+/* Disabled (first/last page) */
+.iv-pagination .page-item.disabled .page-link {
+    background: #1a1a1a;
+    color: #666666;
+    border-color: #2c2c2c;
+    pointer-events: none;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+    .iv-pagination { gap: 6px; }
+
+    .iv-pagination .page-link {
+        min-width: 38px;
+        height: 38px;
+        padding: 0 12px;
+        font-size: .85rem;
+    }
+
+    /* Show only arrows on very small screens */
+    .iv-pagination .page-prev .page-link span,
+    .iv-pagination .page-next .page-link span { display: none; }
+}
